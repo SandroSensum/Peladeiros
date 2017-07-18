@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MenuPeladeiros
+namespace CamadaComponente.Formularios
 {
-    public partial class frm_Principal : Form
+    public partial class frmConexaoBanco : Form
     {
-        public frm_Principal()
+        public frmConexaoBanco()
         {
             InitializeComponent();
-        }
-
-        private void btnSair_Click(object sender, EventArgs e)
-        {
-            Close();
         }
     }
 }

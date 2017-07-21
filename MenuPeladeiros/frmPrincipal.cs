@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CamadaComponente.Formularios;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,6 +21,12 @@ namespace MenuPeladeiros
         private void btnSair_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void propriedadesToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmConexaoBanco Configura = new frmConexaoBanco();
+            Configura.Show();
         }
     }
 }

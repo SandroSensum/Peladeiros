@@ -58,5 +58,11 @@
   <ItemGroup>
     <Folder Include="Componentes\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CamadaFuncao\CamadaFuncao.csproj">
+      <Project>{e32f4fb5-22cb-4b1d-baf2-eabdd657ff59}</Project>
+      <Name>CamadaFuncao</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

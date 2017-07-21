@@ -130,6 +130,7 @@
             this.propriedadesToolStripMenuItem1.Name = "propriedadesToolStripMenuItem1";
             this.propriedadesToolStripMenuItem1.Size = new System.Drawing.Size(168, 22);
             this.propriedadesToolStripMenuItem1.Text = "Propriedades";
+            this.propriedadesToolStripMenuItem1.Click += new System.EventHandler(this.propriedadesToolStripMenuItem1_Click);
             // 
             // propriedadesToolStripMenuItem
             // 
@@ -200,13 +201,13 @@
             // menJogadores
             // 
             this.menJogadores.Name = "menJogadores";
-            this.menJogadores.Size = new System.Drawing.Size(127, 22);
+            this.menJogadores.Size = new System.Drawing.Size(152, 22);
             this.menJogadores.Text = "&Jogadores";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(124, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
             // 
             // menCadastros
             // 

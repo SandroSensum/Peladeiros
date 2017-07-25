@@ -83,6 +83,10 @@
       <Project>{8EEFDE95-E7EA-4A34-ADB8-7DF06A5D899F}</Project>
       <Name>CamadaComponente</Name>
     </ProjectReference>
+    <ProjectReference Include="..\CamadaFormulario\CamadaFormulario.csproj">
+      <Project>{A659E794-3C0B-4997-8F94-F70481C32060}</Project>
+      <Name>CamadaFormulario</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

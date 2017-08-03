@@ -48,11 +48,20 @@
     <Compile Include="Formularios\frmConexaoBanco.Designer.cs">
       <DependentUpon>frmConexaoBanco.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmPadrao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPadrao.Designer.cs">
+      <DependentUpon>frmPadrao.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Formularios\frmConexaoBanco.resx">
       <DependentUpon>frmConexaoBanco.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPadrao.resx">
+      <DependentUpon>frmPadrao.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

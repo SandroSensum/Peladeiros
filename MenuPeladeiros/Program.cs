@@ -1,4 +1,5 @@
-﻿using CamadaFormulario.Cadastros;
+﻿using CamadaComponente.Formularios;
+using CamadaFormulario.Cadastros;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,8 +18,15 @@ namespace MenuPeladeiros
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new frm_Principal());
-            Application.Run(new frmJogadores());
+            //Application.Run(new frmLogin());           
+
+            frmLogin oFrmLogin = new frmLogin();
+
+            if (oFrmLogin.ShowDialog() == DialogResult.OK)
+            {
+                Application.Run(new frm_Principal());
+                
+            }
         }
     }
 }

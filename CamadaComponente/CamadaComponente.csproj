@@ -90,6 +90,10 @@
       <Project>{e32f4fb5-22cb-4b1d-baf2-eabdd657ff59}</Project>
       <Name>CamadaFuncao</Name>
     </ProjectReference>
+    <ProjectReference Include="..\CamadaLogica\CamadaLogica.csproj">
+      <Project>{D7168518-7C67-4D7E-86B2-0E810E1396B6}</Project>
+      <Name>CamadaLogica</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

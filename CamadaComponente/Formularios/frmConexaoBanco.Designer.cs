@@ -113,6 +113,7 @@
             this.btnAplicar.Text = "&Aplicar";
             this.btnAplicar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAplicar.UseVisualStyleBackColor = true;
+            this.btnAplicar.Click += new System.EventHandler(this.btnAplicar_Click);
             // 
             // imageList1
             // 
@@ -207,6 +208,7 @@
             // 
             this.txtSenha.Location = new System.Drawing.Point(58, 48);
             this.txtSenha.Name = "txtSenha";
+            this.txtSenha.PasswordChar = '*';
             this.txtSenha.Size = new System.Drawing.Size(129, 20);
             this.txtSenha.TabIndex = 1;
             // 
@@ -325,6 +327,7 @@
             this.Name = "frmConexaoBanco";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Configurações de Conexão";
+            this.Load += new System.EventHandler(this.frmConexaoBanco_Load);
             this.pnlPrincipal.ResumeLayout(false);
             this.pnlFerramentas.ResumeLayout(false);
             this.panel3.ResumeLayout(false);

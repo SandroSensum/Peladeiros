@@ -1,4 +1,5 @@
 ﻿using CamadaFuncao;
+using CamadaLogica.Auxiliar;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -36,6 +37,29 @@ namespace CamadaComponente.Formularios
             TestarConexao();
         }
 
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void btnAplicar_Click(object sender, EventArgs e)
+        {
+            Configuracao oConfiguracao = new Configuracao();
+            oConfiguracao.CaminhoBanco = txtCaminhoBanco.Text;
+            oConfiguracao.Local = radLocal.Checked;
+            oConfiguracao.Rede = radRede.Checked;
+            oConfiguracao.Senha = txtSenha.Text;
+            oConfiguracao.Servidor = txtServidor.Text;
+            oConfiguracao.Usuario = txtUsuario.Text;
+
+            oConfiguracao.GravarArquivoConfiguracao(oConfiguracao);
+        }
+
+        private void frmConexaoBanco_Load(object sender, EventArgs e)
+        {
+            CarregarArquivoConfiguracao();
+        }
+
         #endregion
 
         #region [Métodos]
@@ -45,12 +69,23 @@ namespace CamadaComponente.Formularios
             lblStatus.Text = Funcao.TestarConexao(Funcao.MontarConexao(txtUsuario.Text, txtSenha.Text, txtCaminhoBanco.Text));
         }
 
+        private void CarregarArquivoConfiguracao()
+        {
+            Configuracao oConfiguracao = new Configuracao().CarregarArquivoConfiguracao();
+
+            if (oConfiguracao != null)
+            {
+                txtCaminhoBanco.Text = oConfiguracao.CaminhoBanco;
+                radLocal.Checked = oConfiguracao.Local;
+                radRede.Checked = oConfiguracao.Rede;
+                txtSenha.Text = oConfiguracao.Senha;
+                txtServidor.Text = oConfiguracao.Servidor;
+                txtUsuario.Text = oConfiguracao.Usuario;
+            }
+        }
+
         #endregion
 
-
-        private void btnCancelar_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
+      
     }
 }

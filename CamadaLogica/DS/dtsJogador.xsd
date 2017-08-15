@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dtsJogador" targetNamespace="http://tempuri.org/dtsJogador.xsd" xmlns:mstns="http://tempuri.org/dtsJogador.xsd" xmlns="http://tempuri.org/dtsJogador.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dtsJogador" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dtsJogador" msprop:Generator_UserDSName="dtsJogador">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="JOGADOR" msprop:Generator_TableClassName="JOGADORDataTable" msprop:Generator_TableVarName="tableJOGADOR" msprop:Generator_TablePropName="JOGADOR" msprop:Generator_RowDeletingName="JOGADORRowDeleting" msprop:Generator_RowChangingName="JOGADORRowChanging" msprop:Generator_RowEvHandlerName="JOGADORRowChangeEventHandler" msprop:Generator_RowDeletedName="JOGADORRowDeleted" msprop:Generator_UserTableName="JOGADOR" msprop:Generator_RowChangedName="JOGADORRowChanged" msprop:Generator_RowEvArgName="JOGADORRowChangeEvent" msprop:Generator_RowClassName="JOGADORRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="COD_JOGADOR" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnCOD_JOGADOR" msprop:Generator_ColumnPropNameInRow="COD_JOGADOR" msprop:Generator_ColumnPropNameInTable="COD_JOGADORColumn" msprop:Generator_UserColumnName="COD_JOGADOR" type="xs:int" />
+              <xs:element name="NOM_JOGADOR" msprop:Generator_ColumnVarNameInTable="columnNOM_JOGADOR" msprop:Generator_ColumnPropNameInRow="NOM_JOGADOR" msprop:Generator_ColumnPropNameInTable="NOM_JOGADORColumn" msprop:Generator_UserColumnName="NOM_JOGADOR" type="xs:string" minOccurs="0" />
+              <xs:element name="DAT_NASC" msprop:Generator_ColumnVarNameInTable="columnDAT_NASC" msprop:Generator_ColumnPropNameInRow="DAT_NASC" msprop:Generator_ColumnPropNameInTable="DAT_NASCColumn" msprop:Generator_UserColumnName="DAT_NASC" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="OBS_JOGADOR" msprop:Generator_ColumnVarNameInTable="columnOBS_JOGADOR" msprop:Generator_ColumnPropNameInRow="OBS_JOGADOR" msprop:Generator_ColumnPropNameInTable="OBS_JOGADORColumn" msprop:Generator_UserColumnName="OBS_JOGADOR" type="xs:string" minOccurs="0" />
+              <xs:element name="ATIVO" msprop:Generator_ColumnVarNameInTable="columnATIVO" msprop:Generator_ColumnPropNameInRow="ATIVO" msprop:Generator_ColumnPropNameInTable="ATIVOColumn" msprop:Generator_UserColumnName="ATIVO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:length value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DAT_CADASTRO" msprop:Generator_ColumnVarNameInTable="columnDAT_CADASTRO" msprop:Generator_ColumnPropNameInRow="DAT_CADASTRO" msprop:Generator_ColumnPropNameInTable="DAT_CADASTROColumn" msprop:Generator_UserColumnName="DAT_CADASTRO" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="DAT_DESATIVADO" msprop:Generator_ColumnVarNameInTable="columnDAT_DESATIVADO" msprop:Generator_ColumnPropNameInRow="DAT_DESATIVADO" msprop:Generator_ColumnPropNameInTable="DAT_DESATIVADOColumn" msprop:Generator_UserColumnName="DAT_DESATIVADO" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="FONE" msprop:Generator_ColumnVarNameInTable="columnFONE" msprop:Generator_ColumnPropNameInRow="FONE" msprop:Generator_ColumnPropNameInTable="FONEColumn" msprop:Generator_UserColumnName="FONE" type="xs:double" minOccurs="0" />
+              <xs:element name="CELULAR" msprop:Generator_ColumnVarNameInTable="columnCELULAR" msprop:Generator_ColumnPropNameInRow="CELULAR" msprop:Generator_ColumnPropNameInTable="CELULARColumn" msprop:Generator_UserColumnName="CELULAR" type="xs:double" minOccurs="0" />
+              <xs:element name="EMAIL" msprop:Generator_ColumnVarNameInTable="columnEMAIL" msprop:Generator_ColumnPropNameInRow="EMAIL" msprop:Generator_ColumnPropNameInTable="EMAILColumn" msprop:Generator_UserColumnName="EMAIL" type="xs:string" minOccurs="0" />
+              <xs:element name="LGC_ENVIA_EMAIL" msprop:Generator_ColumnVarNameInTable="columnLGC_ENVIA_EMAIL" msprop:Generator_ColumnPropNameInRow="LGC_ENVIA_EMAIL" msprop:Generator_ColumnPropNameInTable="LGC_ENVIA_EMAILColumn" msprop:Generator_UserColumnName="LGC_ENVIA_EMAIL" type="xs:boolean" minOccurs="0" />
+              <xs:element name="LGC_MENSALISTA" msprop:Generator_ColumnVarNameInTable="columnLGC_MENSALISTA" msprop:Generator_ColumnPropNameInRow="LGC_MENSALISTA" msprop:Generator_ColumnPropNameInTable="LGC_MENSALISTAColumn" msprop:Generator_UserColumnName="LGC_MENSALISTA" type="xs:boolean" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:JOGADOR" />
+      <xs:field xpath="mstns:COD_JOGADOR" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

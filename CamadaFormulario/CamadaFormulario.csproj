@@ -50,7 +50,12 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\CamadaLogica\CamadaLogica.csproj">
+      <Project>{D7168518-7C67-4D7E-86B2-0E810E1396B6}</Project>
+      <Name>CamadaLogica</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Cadastros\frmJogadores.resx">
       <DependentUpon>frmJogadores.cs</DependentUpon>

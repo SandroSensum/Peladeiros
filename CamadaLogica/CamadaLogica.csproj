@@ -41,10 +41,31 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Auxiliar\Configuracao.cs" />
+    <Compile Include="DS\dtsJogador.cs">
+      <DependentUpon>dtsJogador.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DS\dtsJogador.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dtsJogador.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Classes\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DS\dtsJogador.xsc">
+      <DependentUpon>dtsJogador.xsd</DependentUpon>
+    </None>
+    <None Include="DS\dtsJogador.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dtsJogador.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS\dtsJogador.xss">
+      <DependentUpon>dtsJogador.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

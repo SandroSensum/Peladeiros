@@ -28,9 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.lblMensagem = new System.Windows.Forms.ToolStripStatusLabel();
+            this.pgrBarra = new System.Windows.Forms.ToolStripProgressBar();
+            this.lblUsuario = new System.Windows.Forms.ToolStripStatusLabel();
+            this.lblDataHora = new System.Windows.Forms.ToolStripStatusLabel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tbcPadrao = new System.Windows.Forms.TabControl();
             this.tabPesquisa = new System.Windows.Forms.TabPage();
             this.pnlPesquisar = new System.Windows.Forms.Panel();
             this.ckAtivos = new System.Windows.Forms.CheckBox();
@@ -54,8 +59,11 @@
             this.btnPesquisa = new System.Windows.Forms.Button();
             this.chkMostraInativo = new System.Windows.Forms.CheckBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.bsoPadrao = new System.Windows.Forms.BindingSource(this.components);
+            this.tmrHora = new System.Windows.Forms.Timer(this.components);
+            this.statusStrip1.SuspendLayout();
             this.panel3.SuspendLayout();
-            this.tabControl1.SuspendLayout();
+            this.tbcPadrao.SuspendLayout();
             this.tabPesquisa.SuspendLayout();
             this.pnlPesquisar.SuspendLayout();
             this.pnlFerramentas.SuspendLayout();
@@ -66,35 +74,68 @@
             this.pnlExcluir.SuspendLayout();
             this.pnlSair.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsoPadrao)).BeginInit();
             this.SuspendLayout();
             // 
             // statusStrip1
             // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.lblMensagem,
+            this.pgrBarra,
+            this.lblUsuario,
+            this.lblDataHora});
             this.statusStrip1.Location = new System.Drawing.Point(0, 424);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(827, 22);
             this.statusStrip1.TabIndex = 0;
             this.statusStrip1.Text = "statusStrip1";
             // 
+            // lblMensagem
+            // 
+            this.lblMensagem.AutoSize = false;
+            this.lblMensagem.Name = "lblMensagem";
+            this.lblMensagem.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
+            this.lblMensagem.Size = new System.Drawing.Size(500, 17);
+            this.lblMensagem.Text = "Mensagem";
+            // 
+            // pgrBarra
+            // 
+            this.pgrBarra.Name = "pgrBarra";
+            this.pgrBarra.Size = new System.Drawing.Size(100, 16);
+            // 
+            // lblUsuario
+            // 
+            this.lblUsuario.Name = "lblUsuario";
+            this.lblUsuario.Size = new System.Drawing.Size(47, 17);
+            this.lblUsuario.Text = "Usuário";
+            // 
+            // lblDataHora
+            // 
+            this.lblDataHora.AutoSize = false;
+            this.lblDataHora.Name = "lblDataHora";
+            this.lblDataHora.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblDataHora.Size = new System.Drawing.Size(130, 17);
+            this.lblDataHora.Text = "Data e Hora";
+            // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.tabControl1);
+            this.panel3.Controls.Add(this.tbcPadrao);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(827, 384);
             this.panel3.TabIndex = 3;
             // 
-            // tabControl1
+            // tbcPadrao
             // 
-            this.tabControl1.Controls.Add(this.tabPesquisa);
-            this.tabControl1.Controls.Add(this.tabPrincipal);
-            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Location = new System.Drawing.Point(0, 0);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(827, 384);
-            this.tabControl1.TabIndex = 0;
+            this.tbcPadrao.Controls.Add(this.tabPesquisa);
+            this.tbcPadrao.Controls.Add(this.tabPrincipal);
+            this.tbcPadrao.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbcPadrao.Location = new System.Drawing.Point(0, 0);
+            this.tbcPadrao.Name = "tbcPadrao";
+            this.tbcPadrao.SelectedIndex = 0;
+            this.tbcPadrao.Size = new System.Drawing.Size(827, 384);
+            this.tbcPadrao.TabIndex = 0;
             // 
             // tabPesquisa
             // 
@@ -139,6 +180,7 @@
             this.button1.TabIndex = 11;
             this.button1.Text = "Pesquisar";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // pnlResultado
             // 
@@ -161,7 +203,7 @@
             this.tabPrincipal.Location = new System.Drawing.Point(4, 22);
             this.tabPrincipal.Name = "tabPrincipal";
             this.tabPrincipal.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPrincipal.Size = new System.Drawing.Size(819, 371);
+            this.tabPrincipal.Size = new System.Drawing.Size(819, 358);
             this.tabPrincipal.TabIndex = 1;
             this.tabPrincipal.Text = "Principal";
             this.tabPrincipal.UseVisualStyleBackColor = true;
@@ -199,6 +241,7 @@
             this.btnIncluir.TabIndex = 1;
             this.btnIncluir.Text = "&Incluir";
             this.btnIncluir.UseVisualStyleBackColor = true;
+            this.btnIncluir.Click += new System.EventHandler(this.btnIncluir_Click);
             // 
             // pnlAlterar
             // 
@@ -218,6 +261,7 @@
             this.btnAlterar.TabIndex = 0;
             this.btnAlterar.Text = "&Alterar";
             this.btnAlterar.UseVisualStyleBackColor = true;
+            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
             // pnlGravar
             // 
@@ -237,6 +281,7 @@
             this.btnGravar.TabIndex = 0;
             this.btnGravar.Text = "&Gravar";
             this.btnGravar.UseVisualStyleBackColor = true;
+            this.btnGravar.Click += new System.EventHandler(this.btnGravar_Click);
             // 
             // pnlCancelar
             // 
@@ -256,6 +301,7 @@
             this.btnCancelar.TabIndex = 0;
             this.btnCancelar.Text = "&Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // pnlExcluir
             // 
@@ -275,6 +321,7 @@
             this.btnExcluir.TabIndex = 0;
             this.btnExcluir.Text = "&Excluir";
             this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // pnlSair
             // 
@@ -294,6 +341,7 @@
             this.btnSair.TabIndex = 0;
             this.btnSair.Text = "&Sair";
             this.btnSair.UseVisualStyleBackColor = true;
+            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
             // btnPesquisa
             // 
@@ -325,6 +373,12 @@
             this.dataGridView1.Size = new System.Drawing.Size(813, 234);
             this.dataGridView1.TabIndex = 0;
             // 
+            // tmrHora
+            // 
+            this.tmrHora.Enabled = true;
+            this.tmrHora.Interval = 1000;
+            this.tmrHora.Tick += new System.EventHandler(this.tmrHora_Tick);
+            // 
             // frmPadrao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -336,8 +390,10 @@
             this.Name = "frmPadrao";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Formulario Padrao";
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.panel3.ResumeLayout(false);
-            this.tabControl1.ResumeLayout(false);
+            this.tbcPadrao.ResumeLayout(false);
             this.tabPesquisa.ResumeLayout(false);
             this.pnlPesquisar.ResumeLayout(false);
             this.pnlPesquisar.PerformLayout();
@@ -349,6 +405,7 @@
             this.pnlExcluir.ResumeLayout(false);
             this.pnlSair.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsoPadrao)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -359,7 +416,7 @@
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel pnlFerramentas;
-        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabControl tbcPadrao;
         private System.Windows.Forms.TabPage tabPesquisa;
         private System.Windows.Forms.Panel pnlResultado;
         private System.Windows.Forms.Panel pnlPesquisar;
@@ -382,5 +439,11 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.CheckBox ckAtivos;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.BindingSource bsoPadrao;
+        private System.Windows.Forms.ToolStripStatusLabel lblMensagem;
+        private System.Windows.Forms.ToolStripProgressBar pgrBarra;
+        private System.Windows.Forms.ToolStripStatusLabel lblUsuario;
+        private System.Windows.Forms.ToolStripStatusLabel lblDataHora;
+        private System.Windows.Forms.Timer tmrHora;
     }
 }

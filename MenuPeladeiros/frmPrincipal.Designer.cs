@@ -118,6 +118,7 @@
             this.btJogadores.Text = "Jogadores";
             this.btJogadores.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btJogadores.UseVisualStyleBackColor = true;
+            this.btJogadores.Click += new System.EventHandler(this.btJogadores_Click);
             // 
             // usuariosESenhasToolStripMenuItem
             // 
@@ -201,13 +202,13 @@
             // menJogadores
             // 
             this.menJogadores.Name = "menJogadores";
-            this.menJogadores.Size = new System.Drawing.Size(152, 22);
+            this.menJogadores.Size = new System.Drawing.Size(127, 22);
             this.menJogadores.Text = "&Jogadores";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(124, 6);
             // 
             // menCadastros
             // 

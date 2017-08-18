@@ -42,23 +42,49 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Cadastros\frmJogadores.cs">
+    <Compile Include="Cadastros\frmJogador.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Cadastros\frmJogadores.Designer.cs">
-      <DependentUpon>frmJogadores.cs</DependentUpon>
+    <Compile Include="Cadastros\frmJogador.Designer.cs">
+      <DependentUpon>frmJogador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cadastros\frmUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cadastros\frmUsuario.Designer.cs">
+      <DependentUpon>frmUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CamadaComponente\CamadaComponente.csproj">
+      <Project>{8EEFDE95-E7EA-4A34-ADB8-7DF06A5D899F}</Project>
+      <Name>CamadaComponente</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CamadaLogica\CamadaLogica.csproj">
       <Project>{D7168518-7C67-4D7E-86B2-0E810E1396B6}</Project>
       <Name>CamadaLogica</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Cadastros\frmJogadores.resx">
-      <DependentUpon>frmJogadores.cs</DependentUpon>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Cadastros\frmJogador.resx">
+      <DependentUpon>frmJogador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cadastros\frmUsuario.resx">
+      <DependentUpon>frmUsuario.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

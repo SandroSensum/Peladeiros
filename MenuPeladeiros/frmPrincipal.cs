@@ -1,4 +1,5 @@
 ﻿using CamadaComponente.Formularios;
+using CamadaFormulario;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -27,6 +28,12 @@ namespace MenuPeladeiros
         {
             frmConexaoBanco Configura = new frmConexaoBanco();
             Configura.Show();
+        }
+
+        private void btJogadores_Click(object sender, EventArgs e)
+        {
+            frmUsuario oFrmUsuario = new frmUsuario();
+            oFrmUsuario.Show();
         }
     }
 }

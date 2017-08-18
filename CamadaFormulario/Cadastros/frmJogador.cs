@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CamadaComponente;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,16 +11,16 @@ using System.Windows.Forms;
 
 namespace CamadaFormulario.Cadastros
 {
-    public partial class frmJogadores : Form
+    public partial class frmJogador : frmPadrao
     {
-        public frmJogadores()
+        public frmJogador()
         {
             InitializeComponent();
         }
 
-        private void btnSair_Click(object sender, EventArgs e)
+        private void frmJogador_Load(object sender, EventArgs e)
         {
-            Close();
+
         }
     }
 }

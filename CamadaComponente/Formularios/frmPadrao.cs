@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CamadaFuncao;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static CamadaFuncao.Delegates.Delegates;
 using static CamadaFuncao.Enumerados;
 
 namespace CamadaComponente
@@ -19,12 +21,25 @@ namespace CamadaComponente
 
         #endregion
 
+        #region [Delegates]
+
+        [Description ( "Evento executado para validações antes de gravar" ), Category ( "Peladeiros" )]
+        public event PadraoValidarEventHandler ValidarGravar;
+
+        [Description ( "Evento executado antes de gravar no banco" ), Category ( "Peladeiros" )]
+        public event PadraoEventHandler AntesDeGravar;
+
+        [Description ( "Evento executado após gravar no banco" ), Category ( "Peladeiros" )]
+        public event PadraoEventHandler DepoisDeGravar;
+
+        #endregion
+
         #region [Construtor]
 
         public frmPadrao()
         {
-            IniciarFormulario();
-            ControlaNavegacao();
+            IniciarFormulario ();
+            ControlaNavegacao ();
         }
 
         #endregion
@@ -33,188 +48,209 @@ namespace CamadaComponente
 
         private void IniciarFormulario()
         {
-            InitializeComponent();
+            InitializeComponent ();
             lblMensagem.Text = "";
             lblUsuario.Text = "Pedrinho";
-            lblDataHora.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
-
-
-        }
-
-        #endregion
-
-        private void tmrHora_Tick(object sender, EventArgs e)
-        {
-            lblDataHora.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
+            lblDataHora.Text = DateTime.Now.ToString ( "dd/MM/yyyy HH:mm:ss" );
         }
 
         private void ControlaNavegacao()
         {
-            if (Navegacao == eModoNavegacao.navegacao)
+            if ( Navegacao == eModoNavegacao.navegacao )
             {
                 btnGravar.Enabled = false;
-                btnCancelar.Enabled = false;
-                btnAlterar.Enabled = false;
-                btnGravar.Enabled = false;
-                btnSair.Enabled = false;
                 btnExcluir.Enabled = false;
+                btnAlterar.Enabled = true;
+                btnGravar.Enabled = false;
+                btnCancelar.Enabled = false;
                 btnSair.Enabled = true;
-                if (!tbcPadrao.TabPages.Contains(tabPesquisa))
-                    tbcPadrao.TabPages.Add(tabPesquisa);
+
+                if ( !tbcPadrao.TabPages.Contains ( tabPesquisa ) )
+                    tbcPadrao.TabPages.Add ( tabPesquisa );
+
+                //Colocar na aba específica e depois tirar daqui
                 //if (!tbcPadrao.TabPages.Contains(tabMensalidades))
                 //    tbcPadrao.TabPages.Add(tabMensalidades);
 
             }
-            else if (Navegacao == eModoNavegacao.inclusao || Navegacao == eModoNavegacao.alteracao)
+            else if ( Navegacao == eModoNavegacao.inclusao || Navegacao == eModoNavegacao.alteracao )
             {
-                btnCancelar.Enabled = true;
+                btnExcluir.Enabled = false;
                 btnAlterar.Enabled = false;
-                btnGravar.Enabled = false;
+                btnGravar.Enabled = true;
                 btnSair.Enabled = false;
-                btnExcluir.Enabled = true;
-                btnSair.Enabled = false;
-                if (tbcPadrao.TabPages.Contains(tabPesquisa))
-                    tbcPadrao.TabPages.Remove(tabPesquisa);
+                btnCancelar.Enabled = true;
 
+                if ( tbcPadrao.TabPages.Contains ( tabPesquisa ) )
+                    tbcPadrao.TabPages.Remove ( tabPesquisa );
+
+                //Colocar na aba específica e depois tirar daqui
                 //if (tbcPadrao.TabPages.Contains(tabMensalidades))
                 //    tbcPadrao.TabPages.Remove(tabMensalidades);
             }
-            else if (Navegacao == eModoNavegacao.exclusao)
+            else if ( Navegacao == eModoNavegacao.exclusao )
             {
                 //txtDesativado.Text = DateTime.Today.ToString("dd-MM-yyyy");
-                btnCancelar.Enabled = false;
+                btnExcluir.Enabled = false;
                 btnAlterar.Enabled = true;
                 btnGravar.Enabled = false;
                 btnSair.Enabled = false;
             }
         }
 
-        private void btnIncluir_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Chama os eventos padrões
+        /// </summary>
+        /// <param name="pEvent"></param>
+        /// <param name="pValidacao"></param>
+        public bool ChamarEventos( object pEvent, bool pValidacao = false )
         {
-            //lblmensagem.Text = "";
-            Navegacao = eModoNavegacao.inclusao;
-            ControlaNavegacao();
-            //bsoJogador.AddNew();
-            //rbAtivo.Checked = true;
-            //if (rbAtivo.Checked)
-            //{
-            //    if (bsoJogador.Count > 0)
-            //    {
-            //        txtCadastro.Text = DateTime.Now.ToString();
-            //        ((DataRowView)bsoJogador.Current)["ATIVO"] = "A";
-            //    }
-            //}
-            //else
-            //{
-            //    txtCadastro.Text = "";
-            //    ((DataRowView)bsoJogador.Current)["DAT_ATIVADO"] = DBNull.Value;
-            //    ((DataRowView)bsoJogador.Current)["ATIVO"] = "I";
-            //}
+            bool? bRetorno = true;
+            if ( pValidacao )
+            {
+                PadraoValidarEventHandler evento = ( PadraoValidarEventHandler ) pEvent;
+                bRetorno = evento?.Invoke ();//Ponto de interrogação verifica se o evento não é nulo
+            }
+            else
+            {
+                PadraoEventHandler evento = ( PadraoEventHandler ) pEvent;
+                evento?.Invoke ();//Ponto de interrogação verifica se o evento não é n
+            }
 
+            return bRetorno.Value;
         }
 
-        private void btnCancelar_Click(object sender, EventArgs e)
+
+        #endregion
+
+        #region [Eventos]
+
+        private void tmrHora_Tick( object sender, EventArgs e )
         {
-            if (MessageBox.Show("Deseja inativar o Jogador?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            lblDataHora.Text = DateTime.Now.ToString ( "dd/MM/yyyy HH:mm:ss" );
+        }
+
+        private void btnIncluir_Click( object sender, EventArgs e )
+        {
+            Navegacao = eModoNavegacao.inclusao;
+            ControlaNavegacao ();
+        }
+
+        private void btnCancelar_Click( object sender, EventArgs e )
+        {
+            if ( MessageBox.Show ( "Deseja cancelar a operação?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question ) == DialogResult.Yes )
             {
                 Navegacao = eModoNavegacao.navegacao;
-                ControlaNavegacao();
+                ControlaNavegacao ();
                 btnAlterar.Enabled = true;
-                //dsJogadores.Clear();
             }
         }
 
-        private void btnSair_Click(object sender, EventArgs e)
+        private void btnSair_Click( object sender, EventArgs e )
         {
-            Close();
+            Close ();
         }
 
-        private void btnAlterar_Click(object sender, EventArgs e)
+        private void btnAlterar_Click( object sender, EventArgs e )
         {
-            Navegacao = eModoNavegacao.alteracao;
-            //bsoJogador.EndEdit();
-            ControlaNavegacao();
+            if ( Funcao.PossuiRegistro ( bsoPadrao ) )
+            {
+                Navegacao = eModoNavegacao.alteracao;
+                bsoPadrao.EndEdit ();
+                ControlaNavegacao ();
+            }
+            else
+            {
+                MessageBox.Show ( "Não há registros selecionados para alteração.", "Peladeiros", MessageBoxButtons.OK, MessageBoxIcon.Exclamation );
+            }
         }
 
-        private void btnGravar_Click(object sender, EventArgs e)    
+        private void btnGravar_Click( object sender, EventArgs e )
         {
-        //    if (Validacao())
-        //        try
-        //        {
-        //            if (rbInativo.Checked)
-        //            {
-        //                txtDesativado.Text = DateTime.Now.ToString();
-        //                lblmensagem.Text = "Jogador Inativado com sucesso";
-        //                lblmensagem.ForeColor = Color.Red;
-        //            }
-        //            else
-        //            {
-        //                txtDesativado.Text = "";
-        //                lblmensagem.Text = "Dados gravados com sucesso";
-        //                lblmensagem.ForeColor = Color.Green;
-        //            }
-        //            Acesso_Banco oBanco = new Acesso_Banco();
-        //            Jogador oJogador = new Jogador();
+            if ( ChamarEventos ( ValidarGravar, true ) )
+            {
+                ChamarEventos ( AntesDeGravar );
+                //gravar
+                ChamarEventos ( DepoisDeGravar );
+            }
 
-        //            bsoJogador.EndEdit();
-        //            bsoEmail.EndEdit();
-        //            bsoTelefone.EndEdit();
+            //    if (Validacao())
+            //        try
+            //        {
+            //            if (rbInativo.Checked)
+            //            {
+            //                txtDesativado.Text = DateTime.Now.ToString();
+            //                lblmensagem.Text = "Jogador Inativado com sucesso";
+            //                lblmensagem.ForeColor = Color.Red;
+            //            }
+            //            else
+            //            {
+            //                txtDesativado.Text = "";
+            //                lblmensagem.Text = "Dados gravados com sucesso";
+            //                lblmensagem.ForeColor = Color.Green;
+            //            }
+            //            Acesso_Banco oBanco = new Acesso_Banco();
+            //            Jogador oJogador = new Jogador();
 
-        //            oBanco.Atualizar(dsJogadores.Jogador.GetChanges());
+            //            bsoJogador.EndEdit();
+            //            bsoEmail.EndEdit();
+            //            bsoTelefone.EndEdit();
 
-        //            int iCodJogadorAtual = 0;
+            //            oBanco.Atualizar(dsJogadores.Jogador.GetChanges());
 
-        //            if (Navegacao == Enumerado.enavegacao.Inclusao)
-        //            {
-        //                iCodJogadorAtual = oJogador.BuscarCodigoUltimoJogador();
-        //            }
-        //            else
-        //            {
-        //                iCodJogadorAtual = Convert.ToInt32(txtCodigo.Text);
-        //            }
+            //            int iCodJogadorAtual = 0;
 
-        //            foreach (DataRowView drwTelefone in bsoTelefone)
-        //            {
-        //                ((DataRowView)bsoTelefone.Current)["COD_JOGADOR"] = iCodJogadorAtual;
-        //                oBanco.Atualizar(dsJogadores.Telefone.GetChanges());
-        //            }
+            //            if (Navegacao == Enumerado.enavegacao.Inclusao)
+            //            {
+            //                iCodJogadorAtual = oJogador.BuscarCodigoUltimoJogador();
+            //            }
+            //            else
+            //            {
+            //                iCodJogadorAtual = Convert.ToInt32(txtCodigo.Text);
+            //            }
 
-        //            foreach (DataRowView drwEmail in bsoEmail)
-        //            {
-        //                ((DataRowView)bsoEmail.Current)["COD_JOGADOR"] = iCodJogadorAtual;
-        //                oBanco.Atualizar(dsJogadores.Email.GetChanges());
-        //            }
+            //            foreach (DataRowView drwTelefone in bsoTelefone)
+            //            {
+            //                ((DataRowView)bsoTelefone.Current)["COD_JOGADOR"] = iCodJogadorAtual;
+            //                oBanco.Atualizar(dsJogadores.Telefone.GetChanges());
+            //            }
 
-        //            if (dsJogadores.Telefone.AsEnumerable().Where(item => item.RowState == DataRowState.Deleted).Count() > 0)
-        //                oBanco.Atualizar(dsJogadores.Telefone.GetChanges());
+            //            foreach (DataRowView drwEmail in bsoEmail)
+            //            {
+            //                ((DataRowView)bsoEmail.Current)["COD_JOGADOR"] = iCodJogadorAtual;
+            //                oBanco.Atualizar(dsJogadores.Email.GetChanges());
+            //            }
 
-        //            if (dsJogadores.Email.AsEnumerable().Where(item => item.RowState == DataRowState.Deleted).Count() > 0)
-        //                oBanco.Atualizar(dsJogadores.Email.GetChanges());
+            //            if (dsJogadores.Telefone.AsEnumerable().Where(item => item.RowState == DataRowState.Deleted).Count() > 0)
+            //                oBanco.Atualizar(dsJogadores.Telefone.GetChanges());
 
-        //            dsJogadores.Jogador.Clear();
-        //            int iCodJogador = oJogador.BuscarCodigoUltimoJogador();
-        //            dsJogadores.Jogador.Merge(oJogador.BuscarJogador(iCodJogador));
+            //            if (dsJogadores.Email.AsEnumerable().Where(item => item.RowState == DataRowState.Deleted).Count() > 0)
+            //                oBanco.Atualizar(dsJogadores.Email.GetChanges());
 
-        //        }
-        //        catch (Exception ex)
-        //        {
-        //            lblmensagem.Text = "Anomalia: " + ex.Message;
-        //            lblmensagem.ForeColor = Color.Red;
-        //        }
-        //    Navegacao = Enumerado.enavegacao.Navegacao;
-        //    ControlaNavegacao();
-        //    btnAlterar.Enabled = true;
-        //}
-        //private bool Validacao()
-        //{
-        //    string msnvalida = "";
-        //    if (txtNome.Text == "")
-        //        msnvalida = "Campo Nome não pode ser nulo";
-        //    if (msnvalida != "")
-        //        MessageBox.Show(msnvalida);
-        //    return msnvalida == "";
+            //            dsJogadores.Jogador.Clear();
+            //            int iCodJogador = oJogador.BuscarCodigoUltimoJogador();
+            //            dsJogadores.Jogador.Merge(oJogador.BuscarJogador(iCodJogador));
+
+            //        }
+            //        catch (Exception ex)
+            //        {
+            //            lblmensagem.Text = "Anomalia: " + ex.Message;
+            //            lblmensagem.ForeColor = Color.Red;
+            //        }
+            //    Navegacao = Enumerado.enavegacao.Navegacao;
+            //ControlaNavegacao();
+            //    btnAlterar.Enabled = true;
+            //}
+            //private bool Validacao()
+            //{
+            //    string msnvalida = "";
+            //    if (txtNome.Text == "")
+            //        msnvalida = "Campo Nome não pode ser nulo";
+            //    if (msnvalida != "")
+            //        MessageBox.Show(msnvalida);
+            //    return msnvalida == "";
         }
-        private void btnExcluir_Click(object sender, EventArgs e)
+        private void btnExcluir_Click( object sender, EventArgs e )
         {
             //{
             //    if (rbInativo.Checked)
@@ -251,12 +287,12 @@ namespace CamadaComponente
             //            rbInativo.Checked = true;
             //        }
             //        Navegacao = Enumerado.enavegacao.Navegacao;
-            //        ControlaNavegacao();
+            //        //ControlaNavegacao();
             //    }
             //}
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click( object sender, EventArgs e )
         {
             //dsJogadores.Clear();
             //btnGravar.Enabled = false;
@@ -269,5 +305,7 @@ namespace CamadaComponente
             //if (txtCodFim.Text != "")
             //    icodfim = Convert.ToInt32(txtCodFim.Text);
         }
+
+        #endregion
     }
 }

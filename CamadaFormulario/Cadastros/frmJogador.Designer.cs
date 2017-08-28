@@ -52,6 +52,8 @@
             this.ClientSize = new System.Drawing.Size(735, 378);
             this.Name = "frmJogador";
             this.Text = "frmJogador";
+            this.ValidarGravar += new CamadaFuncao.Delegates.Delegates.PadraoValidarEventHandler(this.frmJogador_ValidarGravar);
+            this.AntesDeGravar += new CamadaFuncao.Delegates.Delegates.PadraoEventHandler(this.frmJogador_AntesDeGravar);
             this.Load += new System.EventHandler(this.frmJogador_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bsoJogado)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtsJogador)).EndInit();

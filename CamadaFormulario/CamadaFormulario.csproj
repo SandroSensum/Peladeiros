@@ -66,6 +66,10 @@
       <Project>{8EEFDE95-E7EA-4A34-ADB8-7DF06A5D899F}</Project>
       <Name>CamadaComponente</Name>
     </ProjectReference>
+    <ProjectReference Include="..\CamadaFuncao\CamadaFuncao.csproj">
+      <Project>{e32f4fb5-22cb-4b1d-baf2-eabdd657ff59}</Project>
+      <Name>CamadaFuncao</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CamadaLogica\CamadaLogica.csproj">
       <Project>{D7168518-7C67-4D7E-86B2-0E810E1396B6}</Project>
       <Name>CamadaLogica</Name>

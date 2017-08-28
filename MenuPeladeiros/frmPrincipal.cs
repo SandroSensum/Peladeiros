@@ -1,5 +1,6 @@
 ﻿using CamadaComponente.Formularios;
 using CamadaFormulario;
+using CamadaFormulario.Cadastros;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -32,7 +33,7 @@ namespace MenuPeladeiros
 
         private void btJogadores_Click(object sender, EventArgs e)
         {
-            frmUsuario oFrmUsuario = new frmUsuario();
+            frmJogador oFrmUsuario = new frmJogador();
             oFrmUsuario.Show();
         }
     }

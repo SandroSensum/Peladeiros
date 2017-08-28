@@ -22,5 +22,16 @@ namespace CamadaFormulario.Cadastros
         {
 
         }
+
+        private bool frmJogador_ValidarGravar()
+        {
+            MessageBox.Show("foi validado, deu bom");
+            return true;
+        }
+
+        private void frmJogador_AntesDeGravar()
+        {
+            MessageBox.Show("cHEGOU AQUI!");
+        }
     }
 }

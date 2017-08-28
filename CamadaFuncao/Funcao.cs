@@ -1,5 +1,6 @@
 ﻿using FirebirdSql.Data.FirebirdClient;
 using System;
+using System.Data;
 using System.Text;
 using System.Windows.Forms;
 
@@ -15,9 +16,9 @@ namespace CamadaFuncao
         /// <returns></returns>
         public static string LocalizarArquivo()
         {
-            OpenFileDialog oFileDialog = new OpenFileDialog();
+            OpenFileDialog oFileDialog = new OpenFileDialog ();
 
-            if (oFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            if ( oFileDialog.ShowDialog () == System.Windows.Forms.DialogResult.OK )
             {
                 return oFileDialog.FileName;
             }
@@ -34,46 +35,77 @@ namespace CamadaFuncao
         /// <param name="pServidor"></param>
         /// <param name="pPorta"></param>
         /// <returns></returns>
-        public static string MontarConexao(string pUsuario, string pSenha, string pBanco, string pServidor = "localhost", string pPorta = "3050")
+        public static string MontarConexao( string pUsuario, string pSenha, string pBanco, string pServidor = "localhost", string pPorta = "3050" )
         {
-            StringBuilder sbConexao = new StringBuilder();
+            StringBuilder sbConexao = new StringBuilder ();
 
-            sbConexao.Append($"User={pUsuario.ToUpper()};");
-            sbConexao.Append($"Password={pSenha.ToLower()};");
-            sbConexao.Append($"Database={pBanco};");
-            sbConexao.Append($"DataSource={pServidor};");
-            sbConexao.Append($"Port={pPorta};");
-            sbConexao.Append("Dialect=3;");
-            sbConexao.Append("Charset=NONE;");
-            sbConexao.Append("Role=;");
-            sbConexao.Append("Connection lifetime=15;");
-            sbConexao.Append("Pooling=true;");
-            sbConexao.Append("Packet Size=8192;");
-            sbConexao.Append("Client Library=gds32.dll;");
-            sbConexao.Append("ServerType=0");
+            sbConexao.Append ( $"User={pUsuario.ToUpper ()};" );
+            sbConexao.Append ( $"Password={pSenha.ToLower ()};" );
+            sbConexao.Append ( $"Database={pBanco};" );
+            sbConexao.Append ( $"DataSource={pServidor};" );
+            sbConexao.Append ( $"Port={pPorta};" );
+            sbConexao.Append ( "Dialect=3;" );
+            sbConexao.Append ( "Charset=NONE;" );
+            sbConexao.Append ( "Role=;" );
+            sbConexao.Append ( "Connection lifetime=15;" );
+            sbConexao.Append ( "Pooling=true;" );
+            sbConexao.Append ( "Packet Size=8192;" );
+            sbConexao.Append ( "Client Library=gds32.dll;" );
+            sbConexao.Append ( "ServerType=0" );
 
-            return sbConexao.ToString();
+            return sbConexao.ToString ();
         }
 
         /// <summary>
         /// Testa a conexão com o banco
         /// </summary>
         /// <returns></returns>
-        public static string TestarConexao(string pConexao)
+        public static string TestarConexao( string pConexao )
         {
-            FbConnection oConexao = new FbConnection(pConexao);
+            FbConnection oConexao = new FbConnection ( pConexao );
             string sMensagem = "";
             try
             {
-                oConexao.Open();
+                oConexao.Open ();
                 sMensagem = "Conexão bem sucedida";
             }
-            catch (Exception ex)
+            catch ( Exception ex )
             {
                 sMensagem = "Ocorreu uma anomalia: \n" + ex.Message;
             }
 
             return sMensagem;
+        }
+
+        /// <summary>
+        /// Verifica se possui registro
+        /// </summary>
+        /// <param name="pTabela"></param>
+        /// <returns></returns>
+        public static bool PossuiRegistro( object pTabela )
+        {
+            bool bPossuiRegistro = false;
+
+            if ( pTabela != null )
+            {
+                if ( pTabela is BindingSource )
+                    bPossuiRegistro = ( ( BindingSource ) pTabela ).Count > 0;
+
+                if ( pTabela is DataTable )
+                    bPossuiRegistro = ( ( DataTable ) pTabela ).Rows.Count > 0;
+
+                if ( pTabela is DataSet )
+                {
+                    DataSet dtsPadrao = ( ( DataSet ) pTabela );
+
+                    foreach ( DataTable tabela in dtsPadrao.Tables )
+                    {
+                        PossuiRegistro ( pTabela );
+                    }
+                }
+            }
+
+            return bPossuiRegistro;
         }
 
         #endregion

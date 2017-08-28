@@ -51,9 +51,9 @@
             this.pnlGravar = new System.Windows.Forms.Panel();
             this.btnGravar = new System.Windows.Forms.Button();
             this.pnlCancelar = new System.Windows.Forms.Panel();
-            this.btnCancelar = new System.Windows.Forms.Button();
-            this.pnlExcluir = new System.Windows.Forms.Panel();
             this.btnExcluir = new System.Windows.Forms.Button();
+            this.pnlExcluir = new System.Windows.Forms.Panel();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.pnlSair = new System.Windows.Forms.Panel();
             this.btnSair = new System.Windows.Forms.Button();
             this.btnPesquisa = new System.Windows.Forms.Button();
@@ -285,32 +285,12 @@
             // 
             // pnlCancelar
             // 
-            this.pnlCancelar.Controls.Add(this.btnCancelar);
+            this.pnlCancelar.Controls.Add(this.btnExcluir);
             this.pnlCancelar.Dock = System.Windows.Forms.DockStyle.Right;
             this.pnlCancelar.Location = new System.Drawing.Point(582, 5);
             this.pnlCancelar.Name = "pnlCancelar";
             this.pnlCancelar.Size = new System.Drawing.Size(80, 30);
             this.pnlCancelar.TabIndex = 32;
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnCancelar.Location = new System.Drawing.Point(6, 0);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(74, 30);
-            this.btnCancelar.TabIndex = 0;
-            this.btnCancelar.Text = "&Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
-            // 
-            // pnlExcluir
-            // 
-            this.pnlExcluir.Controls.Add(this.btnExcluir);
-            this.pnlExcluir.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnlExcluir.Location = new System.Drawing.Point(662, 5);
-            this.pnlExcluir.Name = "pnlExcluir";
-            this.pnlExcluir.Size = new System.Drawing.Size(80, 30);
-            this.pnlExcluir.TabIndex = 31;
             // 
             // btnExcluir
             // 
@@ -322,6 +302,26 @@
             this.btnExcluir.Text = "&Excluir";
             this.btnExcluir.UseVisualStyleBackColor = true;
             this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
+            // 
+            // pnlExcluir
+            // 
+            this.pnlExcluir.Controls.Add(this.btnCancelar);
+            this.pnlExcluir.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pnlExcluir.Location = new System.Drawing.Point(662, 5);
+            this.pnlExcluir.Name = "pnlExcluir";
+            this.pnlExcluir.Size = new System.Drawing.Size(80, 30);
+            this.pnlExcluir.TabIndex = 31;
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnCancelar.Location = new System.Drawing.Point(6, 0);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(74, 30);
+            this.btnCancelar.TabIndex = 0;
+            this.btnCancelar.Text = "&Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // pnlSair
             // 
@@ -429,9 +429,9 @@
         private System.Windows.Forms.Panel pnlGravar;
         private System.Windows.Forms.Button btnGravar;
         private System.Windows.Forms.Panel pnlCancelar;
-        private System.Windows.Forms.Button btnCancelar;
-        private System.Windows.Forms.Panel pnlExcluir;
         private System.Windows.Forms.Button btnExcluir;
+        private System.Windows.Forms.Panel pnlExcluir;
+        private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Panel pnlSair;
         private System.Windows.Forms.Button btnSair;
         private System.Windows.Forms.Button btnPesquisa;

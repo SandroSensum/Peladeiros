@@ -11,13 +11,13 @@
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
+        protected override void Dispose( bool disposing )
         {
-            if (disposing && (components != null))
+            if ( disposing && ( components != null ) )
             {
-                components.Dispose();
+                components.Dispose ();
             }
-            base.Dispose(disposing);
+            base.Dispose ( disposing );
         }
 
         #region Windows Form Designer generated code
@@ -28,35 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.bsoJogado = new System.Windows.Forms.BindingSource(this.components);
-            this.dtsJogador = new CamadaLogica.DS.dtsJogador();
-            ((System.ComponentModel.ISupportInitialize)(this.bsoJogado)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtsJogador)).BeginInit();
+            this.jogador1 = new CamadaLogica.Classes.Jogador();
+            this.dtsJogador1 = new CamadaLogica.DS.dtsJogador();
+            ((System.ComponentModel.ISupportInitialize)(this.bsoPadrao)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtsJogador1)).BeginInit();
             this.SuspendLayout();
             // 
-            // bsoJogado
+            // bsoPadrao
             // 
-            this.bsoJogado.DataMember = "JOGADOR";
-            this.bsoJogado.DataSource = this.dtsJogador;
+            this.bsoPadrao.DataMember = "JOGADOR";
+            this.bsoPadrao.DataSource = this.dtsJogador1;
             // 
-            // dtsJogador
+            // dtsJogador1
             // 
-            this.dtsJogador.DataSetName = "dtsJogador";
-            this.dtsJogador.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.dtsJogador1.DataSetName = "dtsJogador";
+            this.dtsJogador1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // frmJogador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(735, 378);
+            this.ClasseDados = this.jogador1;
+            this.ClientSize = new System.Drawing.Size(827, 446);
             this.Name = "frmJogador";
             this.Text = "frmJogador";
-            this.ValidarGravar += new CamadaFuncao.Delegates.Delegates.PadraoValidarEventHandler(this.frmJogador_ValidarGravar);
-            this.AntesDeGravar += new CamadaFuncao.Delegates.Delegates.PadraoEventHandler(this.frmJogador_AntesDeGravar);
-            this.Load += new System.EventHandler(this.frmJogador_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.bsoJogado)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtsJogador)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsoPadrao)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtsJogador1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -64,7 +61,7 @@
 
         #endregion
 
-        private System.Windows.Forms.BindingSource bsoJogado;
-        private CamadaLogica.DS.dtsJogador dtsJogador;
+        private CamadaLogica.Classes.Jogador jogador1;
+        private CamadaLogica.DS.dtsJogador dtsJogador1;
     }
 }

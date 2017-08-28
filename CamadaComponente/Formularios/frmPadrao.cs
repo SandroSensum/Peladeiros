@@ -1,4 +1,5 @@
-﻿using CamadaFuncao;
+﻿using CamadaBase;
+using CamadaFuncao;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,6 +19,19 @@ namespace CamadaComponente
         #region [Atributos]
 
         private eModoNavegacao Navegacao = eModoNavegacao.navegacao;
+        private Base classeDados = null;
+        
+        #endregion
+
+        #region [Propriedades]
+
+        [Description ( "Vincula uma classe que irá gravar os dados no banco" ), Category ( "Peladeiros" ), DefaultValue ( null )]
+        public Base ClasseDados
+        {
+            
+            get { return classeDados; }
+            set { classeDados = value; }
+        }
 
         #endregion
 
@@ -170,7 +184,11 @@ namespace CamadaComponente
             if ( ChamarEventos ( ValidarGravar, true ) )
             {
                 ChamarEventos ( AntesDeGravar );
-                //gravar
+
+                bsoPadrao.EndEdit ();
+
+                classeDados.Atualizar ( ( ( DataSet ) bsoPadrao.DataSource ).Tables[bsoPadrao.DataMember] );
+
                 ChamarEventos ( DepoisDeGravar );
             }
 

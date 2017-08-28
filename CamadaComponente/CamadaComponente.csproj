@@ -86,6 +86,10 @@
     <Folder Include="Componentes\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CamadaBase\CamadaBase.csproj">
+      <Project>{7CA4F545-3100-4272-AA3C-DF6CADDCC439}</Project>
+      <Name>CamadaBase</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CamadaFuncao\CamadaFuncao.csproj">
       <Project>{e32f4fb5-22cb-4b1d-baf2-eabdd657ff59}</Project>
       <Name>CamadaFuncao</Name>

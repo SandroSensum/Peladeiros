@@ -421,7 +421,6 @@
         private System.Windows.Forms.Panel pnlResultado;
         private System.Windows.Forms.Panel pnlPesquisar;
         private System.Windows.Forms.Panel pnlFiltro;
-        private System.Windows.Forms.TabPage tabPrincipal;
         private System.Windows.Forms.Panel pnlIncluir;
         private System.Windows.Forms.Button btnIncluir;
         private System.Windows.Forms.Panel pnlAlterar;
@@ -439,11 +438,12 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.CheckBox ckAtivos;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.BindingSource bsoPadrao;
         private System.Windows.Forms.ToolStripStatusLabel lblMensagem;
         private System.Windows.Forms.ToolStripProgressBar pgrBarra;
         private System.Windows.Forms.ToolStripStatusLabel lblUsuario;
         private System.Windows.Forms.ToolStripStatusLabel lblDataHora;
-        private System.Windows.Forms.Timer tmrHora;
+        public System.Windows.Forms.BindingSource bsoPadrao;
+        public System.Windows.Forms.Timer tmrHora;
+        public System.Windows.Forms.TabPage tabPrincipal;
     }
 }

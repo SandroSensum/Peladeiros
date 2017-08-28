@@ -15,23 +15,7 @@ namespace CamadaFormulario.Cadastros
     {
         public frmJogador()
         {
-            InitializeComponent();
-        }
-
-        private void frmJogador_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private bool frmJogador_ValidarGravar()
-        {
-            MessageBox.Show("foi validado, deu bom");
-            return true;
-        }
-
-        private void frmJogador_AntesDeGravar()
-        {
-            MessageBox.Show("cHEGOU AQUI!");
+            InitializeComponent ();
         }
     }
 }

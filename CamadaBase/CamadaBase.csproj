@@ -45,5 +45,11 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CamadaBanco\CamadaBanco.csproj">
+      <Project>{E8E1F9DC-C07A-4A66-B60C-1F1F63411B43}</Project>
+      <Name>CamadaBanco</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

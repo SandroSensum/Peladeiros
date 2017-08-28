@@ -41,6 +41,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Auxiliar\Configuracao.cs" />
+    <Compile Include="Classes\Jogador.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="DS\dtsJogador.cs">
       <DependentUpon>dtsJogador.xsd</DependentUpon>
     </Compile>
@@ -51,9 +54,7 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Classes\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="DS\dtsJogador.xsc">
       <DependentUpon>dtsJogador.xsd</DependentUpon>
@@ -66,6 +67,12 @@
     <None Include="DS\dtsJogador.xss">
       <DependentUpon>dtsJogador.xsd</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CamadaBase\CamadaBase.csproj">
+      <Project>{7CA4F545-3100-4272-AA3C-DF6CADDCC439}</Project>
+      <Name>CamadaBase</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

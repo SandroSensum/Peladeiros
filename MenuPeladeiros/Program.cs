@@ -18,15 +18,16 @@ namespace MenuPeladeiros
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new frmLogin());           
+            //Application.Run(new frmLogin());     
+            Application.Run ( new frm_Principal () );
 
-            frmLogin oFrmLogin = new frmLogin();
+            //frmLogin oFrmLogin = new frmLogin();
 
-            if (oFrmLogin.ShowDialog() == DialogResult.OK)
-            {
-                Application.Run(new frm_Principal());
-                
-            }
+            //if (oFrmLogin.ShowDialog() == DialogResult.OK)
+            //{
+            //    Application.Run(new frm_Principal());
+
+            //}
         }
     }
 }

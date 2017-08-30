@@ -19,20 +19,14 @@
               <xs:element name="NOM_JOGADOR" msprop:Generator_ColumnVarNameInTable="columnNOM_JOGADOR" msprop:Generator_ColumnPropNameInRow="NOM_JOGADOR" msprop:Generator_ColumnPropNameInTable="NOM_JOGADORColumn" msprop:Generator_UserColumnName="NOM_JOGADOR" type="xs:string" minOccurs="0" />
               <xs:element name="DAT_NASC" msprop:Generator_ColumnVarNameInTable="columnDAT_NASC" msprop:Generator_ColumnPropNameInRow="DAT_NASC" msprop:Generator_ColumnPropNameInTable="DAT_NASCColumn" msprop:Generator_UserColumnName="DAT_NASC" type="xs:dateTime" minOccurs="0" />
               <xs:element name="OBS_JOGADOR" msprop:Generator_ColumnVarNameInTable="columnOBS_JOGADOR" msprop:Generator_ColumnPropNameInRow="OBS_JOGADOR" msprop:Generator_ColumnPropNameInTable="OBS_JOGADORColumn" msprop:Generator_UserColumnName="OBS_JOGADOR" type="xs:string" minOccurs="0" />
-              <xs:element name="ATIVO" msprop:Generator_ColumnVarNameInTable="columnATIVO" msprop:Generator_ColumnPropNameInRow="ATIVO" msprop:Generator_ColumnPropNameInTable="ATIVOColumn" msprop:Generator_UserColumnName="ATIVO" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:length value="1" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
               <xs:element name="DAT_CADASTRO" msprop:Generator_ColumnVarNameInTable="columnDAT_CADASTRO" msprop:Generator_ColumnPropNameInRow="DAT_CADASTRO" msprop:Generator_ColumnPropNameInTable="DAT_CADASTROColumn" msprop:Generator_UserColumnName="DAT_CADASTRO" type="xs:dateTime" minOccurs="0" />
               <xs:element name="DAT_DESATIVADO" msprop:Generator_ColumnVarNameInTable="columnDAT_DESATIVADO" msprop:Generator_ColumnPropNameInRow="DAT_DESATIVADO" msprop:Generator_ColumnPropNameInTable="DAT_DESATIVADOColumn" msprop:Generator_UserColumnName="DAT_DESATIVADO" type="xs:dateTime" minOccurs="0" />
               <xs:element name="FONE" msprop:Generator_ColumnVarNameInTable="columnFONE" msprop:Generator_ColumnPropNameInRow="FONE" msprop:Generator_ColumnPropNameInTable="FONEColumn" msprop:Generator_UserColumnName="FONE" type="xs:double" minOccurs="0" />
-              <xs:element name="CELULAR" msprop:Generator_ColumnVarNameInTable="columnCELULAR" msprop:Generator_ColumnPropNameInRow="CELULAR" msprop:Generator_ColumnPropNameInTable="CELULARColumn" msprop:Generator_UserColumnName="CELULAR" type="xs:double" minOccurs="0" />
+              <xs:element name="CELULAR1" msprop:Generator_ColumnVarNameInTable="columnCELULAR1" msprop:Generator_ColumnPropNameInRow="CELULAR1" msprop:Generator_ColumnPropNameInTable="CELULAR1Column" msprop:Generator_UserColumnName="CELULAR1" type="xs:double" minOccurs="0" />
               <xs:element name="EMAIL" msprop:Generator_ColumnVarNameInTable="columnEMAIL" msprop:Generator_ColumnPropNameInRow="EMAIL" msprop:Generator_ColumnPropNameInTable="EMAILColumn" msprop:Generator_UserColumnName="EMAIL" type="xs:string" minOccurs="0" />
               <xs:element name="LGC_ENVIA_EMAIL" msprop:Generator_ColumnVarNameInTable="columnLGC_ENVIA_EMAIL" msprop:Generator_ColumnPropNameInRow="LGC_ENVIA_EMAIL" msprop:Generator_ColumnPropNameInTable="LGC_ENVIA_EMAILColumn" msprop:Generator_UserColumnName="LGC_ENVIA_EMAIL" type="xs:boolean" minOccurs="0" />
               <xs:element name="LGC_MENSALISTA" msprop:Generator_ColumnVarNameInTable="columnLGC_MENSALISTA" msprop:Generator_ColumnPropNameInRow="LGC_MENSALISTA" msprop:Generator_ColumnPropNameInTable="LGC_MENSALISTAColumn" msprop:Generator_UserColumnName="LGC_MENSALISTA" type="xs:boolean" minOccurs="0" />
+              <xs:element name="CELULAR2" msprop:Generator_ColumnVarNameInTable="columnCELULAR2" msprop:Generator_ColumnPropNameInRow="CELULAR2" msprop:Generator_ColumnPropNameInTable="CELULAR2Column" msprop:Generator_UserColumnName="CELULAR2" type="xs:double" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

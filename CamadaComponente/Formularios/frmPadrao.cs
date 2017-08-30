@@ -131,7 +131,7 @@ namespace CamadaComponente
                 evento?.Invoke ();//Ponto de interrogação verifica se o evento não é n
             }
 
-            return bRetorno.Value;
+            return bRetorno.HasValue ? bRetorno.Value : false;
         }
 
 

@@ -42,6 +42,7 @@
             this.lblPesquisaMes = new System.Windows.Forms.Label();
             this.txtAnoPesquisa = new System.Windows.Forms.TextBox();
             this.lblPesquisaAno = new System.Windows.Forms.Label();
+            this.mes1 = new CamadaLogica.Classes.Mes();
             ((System.ComponentModel.ISupportInitialize)(this.bsoPadrao)).BeginInit();
             this.tabPrincipal.SuspendLayout();
             this.pnlResultado.SuspendLayout();
@@ -227,6 +228,7 @@
             // frmMeses
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.ClasseDados = this.mes1;
             this.ClientSize = new System.Drawing.Size(506, 253);
             this.Name = "frmMeses";
             this.Text = "Cadastro de Meses";
@@ -265,5 +267,6 @@
         private System.Windows.Forms.Label lblPesquisaAno;
         private System.Windows.Forms.TextBox txtMesPesquisa;
         private System.Windows.Forms.Label lblPesquisaMes;
+        private CamadaLogica.Classes.Mes mes1;
     }
 }

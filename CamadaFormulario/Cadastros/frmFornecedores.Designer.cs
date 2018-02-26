@@ -37,6 +37,7 @@
             this.lblPesquisa = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.nOMFORNECEDORDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fornecedores1 = new CamadaLogica.Classes.Fornecedores();
             ((System.ComponentModel.ISupportInitialize)(this.bsoPadrao)).BeginInit();
             this.tabPrincipal.SuspendLayout();
             this.pnlResultado.SuspendLayout();
@@ -61,16 +62,17 @@
             this.tabPrincipal.Controls.Add(this.txtCodigo);
             this.tabPrincipal.Controls.Add(this.label2);
             this.tabPrincipal.Controls.Add(this.txtNome);
+            this.tabPrincipal.Size = new System.Drawing.Size(507, 211);
             // 
             // pnlResultado
             // 
             this.pnlResultado.Location = new System.Drawing.Point(3, 62);
-            this.pnlResultado.Size = new System.Drawing.Size(501, 76);
+            this.pnlResultado.Size = new System.Drawing.Size(501, 146);
             // 
             // pnlGrade
             // 
             this.pnlGrade.Controls.Add(this.dataGridView1);
-            this.pnlGrade.Size = new System.Drawing.Size(501, 49);
+            this.pnlGrade.Size = new System.Drawing.Size(501, 119);
             // 
             // pnlFiltro
             // 
@@ -82,17 +84,21 @@
             // 
             this.pnlPesquisar.Size = new System.Drawing.Size(501, 27);
             // 
+            // btnPesquisar
+            // 
+            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
+            // 
             // tabPesquisa
             // 
-            this.tabPesquisa.Size = new System.Drawing.Size(507, 141);
+            this.tabPesquisa.Size = new System.Drawing.Size(507, 211);
             // 
             // panel3
             // 
-            this.panel3.Size = new System.Drawing.Size(515, 167);
+            this.panel3.Size = new System.Drawing.Size(515, 237);
             // 
             // tbcPadrao
             // 
-            this.tbcPadrao.Size = new System.Drawing.Size(515, 167);
+            this.tbcPadrao.Size = new System.Drawing.Size(515, 237);
             // 
             // label1
             // 
@@ -142,6 +148,7 @@
             this.txtNomePesquisa.Name = "txtNomePesquisa";
             this.txtNomePesquisa.Size = new System.Drawing.Size(322, 20);
             this.txtNomePesquisa.TabIndex = 3;
+            this.txtNomePesquisa.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtNomePesquisa_KeyDown);
             // 
             // lblPesquisa
             // 
@@ -165,8 +172,9 @@
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(501, 49);
+            this.dataGridView1.Size = new System.Drawing.Size(501, 119);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.DoubleClick += new System.EventHandler(this.dataGridView1_DoubleClick);
             // 
             // nOMFORNECEDORDataGridViewTextBoxColumn
             // 
@@ -178,7 +186,8 @@
             // frmFornecedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.ClientSize = new System.Drawing.Size(515, 229);
+            this.ClasseDados = this.fornecedores1;
+            this.ClientSize = new System.Drawing.Size(515, 299);
             this.Name = "frmFornecedores";
             this.Text = "Cadastro de Fornecedores";
             ((System.ComponentModel.ISupportInitialize)(this.bsoPadrao)).EndInit();
@@ -210,5 +219,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nOMFORNECEDORDataGridViewTextBoxColumn;
         private System.Windows.Forms.TextBox txtNomePesquisa;
         private System.Windows.Forms.Label lblPesquisa;
+        private CamadaLogica.Classes.Fornecedores fornecedores1;
     }
 }

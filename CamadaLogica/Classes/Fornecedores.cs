@@ -14,7 +14,7 @@ namespace CamadaLogica.Classes
         {
             StringBuilder sql = new StringBuilder ();
             sql.AppendLine ( "SELECT * FROM FORNECEDORES " );
-            sql.AppendLine ( "WHERE O=O" );
+            sql.AppendLine ( "WHERE 0=0" );
             if ( !string.IsNullOrEmpty ( Fornecedor ) )
                 sql.AppendLine ( $"AND UPPER (NOM_FORNECEDOR) LIKE '%{Fornecedor.ToUpper ()}%'" );
             return Select ( sql );

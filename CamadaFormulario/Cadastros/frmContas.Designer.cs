@@ -38,10 +38,11 @@
             this.rbAtivo = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
             this.txtCodigo = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dtsConta1 = new CamadaLogica.DS.dtsConta();
+            this.dtgPesquisaConta = new System.Windows.Forms.DataGridView();
             this.dESCONTADataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dATDESATIVADODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dtsConta1 = new CamadaLogica.DS.dtsConta();
+            this.contas1 = new CamadaLogica.Classes.Contas();
             ((System.ComponentModel.ISupportInitialize)(this.bsoPadrao)).BeginInit();
             this.tabPrincipal.SuspendLayout();
             this.pnlResultado.SuspendLayout();
@@ -51,7 +52,7 @@
             this.panel3.SuspendLayout();
             this.tbcPadrao.SuspendLayout();
             this.gpAtivo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgPesquisaConta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtsConta1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -70,17 +71,16 @@
             this.tabPrincipal.Controls.Add(this.gpAtivo);
             this.tabPrincipal.Controls.Add(this.label1);
             this.tabPrincipal.Controls.Add(this.txtCodigo);
-            this.tabPrincipal.Size = new System.Drawing.Size(560, 177);
             // 
             // pnlResultado
             // 
             this.pnlResultado.Location = new System.Drawing.Point(3, 56);
-            this.pnlResultado.Size = new System.Drawing.Size(554, 118);
+            this.pnlResultado.Size = new System.Drawing.Size(554, 136);
             // 
             // pnlGrade
             // 
-            this.pnlGrade.Controls.Add(this.dataGridView1);
-            this.pnlGrade.Size = new System.Drawing.Size(554, 91);
+            this.pnlGrade.Controls.Add(this.dtgPesquisaConta);
+            this.pnlGrade.Size = new System.Drawing.Size(554, 109);
             // 
             // pnlFiltro
             // 
@@ -90,17 +90,21 @@
             // 
             this.pnlPesquisar.Size = new System.Drawing.Size(554, 27);
             // 
+            // btnPesquisar
+            // 
+            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
+            // 
             // tabPesquisa
             // 
-            this.tabPesquisa.Size = new System.Drawing.Size(560, 177);
+            this.tabPesquisa.Size = new System.Drawing.Size(560, 195);
             // 
             // panel3
             // 
-            this.panel3.Size = new System.Drawing.Size(568, 203);
+            this.panel3.Size = new System.Drawing.Size(568, 221);
             // 
             // tbcPadrao
             // 
-            this.tbcPadrao.Size = new System.Drawing.Size(568, 203);
+            this.tbcPadrao.Size = new System.Drawing.Size(568, 221);
             // 
             // label11
             // 
@@ -199,27 +203,23 @@
             this.txtCodigo.Size = new System.Drawing.Size(70, 20);
             this.txtCodigo.TabIndex = 37;
             // 
-            // dataGridView1
+            // dtgPesquisaConta
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dtgPesquisaConta.AllowUserToAddRows = false;
+            this.dtgPesquisaConta.AllowUserToDeleteRows = false;
+            this.dtgPesquisaConta.AutoGenerateColumns = false;
+            this.dtgPesquisaConta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgPesquisaConta.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dESCONTADataGridViewTextBoxColumn,
             this.dATDESATIVADODataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.bsoPadrao;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(554, 91);
-            this.dataGridView1.TabIndex = 0;
-            // 
-            // dtsConta1
-            // 
-            this.dtsConta1.DataSetName = "dtsConta";
-            this.dtsConta1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.dtgPesquisaConta.DataSource = this.bsoPadrao;
+            this.dtgPesquisaConta.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtgPesquisaConta.Location = new System.Drawing.Point(0, 0);
+            this.dtgPesquisaConta.Name = "dtgPesquisaConta";
+            this.dtgPesquisaConta.ReadOnly = true;
+            this.dtgPesquisaConta.Size = new System.Drawing.Size(554, 109);
+            this.dtgPesquisaConta.TabIndex = 0;
+            this.dtgPesquisaConta.DoubleClick += new System.EventHandler(this.dtgPesquisaConta_DoubleClick);
             // 
             // dESCONTADataGridViewTextBoxColumn
             // 
@@ -235,10 +235,16 @@
             this.dATDESATIVADODataGridViewTextBoxColumn.Name = "dATDESATIVADODataGridViewTextBoxColumn";
             this.dATDESATIVADODataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // dtsConta1
+            // 
+            this.dtsConta1.DataSetName = "dtsConta";
+            this.dtsConta1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // frmContas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.ClientSize = new System.Drawing.Size(568, 265);
+            this.ClasseDados = this.contas1;
+            this.ClientSize = new System.Drawing.Size(568, 283);
             this.Name = "frmContas";
             this.Text = "Cadastro de Contas";
             ((System.ComponentModel.ISupportInitialize)(this.bsoPadrao)).EndInit();
@@ -253,7 +259,7 @@
             this.tbcPadrao.ResumeLayout(false);
             this.gpAtivo.ResumeLayout(false);
             this.gpAtivo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgPesquisaConta)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtsConta1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -273,8 +279,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtCodigo;
         private CamadaLogica.DS.dtsConta dtsConta1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dtgPesquisaConta;
         private System.Windows.Forms.DataGridViewTextBoxColumn dESCONTADataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dATDESATIVADODataGridViewTextBoxColumn;
+        private CamadaLogica.Classes.Contas contas1;
     }
 }

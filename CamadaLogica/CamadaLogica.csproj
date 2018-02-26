@@ -40,9 +40,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Auxiliar\Configuracao.cs" />
+    <Compile Include="Classes\Fornecedores.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Classes\Jogador.cs">
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Classes\Mes.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Classes\Usuario.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DS\dtsConta.cs">
+      <DependentUpon>dtsConta.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DS\dtsConta.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dtsConta.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DS\dtsFornecedor.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dtsFornecedor.xsd</DependentUpon>
     </Compile>
     <Compile Include="DS\dtsJogador.cs">
       <DependentUpon>dtsJogador.xsd</DependentUpon>
@@ -52,10 +73,48 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dtsJogador.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DS\dtsMes.cs">
+      <DependentUpon>dtsMes.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DS\dtsMes.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dtsMes.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DS\dtsUsuarios.cs">
+      <DependentUpon>dtsUsuarios.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DS\dtsUsuarios.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dtsUsuarios.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <None Include="DS\dtsConta.xsc">
+      <DependentUpon>dtsConta.xsd</DependentUpon>
+    </None>
+    <None Include="DS\dtsConta.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dtsConta.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS\dtsConta.xss">
+      <DependentUpon>dtsConta.xsd</DependentUpon>
+    </None>
+    <None Include="DS\dtsFornecedor.xsc">
+      <DependentUpon>dtsFornecedor.xsd</DependentUpon>
+    </None>
+    <None Include="DS\dtsFornecedor.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dtsFornecedor.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS\dtsFornecedor.xss">
+      <DependentUpon>dtsFornecedor.xsd</DependentUpon>
+    </None>
     <None Include="DS\dtsJogador.xsc">
       <DependentUpon>dtsJogador.xsd</DependentUpon>
     </None>
@@ -66,6 +125,28 @@
     </None>
     <None Include="DS\dtsJogador.xss">
       <DependentUpon>dtsJogador.xsd</DependentUpon>
+    </None>
+    <None Include="DS\dtsMes.xsc">
+      <DependentUpon>dtsMes.xsd</DependentUpon>
+    </None>
+    <None Include="DS\dtsMes.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dtsMes.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS\dtsMes.xss">
+      <DependentUpon>dtsMes.xsd</DependentUpon>
+    </None>
+    <None Include="DS\dtsUsuarios.xsc">
+      <DependentUpon>dtsUsuarios.xsd</DependentUpon>
+    </None>
+    <None Include="DS\dtsUsuarios.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dtsUsuarios.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS\dtsUsuarios.xss">
+      <DependentUpon>dtsUsuarios.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

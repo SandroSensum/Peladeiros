@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
 
-namespace CamadaLogica.Auxiliar
+namespace CamadaFuncao.Cls
 {
     public class Configuracao
     {

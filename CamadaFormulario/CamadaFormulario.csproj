@@ -42,6 +42,42 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cadastros\frmContaCorrente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cadastros\frmContaCorrente.Designer.cs">
+      <DependentUpon>frmContaCorrente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cadastros\frmContas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cadastros\frmContas.Designer.cs">
+      <DependentUpon>frmContas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cadastros\frmFornecedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cadastros\frmFornecedores.Designer.cs">
+      <DependentUpon>frmFornecedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cadastros\frmPagamentos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cadastros\frmPagamentos.Designer.cs">
+      <DependentUpon>frmPagamentos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cadastros\frmMensalidades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cadastros\frmMensalidades.Designer.cs">
+      <DependentUpon>frmMensalidades.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cadastros\frmMeses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cadastros\frmMeses.Designer.cs">
+      <DependentUpon>frmMeses.cs</DependentUpon>
+    </Compile>
     <Compile Include="Cadastros\frmJogador.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -54,7 +90,21 @@
     <Compile Include="Cadastros\frmUsuario.Designer.cs">
       <DependentUpon>frmUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="Cadastros\frmValores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cadastros\frmValores.Designer.cs">
+      <DependentUpon>frmValores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cadastros\Usuario.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
@@ -88,11 +138,33 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <EmbeddedResource Include="Cadastros\frmContas.resx">
+      <DependentUpon>frmContas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cadastros\frmFornecedores.resx">
+      <DependentUpon>frmFornecedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cadastros\frmPagamentos.resx">
+      <DependentUpon>frmPagamentos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cadastros\frmMensalidades.resx">
+      <DependentUpon>frmMensalidades.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cadastros\frmMeses.resx">
+      <DependentUpon>frmMeses.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Cadastros\frmJogador.resx">
       <DependentUpon>frmJogador.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Cadastros\frmUsuario.resx">
       <DependentUpon>frmUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cadastros\frmValores.resx">
+      <DependentUpon>frmValores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

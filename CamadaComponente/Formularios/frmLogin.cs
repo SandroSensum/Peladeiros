@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CamadaFuncao.Cls;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -30,9 +31,20 @@ namespace CamadaComponente.Formularios
 
         private void btnAcessar_Click(object sender, EventArgs e)
         {
-            if (txtUsuario.Text == "ADMIN" && txtSenha.Text == "ADMIN")
+            if (txtUsuario.Text.ToUpper() == "ADMIN" && txtSenha.Text.ToUpper() == "ADMIN")
             {
-                DialogResult = DialogResult.OK;
+                Configuracao oConfiguracao = new Configuracao ().CarregarArquivoConfiguracao ();
+
+                frmConexaoBanco oFrmConexao = null;
+
+
+                if ( oConfiguracao == null )
+                    oFrmConexao.ShowDialog ();
+                else
+                {
+                    ConexaoBanco.ConfiguracaoBanco = oConfiguracao;
+                    DialogResult = DialogResult.OK;
+                }
             }
             else
                 MessageBox.Show("Usuario ou senha invalidos");
@@ -42,6 +54,12 @@ namespace CamadaComponente.Formularios
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.Cancel;
+        }
+
+        private void txtSenha_KeyDown( object sender, KeyEventArgs e )
+        {
+            if ( e.KeyCode == Keys.Enter )
+                btnAcessar.PerformClick ();
         }
     }
 }

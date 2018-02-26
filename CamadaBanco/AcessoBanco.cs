@@ -1,4 +1,5 @@
-﻿using FirebirdSql.Data.FirebirdClient;
+﻿using CamadaFuncao.Cls;
+using FirebirdSql.Data.FirebirdClient;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -133,11 +134,32 @@ namespace CamadaBanco
 
         private FbConnection AbrirConexao()
         {
-            //oConexao = new FbConnection(MontarConexao());
+            oConexao = new FbConnection(MontarConexao());
 
             oConexao.Open();
 
             return oConexao;
+        }
+
+        private string MontarConexao()
+        {
+            StringBuilder sbConexao = new StringBuilder ();
+            
+            sbConexao.Append ( $"User={ConexaoBanco.ConfiguracaoBanco.Usuario};" );
+            sbConexao.Append ( $"Password={ConexaoBanco.ConfiguracaoBanco.Senha};" );
+            sbConexao.Append ( $"Database={ConexaoBanco.ConfiguracaoBanco.CaminhoBanco};" );
+            sbConexao.Append ( $"DataSource={ConexaoBanco.ConfiguracaoBanco.Servidor};" );
+            sbConexao.Append ( "Port=3050;" );
+            sbConexao.Append ( "Dialect=3;" );
+            sbConexao.Append ( "Charset=NONE;" );
+            sbConexao.Append ( "Role=;" );
+            sbConexao.Append ( "Connection lifetime=15;" );
+            sbConexao.Append ( "Pooling=true;" );
+            sbConexao.Append ( "Packet Size=8192;" );
+            sbConexao.Append ( "Client Library=gds32.dll;" );
+            sbConexao.Append ( "ServerType=0" );
+
+            return sbConexao.ToString ();
         }
         #endregion
     }

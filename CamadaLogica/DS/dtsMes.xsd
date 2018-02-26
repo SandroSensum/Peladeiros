@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dtsMes" targetNamespace="http://tempuri.org/dtsMes.xsd" xmlns:mstns="http://tempuri.org/dtsMes.xsd" xmlns="http://tempuri.org/dtsMes.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dtsMes" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dtsMes" msprop:Generator_UserDSName="dtsMes">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="MES" msprop:Generator_TableClassName="MESDataTable" msprop:Generator_TableVarName="tableMES" msprop:Generator_TablePropName="MES" msprop:Generator_RowDeletingName="MESRowDeleting" msprop:Generator_RowChangingName="MESRowChanging" msprop:Generator_RowEvHandlerName="MESRowChangeEventHandler" msprop:Generator_RowDeletedName="MESRowDeleted" msprop:Generator_UserTableName="MES" msprop:Generator_RowChangedName="MESRowChanged" msprop:Generator_RowEvArgName="MESRowChangeEvent" msprop:Generator_RowClassName="MESRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="COD_MES" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnCOD_MES" msprop:Generator_ColumnPropNameInRow="COD_MES" msprop:Generator_ColumnPropNameInTable="COD_MESColumn" msprop:Generator_UserColumnName="COD_MES" type="xs:int" />
+              <xs:element name="IDE_MES" msprop:Generator_ColumnVarNameInTable="columnIDE_MES" msprop:Generator_ColumnPropNameInRow="IDE_MES" msprop:Generator_ColumnPropNameInTable="IDE_MESColumn" msprop:Generator_UserColumnName="IDE_MES" type="xs:string" minOccurs="0" />
+              <xs:element name="IDE_ANO" msprop:Generator_ColumnVarNameInTable="columnIDE_ANO" msprop:Generator_ColumnPropNameInRow="IDE_ANO" msprop:Generator_ColumnPropNameInTable="IDE_ANOColumn" msprop:Generator_UserColumnName="IDE_ANO" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:MES" />
+      <xs:field xpath="mstns:COD_MES" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

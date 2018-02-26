@@ -37,10 +37,11 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.tbcPadrao = new System.Windows.Forms.TabControl();
             this.tabPesquisa = new System.Windows.Forms.TabPage();
+            this.pnlResultado = new System.Windows.Forms.Panel();
+            this.pnlGrade = new System.Windows.Forms.Panel();
             this.pnlPesquisar = new System.Windows.Forms.Panel();
             this.ckAtivos = new System.Windows.Forms.CheckBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.pnlResultado = new System.Windows.Forms.Panel();
+            this.btnPesquisar = new System.Windows.Forms.Button();
             this.pnlFiltro = new System.Windows.Forms.Panel();
             this.tabPrincipal = new System.Windows.Forms.TabPage();
             this.pnlFerramentas = new System.Windows.Forms.Panel();
@@ -61,10 +62,12 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.bsoPadrao = new System.Windows.Forms.BindingSource(this.components);
             this.tmrHora = new System.Windows.Forms.Timer(this.components);
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusStrip1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.tbcPadrao.SuspendLayout();
             this.tabPesquisa.SuspendLayout();
+            this.pnlResultado.SuspendLayout();
             this.pnlPesquisar.SuspendLayout();
             this.pnlFerramentas.SuspendLayout();
             this.pnlIncluir.SuspendLayout();
@@ -83,7 +86,8 @@
             this.lblMensagem,
             this.pgrBarra,
             this.lblUsuario,
-            this.lblDataHora});
+            this.lblDataHora,
+            this.toolStripStatusLabel1});
             this.statusStrip1.Location = new System.Drawing.Point(0, 424);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(827, 22);
@@ -139,7 +143,6 @@
             // 
             // tabPesquisa
             // 
-            this.tabPesquisa.Controls.Add(this.pnlPesquisar);
             this.tabPesquisa.Controls.Add(this.pnlResultado);
             this.tabPesquisa.Controls.Add(this.pnlFiltro);
             this.tabPesquisa.Location = new System.Drawing.Point(4, 22);
@@ -150,45 +153,54 @@
             this.tabPesquisa.Text = "Pesquisa";
             this.tabPesquisa.UseVisualStyleBackColor = true;
             // 
-            // pnlPesquisar
-            // 
-            this.pnlPesquisar.Controls.Add(this.ckAtivos);
-            this.pnlPesquisar.Controls.Add(this.button1);
-            this.pnlPesquisar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlPesquisar.Location = new System.Drawing.Point(3, 97);
-            this.pnlPesquisar.Name = "pnlPesquisar";
-            this.pnlPesquisar.Size = new System.Drawing.Size(813, 27);
-            this.pnlPesquisar.TabIndex = 3;
-            // 
-            // ckAtivos
-            // 
-            this.ckAtivos.AutoSize = true;
-            this.ckAtivos.Dock = System.Windows.Forms.DockStyle.Left;
-            this.ckAtivos.Location = new System.Drawing.Point(75, 0);
-            this.ckAtivos.Name = "ckAtivos";
-            this.ckAtivos.Size = new System.Drawing.Size(101, 27);
-            this.ckAtivos.TabIndex = 12;
-            this.ckAtivos.Text = "Mostrar Inativos";
-            this.ckAtivos.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.button1.Location = new System.Drawing.Point(0, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 27);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "Pesquisar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // pnlResultado
             // 
+            this.pnlResultado.Controls.Add(this.pnlGrade);
+            this.pnlResultado.Controls.Add(this.pnlPesquisar);
             this.pnlResultado.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlResultado.Location = new System.Drawing.Point(3, 97);
             this.pnlResultado.Name = "pnlResultado";
             this.pnlResultado.Size = new System.Drawing.Size(813, 258);
             this.pnlResultado.TabIndex = 4;
+            // 
+            // pnlGrade
+            // 
+            this.pnlGrade.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlGrade.Location = new System.Drawing.Point(0, 27);
+            this.pnlGrade.Name = "pnlGrade";
+            this.pnlGrade.Size = new System.Drawing.Size(813, 231);
+            this.pnlGrade.TabIndex = 5;
+            // 
+            // pnlPesquisar
+            // 
+            this.pnlPesquisar.Controls.Add(this.ckAtivos);
+            this.pnlPesquisar.Controls.Add(this.btnPesquisar);
+            this.pnlPesquisar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlPesquisar.Location = new System.Drawing.Point(0, 0);
+            this.pnlPesquisar.Name = "pnlPesquisar";
+            this.pnlPesquisar.Size = new System.Drawing.Size(813, 27);
+            this.pnlPesquisar.TabIndex = 4;
+            // 
+            // ckAtivos
+            // 
+            this.ckAtivos.AutoSize = true;
+            this.ckAtivos.Location = new System.Drawing.Point(97, 6);
+            this.ckAtivos.Name = "ckAtivos";
+            this.ckAtivos.Size = new System.Drawing.Size(101, 17);
+            this.ckAtivos.TabIndex = 12;
+            this.ckAtivos.Text = "Mostrar Inativos";
+            this.ckAtivos.UseVisualStyleBackColor = true;
+            // 
+            // btnPesquisar
+            // 
+            this.btnPesquisar.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnPesquisar.Location = new System.Drawing.Point(0, 0);
+            this.btnPesquisar.Name = "btnPesquisar";
+            this.btnPesquisar.Size = new System.Drawing.Size(75, 27);
+            this.btnPesquisar.TabIndex = 11;
+            this.btnPesquisar.Text = "Pesquisar";
+            this.btnPesquisar.UseVisualStyleBackColor = true;
+            this.btnPesquisar.Click += new System.EventHandler(this.button1_Click);
             // 
             // pnlFiltro
             // 
@@ -379,6 +391,12 @@
             this.tmrHora.Interval = 1000;
             this.tmrHora.Tick += new System.EventHandler(this.tmrHora_Tick);
             // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(118, 15);
+            this.toolStripStatusLabel1.Text = "toolStripStatusLabel1";
+            // 
             // frmPadrao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -395,6 +413,7 @@
             this.panel3.ResumeLayout(false);
             this.tbcPadrao.ResumeLayout(false);
             this.tabPesquisa.ResumeLayout(false);
+            this.pnlResultado.ResumeLayout(false);
             this.pnlPesquisar.ResumeLayout(false);
             this.pnlPesquisar.PerformLayout();
             this.pnlFerramentas.ResumeLayout(false);
@@ -414,13 +433,7 @@
         #endregion
 
         private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel pnlFerramentas;
-        private System.Windows.Forms.TabControl tbcPadrao;
-        private System.Windows.Forms.TabPage tabPesquisa;
-        private System.Windows.Forms.Panel pnlResultado;
-        private System.Windows.Forms.Panel pnlPesquisar;
-        private System.Windows.Forms.Panel pnlFiltro;
         private System.Windows.Forms.Panel pnlIncluir;
         private System.Windows.Forms.Button btnIncluir;
         private System.Windows.Forms.Panel pnlAlterar;
@@ -436,8 +449,6 @@
         private System.Windows.Forms.Button btnPesquisa;
         private System.Windows.Forms.CheckBox chkMostraInativo;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.CheckBox ckAtivos;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ToolStripStatusLabel lblMensagem;
         private System.Windows.Forms.ToolStripProgressBar pgrBarra;
         private System.Windows.Forms.ToolStripStatusLabel lblUsuario;
@@ -445,5 +456,15 @@
         public System.Windows.Forms.BindingSource bsoPadrao;
         public System.Windows.Forms.Timer tmrHora;
         public System.Windows.Forms.TabPage tabPrincipal;
+        public System.Windows.Forms.Panel pnlResultado;
+        public System.Windows.Forms.Panel pnlGrade;
+        public System.Windows.Forms.Panel pnlFiltro;
+        public System.Windows.Forms.Panel pnlPesquisar;
+        public System.Windows.Forms.Button btnPesquisar;
+        public System.Windows.Forms.TabPage tabPesquisa;
+        public System.Windows.Forms.Panel panel3;
+        public System.Windows.Forms.TabControl tbcPadrao;
+        public System.Windows.Forms.CheckBox ckAtivos;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
     }
 }

@@ -297,11 +297,11 @@ namespace CamadaLogica.DS {
             
             private global::System.Data.DataColumn columnEMAIL;
             
+            private global::System.Data.DataColumn columnCELULAR2;
+            
             private global::System.Data.DataColumn columnLGC_ENVIA_EMAIL;
             
             private global::System.Data.DataColumn columnLGC_MENSALISTA;
-            
-            private global::System.Data.DataColumn columnCELULAR2;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -410,6 +410,14 @@ namespace CamadaLogica.DS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CELULAR2Column {
+                get {
+                    return this.columnCELULAR2;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public global::System.Data.DataColumn LGC_ENVIA_EMAILColumn {
                 get {
                     return this.columnLGC_ENVIA_EMAIL;
@@ -421,14 +429,6 @@ namespace CamadaLogica.DS {
             public global::System.Data.DataColumn LGC_MENSALISTAColumn {
                 get {
                     return this.columnLGC_MENSALISTA;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn CELULAR2Column {
-                get {
-                    return this.columnCELULAR2;
                 }
             }
             
@@ -469,7 +469,7 @@ namespace CamadaLogica.DS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public JOGADORRow AddJOGADORRow(string NOM_JOGADOR, System.DateTime DAT_NASC, string OBS_JOGADOR, System.DateTime DAT_CADASTRO, System.DateTime DAT_DESATIVADO, double FONE, double CELULAR1, string EMAIL, bool LGC_ENVIA_EMAIL, bool LGC_MENSALISTA, double CELULAR2) {
+            public JOGADORRow AddJOGADORRow(string NOM_JOGADOR, System.DateTime DAT_NASC, string OBS_JOGADOR, System.DateTime DAT_CADASTRO, System.DateTime DAT_DESATIVADO, string FONE, string CELULAR1, string EMAIL, string CELULAR2, short LGC_ENVIA_EMAIL, short LGC_MENSALISTA) {
                 JOGADORRow rowJOGADORRow = ((JOGADORRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -481,9 +481,9 @@ namespace CamadaLogica.DS {
                         FONE,
                         CELULAR1,
                         EMAIL,
+                        CELULAR2,
                         LGC_ENVIA_EMAIL,
-                        LGC_MENSALISTA,
-                        CELULAR2};
+                        LGC_MENSALISTA};
                 rowJOGADORRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowJOGADORRow);
                 return rowJOGADORRow;
@@ -522,9 +522,9 @@ namespace CamadaLogica.DS {
                 this.columnFONE = base.Columns["FONE"];
                 this.columnCELULAR1 = base.Columns["CELULAR1"];
                 this.columnEMAIL = base.Columns["EMAIL"];
+                this.columnCELULAR2 = base.Columns["CELULAR2"];
                 this.columnLGC_ENVIA_EMAIL = base.Columns["LGC_ENVIA_EMAIL"];
                 this.columnLGC_MENSALISTA = base.Columns["LGC_MENSALISTA"];
-                this.columnCELULAR2 = base.Columns["CELULAR2"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -542,18 +542,18 @@ namespace CamadaLogica.DS {
                 base.Columns.Add(this.columnDAT_CADASTRO);
                 this.columnDAT_DESATIVADO = new global::System.Data.DataColumn("DAT_DESATIVADO", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDAT_DESATIVADO);
-                this.columnFONE = new global::System.Data.DataColumn("FONE", typeof(double), null, global::System.Data.MappingType.Element);
+                this.columnFONE = new global::System.Data.DataColumn("FONE", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnFONE);
-                this.columnCELULAR1 = new global::System.Data.DataColumn("CELULAR1", typeof(double), null, global::System.Data.MappingType.Element);
+                this.columnCELULAR1 = new global::System.Data.DataColumn("CELULAR1", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCELULAR1);
                 this.columnEMAIL = new global::System.Data.DataColumn("EMAIL", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnEMAIL);
-                this.columnLGC_ENVIA_EMAIL = new global::System.Data.DataColumn("LGC_ENVIA_EMAIL", typeof(bool), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnLGC_ENVIA_EMAIL);
-                this.columnLGC_MENSALISTA = new global::System.Data.DataColumn("LGC_MENSALISTA", typeof(bool), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnLGC_MENSALISTA);
-                this.columnCELULAR2 = new global::System.Data.DataColumn("CELULAR2", typeof(double), null, global::System.Data.MappingType.Element);
+                this.columnCELULAR2 = new global::System.Data.DataColumn("CELULAR2", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCELULAR2);
+                this.columnLGC_ENVIA_EMAIL = new global::System.Data.DataColumn("LGC_ENVIA_EMAIL", typeof(short), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnLGC_ENVIA_EMAIL);
+                this.columnLGC_MENSALISTA = new global::System.Data.DataColumn("LGC_MENSALISTA", typeof(short), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnLGC_MENSALISTA);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnCOD_JOGADOR}, true));
                 this.columnCOD_JOGADOR.AutoIncrement = true;
@@ -794,10 +794,10 @@ namespace CamadaLogica.DS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public double FONE {
+            public string FONE {
                 get {
                     try {
-                        return ((double)(this[this.tableJOGADOR.FONEColumn]));
+                        return ((string)(this[this.tableJOGADOR.FONEColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("O valor da coluna \'FONE\' na tabela \'JOGADOR\' é DBNull.", e);
@@ -810,10 +810,10 @@ namespace CamadaLogica.DS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public double CELULAR1 {
+            public string CELULAR1 {
                 get {
                     try {
-                        return ((double)(this[this.tableJOGADOR.CELULAR1Column]));
+                        return ((string)(this[this.tableJOGADOR.CELULAR1Column]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("O valor da coluna \'CELULAR1\' na tabela \'JOGADOR\' é DBNull.", e);
@@ -842,10 +842,26 @@ namespace CamadaLogica.DS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool LGC_ENVIA_EMAIL {
+            public string CELULAR2 {
                 get {
                     try {
-                        return ((bool)(this[this.tableJOGADOR.LGC_ENVIA_EMAILColumn]));
+                        return ((string)(this[this.tableJOGADOR.CELULAR2Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'CELULAR2\' na tabela \'JOGADOR\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableJOGADOR.CELULAR2Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public short LGC_ENVIA_EMAIL {
+                get {
+                    try {
+                        return ((short)(this[this.tableJOGADOR.LGC_ENVIA_EMAILColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("O valor da coluna \'LGC_ENVIA_EMAIL\' na tabela \'JOGADOR\' é DBNull.", e);
@@ -858,10 +874,10 @@ namespace CamadaLogica.DS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool LGC_MENSALISTA {
+            public short LGC_MENSALISTA {
                 get {
                     try {
-                        return ((bool)(this[this.tableJOGADOR.LGC_MENSALISTAColumn]));
+                        return ((short)(this[this.tableJOGADOR.LGC_MENSALISTAColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("O valor da coluna \'LGC_MENSALISTA\' na tabela \'JOGADOR\' é DBNull.", e);
@@ -869,22 +885,6 @@ namespace CamadaLogica.DS {
                 }
                 set {
                     this[this.tableJOGADOR.LGC_MENSALISTAColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public double CELULAR2 {
-                get {
-                    try {
-                        return ((double)(this[this.tableJOGADOR.CELULAR2Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("O valor da coluna \'CELULAR2\' na tabela \'JOGADOR\' é DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableJOGADOR.CELULAR2Column] = value;
                 }
             }
             
@@ -986,6 +986,18 @@ namespace CamadaLogica.DS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCELULAR2Null() {
+                return this.IsNull(this.tableJOGADOR.CELULAR2Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCELULAR2Null() {
+                this[this.tableJOGADOR.CELULAR2Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsLGC_ENVIA_EMAILNull() {
                 return this.IsNull(this.tableJOGADOR.LGC_ENVIA_EMAILColumn);
             }
@@ -1006,18 +1018,6 @@ namespace CamadaLogica.DS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetLGC_MENSALISTANull() {
                 this[this.tableJOGADOR.LGC_MENSALISTAColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsCELULAR2Null() {
-                return this.IsNull(this.tableJOGADOR.CELULAR2Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetCELULAR2Null() {
-                this[this.tableJOGADOR.CELULAR2Column] = global::System.Convert.DBNull;
             }
         }
         

@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmJogador));
             this.jogador1 = new CamadaLogica.Classes.Jogador();
             this.dtsJogador1 = new CamadaLogica.DS.dtsJogador();
             this.label11 = new System.Windows.Forms.Label();
@@ -57,10 +59,38 @@
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.ckEnviaEmail = new System.Windows.Forms.CheckBox();
             this.ckMensalista = new System.Windows.Forms.CheckBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dtgResultpesquisa = new System.Windows.Forms.DataGridView();
+            this.cODJOGADORDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nOMJOGADORDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dATNASCDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.oBSJOGADORDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dATCADASTRODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dATDESATIVADODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fONEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cELULAR1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.eMAILDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cELULAR2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lGCENVIAEMAILDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lGCMENSALISTADataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtNomePesquisa = new System.Windows.Forms.TextBox();
+            this.btnInformeInativo = new System.Windows.Forms.Button();
+            this.btnInformeNome = new System.Windows.Forms.Button();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.bsoPadrao)).BeginInit();
             this.tabPrincipal.SuspendLayout();
+            this.pnlResultado.SuspendLayout();
+            this.pnlGrade.SuspendLayout();
+            this.pnlFiltro.SuspendLayout();
+            this.pnlPesquisar.SuspendLayout();
+            this.tabPesquisa.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.tbcPadrao.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtsJogador1)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgResultpesquisa)).BeginInit();
             this.SuspendLayout();
             // 
             // bsoPadrao
@@ -96,6 +126,56 @@
             this.tabPrincipal.Controls.Add(this.label4);
             this.tabPrincipal.Controls.Add(this.txtNasc);
             this.tabPrincipal.Size = new System.Drawing.Size(675, 292);
+            // 
+            // pnlResultado
+            // 
+            this.pnlResultado.Controls.Add(this.dataGridView1);
+            this.pnlResultado.Location = new System.Drawing.Point(3, 63);
+            this.pnlResultado.Size = new System.Drawing.Size(669, 226);
+            this.pnlResultado.Controls.SetChildIndex(this.pnlPesquisar, 0);
+            this.pnlResultado.Controls.SetChildIndex(this.dataGridView1, 0);
+            this.pnlResultado.Controls.SetChildIndex(this.pnlGrade, 0);
+            // 
+            // pnlGrade
+            // 
+            this.pnlGrade.Controls.Add(this.dtgResultpesquisa);
+            this.pnlGrade.Size = new System.Drawing.Size(669, 199);
+            // 
+            // pnlFiltro
+            // 
+            this.pnlFiltro.Controls.Add(this.btnInformeNome);
+            this.pnlFiltro.Controls.Add(this.txtNomePesquisa);
+            this.pnlFiltro.Controls.Add(this.label5);
+            this.pnlFiltro.Size = new System.Drawing.Size(669, 60);
+            // 
+            // pnlPesquisar
+            // 
+            this.pnlPesquisar.Controls.Add(this.btnInformeInativo);
+            this.pnlPesquisar.Size = new System.Drawing.Size(669, 27);
+            this.pnlPesquisar.Controls.SetChildIndex(this.btnPesquisar, 0);
+            this.pnlPesquisar.Controls.SetChildIndex(this.ckAtivos, 0);
+            this.pnlPesquisar.Controls.SetChildIndex(this.btnInformeInativo, 0);
+            // 
+            // btnPesquisar
+            // 
+            this.btnPesquisar.TabIndex = 0;
+            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
+            // 
+            // tabPesquisa
+            // 
+            this.tabPesquisa.Size = new System.Drawing.Size(675, 292);
+            // 
+            // panel3
+            // 
+            this.panel3.Size = new System.Drawing.Size(683, 318);
+            // 
+            // tbcPadrao
+            // 
+            this.tbcPadrao.Size = new System.Drawing.Size(683, 318);
+            // 
+            // ckAtivos
+            // 
+            this.ckAtivos.TabIndex = 1;
             // 
             // dtsJogador1
             // 
@@ -256,6 +336,7 @@
             // 
             // txtNasc
             // 
+            this.txtNasc.AllowPromptAsInput = false;
             this.txtNasc.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsoPadrao, "DAT_NASC", true));
             this.txtNasc.Location = new System.Drawing.Point(429, 72);
             this.txtNasc.Mask = "00/00/0000";
@@ -295,7 +376,7 @@
             // 
             this.txtFone.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsoPadrao, "FONE", true));
             this.txtFone.Location = new System.Drawing.Point(17, 111);
-            this.txtFone.Mask = "(99) 0000-0000";
+            this.txtFone.Mask = "(99) 000-0000";
             this.txtFone.Name = "txtFone";
             this.txtFone.Size = new System.Drawing.Size(100, 20);
             this.txtFone.TabIndex = 2;
@@ -358,6 +439,158 @@
             this.ckMensalista.Text = "Mensalista";
             this.ckMensalista.UseVisualStyleBackColor = true;
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(5, 33);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(294, 156);
+            this.dataGridView1.TabIndex = 0;
+            // 
+            // dtgResultpesquisa
+            // 
+            this.dtgResultpesquisa.AllowUserToAddRows = false;
+            this.dtgResultpesquisa.AllowUserToDeleteRows = false;
+            this.dtgResultpesquisa.AutoGenerateColumns = false;
+            this.dtgResultpesquisa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgResultpesquisa.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.cODJOGADORDataGridViewTextBoxColumn,
+            this.nOMJOGADORDataGridViewTextBoxColumn,
+            this.dATNASCDataGridViewTextBoxColumn,
+            this.oBSJOGADORDataGridViewTextBoxColumn,
+            this.dATCADASTRODataGridViewTextBoxColumn,
+            this.dATDESATIVADODataGridViewTextBoxColumn,
+            this.fONEDataGridViewTextBoxColumn,
+            this.cELULAR1DataGridViewTextBoxColumn,
+            this.eMAILDataGridViewTextBoxColumn,
+            this.cELULAR2DataGridViewTextBoxColumn,
+            this.lGCENVIAEMAILDataGridViewTextBoxColumn,
+            this.lGCMENSALISTADataGridViewTextBoxColumn});
+            this.dtgResultpesquisa.DataSource = this.bsoPadrao;
+            this.dtgResultpesquisa.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtgResultpesquisa.Location = new System.Drawing.Point(0, 0);
+            this.dtgResultpesquisa.Name = "dtgResultpesquisa";
+            this.dtgResultpesquisa.Size = new System.Drawing.Size(669, 199);
+            this.dtgResultpesquisa.TabIndex = 0;
+            this.dtgResultpesquisa.DoubleClick += new System.EventHandler(this.dtgResultpesquisa_DoubleClick);
+            // 
+            // cODJOGADORDataGridViewTextBoxColumn
+            // 
+            this.cODJOGADORDataGridViewTextBoxColumn.DataPropertyName = "COD_JOGADOR";
+            this.cODJOGADORDataGridViewTextBoxColumn.HeaderText = "COD_JOGADOR";
+            this.cODJOGADORDataGridViewTextBoxColumn.Name = "cODJOGADORDataGridViewTextBoxColumn";
+            // 
+            // nOMJOGADORDataGridViewTextBoxColumn
+            // 
+            this.nOMJOGADORDataGridViewTextBoxColumn.DataPropertyName = "NOM_JOGADOR";
+            this.nOMJOGADORDataGridViewTextBoxColumn.HeaderText = "NOM_JOGADOR";
+            this.nOMJOGADORDataGridViewTextBoxColumn.Name = "nOMJOGADORDataGridViewTextBoxColumn";
+            // 
+            // dATNASCDataGridViewTextBoxColumn
+            // 
+            this.dATNASCDataGridViewTextBoxColumn.DataPropertyName = "DAT_NASC";
+            this.dATNASCDataGridViewTextBoxColumn.HeaderText = "DAT_NASC";
+            this.dATNASCDataGridViewTextBoxColumn.Name = "dATNASCDataGridViewTextBoxColumn";
+            // 
+            // oBSJOGADORDataGridViewTextBoxColumn
+            // 
+            this.oBSJOGADORDataGridViewTextBoxColumn.DataPropertyName = "OBS_JOGADOR";
+            this.oBSJOGADORDataGridViewTextBoxColumn.HeaderText = "OBS_JOGADOR";
+            this.oBSJOGADORDataGridViewTextBoxColumn.Name = "oBSJOGADORDataGridViewTextBoxColumn";
+            // 
+            // dATCADASTRODataGridViewTextBoxColumn
+            // 
+            this.dATCADASTRODataGridViewTextBoxColumn.DataPropertyName = "DAT_CADASTRO";
+            this.dATCADASTRODataGridViewTextBoxColumn.HeaderText = "DAT_CADASTRO";
+            this.dATCADASTRODataGridViewTextBoxColumn.Name = "dATCADASTRODataGridViewTextBoxColumn";
+            // 
+            // dATDESATIVADODataGridViewTextBoxColumn
+            // 
+            this.dATDESATIVADODataGridViewTextBoxColumn.DataPropertyName = "DAT_DESATIVADO";
+            this.dATDESATIVADODataGridViewTextBoxColumn.HeaderText = "DAT_DESATIVADO";
+            this.dATDESATIVADODataGridViewTextBoxColumn.Name = "dATDESATIVADODataGridViewTextBoxColumn";
+            // 
+            // fONEDataGridViewTextBoxColumn
+            // 
+            this.fONEDataGridViewTextBoxColumn.DataPropertyName = "FONE";
+            this.fONEDataGridViewTextBoxColumn.HeaderText = "FONE";
+            this.fONEDataGridViewTextBoxColumn.Name = "fONEDataGridViewTextBoxColumn";
+            // 
+            // cELULAR1DataGridViewTextBoxColumn
+            // 
+            this.cELULAR1DataGridViewTextBoxColumn.DataPropertyName = "CELULAR1";
+            this.cELULAR1DataGridViewTextBoxColumn.HeaderText = "CELULAR1";
+            this.cELULAR1DataGridViewTextBoxColumn.Name = "cELULAR1DataGridViewTextBoxColumn";
+            // 
+            // eMAILDataGridViewTextBoxColumn
+            // 
+            this.eMAILDataGridViewTextBoxColumn.DataPropertyName = "EMAIL";
+            this.eMAILDataGridViewTextBoxColumn.HeaderText = "EMAIL";
+            this.eMAILDataGridViewTextBoxColumn.Name = "eMAILDataGridViewTextBoxColumn";
+            // 
+            // cELULAR2DataGridViewTextBoxColumn
+            // 
+            this.cELULAR2DataGridViewTextBoxColumn.DataPropertyName = "CELULAR2";
+            this.cELULAR2DataGridViewTextBoxColumn.HeaderText = "CELULAR2";
+            this.cELULAR2DataGridViewTextBoxColumn.Name = "cELULAR2DataGridViewTextBoxColumn";
+            // 
+            // lGCENVIAEMAILDataGridViewTextBoxColumn
+            // 
+            this.lGCENVIAEMAILDataGridViewTextBoxColumn.DataPropertyName = "LGC_ENVIA_EMAIL";
+            this.lGCENVIAEMAILDataGridViewTextBoxColumn.HeaderText = "LGC_ENVIA_EMAIL";
+            this.lGCENVIAEMAILDataGridViewTextBoxColumn.Name = "lGCENVIAEMAILDataGridViewTextBoxColumn";
+            // 
+            // lGCMENSALISTADataGridViewTextBoxColumn
+            // 
+            this.lGCMENSALISTADataGridViewTextBoxColumn.DataPropertyName = "LGC_MENSALISTA";
+            this.lGCMENSALISTADataGridViewTextBoxColumn.HeaderText = "LGC_MENSALISTA";
+            this.lGCMENSALISTADataGridViewTextBoxColumn.Name = "lGCMENSALISTADataGridViewTextBoxColumn";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(17, 10);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(35, 13);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Nome";
+            // 
+            // txtNomePesquisa
+            // 
+            this.txtNomePesquisa.Location = new System.Drawing.Point(20, 26);
+            this.txtNomePesquisa.Name = "txtNomePesquisa";
+            this.txtNomePesquisa.Size = new System.Drawing.Size(426, 20);
+            this.txtNomePesquisa.TabIndex = 0;
+            this.txtNomePesquisa.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtNomePesquisa_KeyDown);
+            this.txtNomePesquisa.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNomePesquisa_KeyPress);
+            // 
+            // btnInformeInativo
+            // 
+            this.btnInformeInativo.FlatAppearance.BorderSize = 0;
+            this.btnInformeInativo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInformeInativo.Image = ((System.Drawing.Image)(resources.GetObject("btnInformeInativo.Image")));
+            this.btnInformeInativo.Location = new System.Drawing.Point(204, 2);
+            this.btnInformeInativo.Name = "btnInformeInativo";
+            this.btnInformeInativo.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.btnInformeInativo.Size = new System.Drawing.Size(23, 23);
+            this.btnInformeInativo.TabIndex = 2;
+            this.btnInformeInativo.UseVisualStyleBackColor = true;
+            this.btnInformeInativo.Click += new System.EventHandler(this.btnInformeInativo_Click);
+            // 
+            // btnInformeNome
+            // 
+            this.btnInformeNome.FlatAppearance.BorderSize = 0;
+            this.btnInformeNome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInformeNome.Image = ((System.Drawing.Image)(resources.GetObject("btnInformeNome.Image")));
+            this.btnInformeNome.Location = new System.Drawing.Point(452, 25);
+            this.btnInformeNome.Name = "btnInformeNome";
+            this.btnInformeNome.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.btnInformeNome.Size = new System.Drawing.Size(23, 23);
+            this.btnInformeNome.TabIndex = 3;
+            this.toolTip1.SetToolTip(this.btnInformeNome, "Informe o nome para pesquisar um jogador!");
+            this.btnInformeNome.UseVisualStyleBackColor = true;
+            this.btnInformeNome.Click += new System.EventHandler(this.btnInformeNome_Click);
+            // 
             // frmJogador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -365,13 +598,25 @@
             this.ClasseDados = this.jogador1;
             this.ClientSize = new System.Drawing.Size(683, 380);
             this.Name = "frmJogador";
-            this.Text = "frmJogador";
+            this.Text = "Cadastro de Jogadores";
+            this.ValidarGravar += new CamadaFuncao.Delegates.Delegates.PadraoValidarEventHandler(this.frmJogador_ValidarGravar);
             ((System.ComponentModel.ISupportInitialize)(this.bsoPadrao)).EndInit();
             this.tabPrincipal.ResumeLayout(false);
             this.tabPrincipal.PerformLayout();
+            this.pnlResultado.ResumeLayout(false);
+            this.pnlGrade.ResumeLayout(false);
+            this.pnlFiltro.ResumeLayout(false);
+            this.pnlFiltro.PerformLayout();
+            this.pnlPesquisar.ResumeLayout(false);
+            this.pnlPesquisar.PerformLayout();
+            this.tabPesquisa.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.tbcPadrao.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtsJogador1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgResultpesquisa)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -408,5 +653,24 @@
         private System.Windows.Forms.MaskedTextBox txtCelular2;
         private System.Windows.Forms.MaskedTextBox txtCelular1;
         private System.Windows.Forms.MaskedTextBox txtFone;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dtgResultpesquisa;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cODJOGADORDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nOMJOGADORDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dATNASCDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn oBSJOGADORDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dATCADASTRODataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dATDESATIVADODataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fONEDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cELULAR1DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn eMAILDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cELULAR2DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lGCENVIAEMAILDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lGCMENSALISTADataGridViewTextBoxColumn;
+        private System.Windows.Forms.TextBox txtNomePesquisa;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btnInformeInativo;
+        private System.Windows.Forms.Button btnInformeNome;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

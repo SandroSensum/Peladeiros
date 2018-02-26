@@ -50,5 +50,11 @@
     <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CamadaFuncao\CamadaFuncao.csproj">
+      <Project>{E32F4FB5-22CB-4B1D-BAF2-EABDD657FF59}</Project>
+      <Name>CamadaFuncao</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

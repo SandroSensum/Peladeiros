@@ -70,9 +70,11 @@ namespace CamadaComponente
 
         private void ControlaNavegacao()
         {
+            AtualizarNavegacaoComponentes ( this );
             if ( Navegacao == eModoNavegacao.navegacao )
             {
                 btnGravar.Enabled = false;
+                btnIncluir.Enabled = true;
                 btnExcluir.Enabled = false;
                 btnAlterar.Enabled = true;
                 btnGravar.Enabled = false;
@@ -91,16 +93,14 @@ namespace CamadaComponente
             {
                 btnExcluir.Enabled = false;
                 btnAlterar.Enabled = false;
+                btnIncluir.Enabled = false;
                 btnGravar.Enabled = true;
                 btnSair.Enabled = false;
                 btnCancelar.Enabled = true;
 
                 if ( tbcPadrao.TabPages.Contains ( tabPesquisa ) )
                     tbcPadrao.TabPages.Remove ( tabPesquisa );
-
-                //Colocar na aba específica e depois tirar daqui
-                //if (tbcPadrao.TabPages.Contains(tabMensalidades))
-                //    tbcPadrao.TabPages.Remove(tabMensalidades);
+                
             }
             else if ( Navegacao == eModoNavegacao.exclusao )
             {
@@ -109,6 +109,25 @@ namespace CamadaComponente
                 btnAlterar.Enabled = true;
                 btnGravar.Enabled = false;
                 btnSair.Enabled = false;
+            }
+
+        }
+
+        private void AtualizarNavegacaoComponentes( Control pControle )
+        {
+            foreach ( Control controle in pControle.Controls )
+            {
+                if ( controle is TabControl || controle is Button || controle is Panel )
+                {
+                    continue;
+                }
+                else
+                {
+                    if ( controle.Controls.Count > 0 )
+                        AtualizarNavegacaoComponentes ( controle );
+
+                    controle.Enabled = Navegacao != eModoNavegacao.navegacao;
+                }
             }
         }
 
@@ -131,7 +150,7 @@ namespace CamadaComponente
                 evento?.Invoke ();//Ponto de interrogação verifica se o evento não é n
             }
 
-            return bRetorno.HasValue ? bRetorno.Value : false;
+            return bRetorno.HasValue ? bRetorno.Value : true;
         }
 
 
@@ -147,7 +166,9 @@ namespace CamadaComponente
         private void btnIncluir_Click( object sender, EventArgs e )
         {
             Navegacao = eModoNavegacao.inclusao;
+            bsoPadrao.AddNew ();
             ControlaNavegacao ();
+            
         }
 
         private void btnCancelar_Click( object sender, EventArgs e )
@@ -190,6 +211,9 @@ namespace CamadaComponente
                 classeDados.Atualizar ( ( ( DataSet ) bsoPadrao.DataSource ).Tables[bsoPadrao.DataMember] );
 
                 ChamarEventos ( DepoisDeGravar );
+
+                Navegacao = eModoNavegacao.navegacao;
+                ControlaNavegacao ();
             }
 
             //    if (Validacao())
@@ -312,10 +336,10 @@ namespace CamadaComponente
 
         private void button1_Click( object sender, EventArgs e )
         {
-            //dsJogadores.Clear();
+            //dsJogadores.Clear(); ----
             //btnGravar.Enabled = false;
             //lblmensagem.Text = "";
-            //Jogador oJogador = new Jogador();
+            //Jogador oJogador = new Jogador();-----
             //int icodini = 0;
             //if (txtCodini.Text != "")
             //    icodini = Convert.ToInt32(txtCodini.Text);
@@ -325,5 +349,6 @@ namespace CamadaComponente
         }
 
         #endregion
+
     }
 }

@@ -108,6 +108,8 @@ namespace CamadaFuncao
             return bPossuiRegistro;
         }
 
+
+
         #endregion
     }
 }

@@ -1,9 +1,6 @@
 ﻿using CamadaComponente.Formularios;
-using CamadaFormulario.Cadastros;
+using CamadaFuncao.Cls;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MenuPeladeiros
@@ -18,16 +15,18 @@ namespace MenuPeladeiros
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new frmLogin());     
-            Application.Run ( new frm_Principal () );
+            //Application.Run(new frmLogin());  
+            //ConexaoBanco.ConfiguracaoBanco = new Configuracao ().CarregarArquivoConfiguracao ();
 
-            //frmLogin oFrmLogin = new frmLogin();
+            //Application.Run ( new frm_Principal () );
 
-            //if (oFrmLogin.ShowDialog() == DialogResult.OK)
-            //{
-            //    Application.Run(new frm_Principal());
+            frmLogin oFrmLogin = new frmLogin ();
 
-            //}
+            if ( oFrmLogin.ShowDialog () == DialogResult.OK )
+            {
+                Application.Run ( new frm_Principal () );
+                
+            }
         }
     }
 }

@@ -44,6 +44,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cls\ConexaoBanco.cs" />
+    <Compile Include="Cls\Configuracao.cs" />
     <Compile Include="Delegates\Delegates.cs" />
     <Compile Include="Enumerados.cs" />
     <Compile Include="Funcao.cs" />

@@ -1,13 +1,6 @@
 ﻿using CamadaFuncao;
-using CamadaLogica.Auxiliar;
+using CamadaFuncao.Cls;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CamadaComponente.Formularios
@@ -73,7 +66,7 @@ namespace CamadaComponente.Formularios
         {
             Configuracao oConfiguracao = new Configuracao().CarregarArquivoConfiguracao();
 
-            if (oConfiguracao != null)
+            if ( oConfiguracao != null )
             {
                 txtCaminhoBanco.Text = oConfiguracao.CaminhoBanco;
                 radLocal.Checked = oConfiguracao.Local;
@@ -81,6 +74,8 @@ namespace CamadaComponente.Formularios
                 txtSenha.Text = oConfiguracao.Senha;
                 txtServidor.Text = oConfiguracao.Servidor;
                 txtUsuario.Text = oConfiguracao.Usuario;
+
+                ConexaoBanco.ConfiguracaoBanco = oConfiguracao;
             }
         }
 

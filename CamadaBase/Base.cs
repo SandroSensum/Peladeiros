@@ -40,6 +40,11 @@ namespace CamadaBase
             oAcessoBanco.Atualizar ( pTabela );
         }
 
+        public DataTable Select (StringBuilder sql)
+        {          
+            return oAcessoBanco.Select ( sql.ToString () );
+        }
+
         #endregion
     }
 }

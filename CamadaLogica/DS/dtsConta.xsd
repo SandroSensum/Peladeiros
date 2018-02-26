@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dtsConta" targetNamespace="http://tempuri.org/dtsConta.xsd" xmlns:mstns="http://tempuri.org/dtsConta.xsd" xmlns="http://tempuri.org/dtsConta.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dtsConta" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dtsConta" msprop:Generator_UserDSName="dtsConta">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="CONTAS" msprop:Generator_TableClassName="CONTASDataTable" msprop:Generator_TableVarName="tableCONTAS" msprop:Generator_TablePropName="CONTAS" msprop:Generator_RowDeletingName="CONTASRowDeleting" msprop:Generator_RowChangingName="CONTASRowChanging" msprop:Generator_RowEvHandlerName="CONTASRowChangeEventHandler" msprop:Generator_RowDeletedName="CONTASRowDeleted" msprop:Generator_UserTableName="CONTAS" msprop:Generator_RowChangedName="CONTASRowChanged" msprop:Generator_RowEvArgName="CONTASRowChangeEvent" msprop:Generator_RowClassName="CONTASRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="COD_CONTA" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnCOD_CONTA" msprop:Generator_ColumnPropNameInRow="COD_CONTA" msprop:Generator_ColumnPropNameInTable="COD_CONTAColumn" msprop:Generator_UserColumnName="COD_CONTA" type="xs:int" />
+              <xs:element name="DES_CONTA" msprop:Generator_ColumnVarNameInTable="columnDES_CONTA" msprop:Generator_ColumnPropNameInRow="DES_CONTA" msprop:Generator_ColumnPropNameInTable="DES_CONTAColumn" msprop:Generator_UserColumnName="DES_CONTA" type="xs:string" minOccurs="0" />
+              <xs:element name="DAT_DESATIVADO" msprop:Generator_ColumnVarNameInTable="columnDAT_DESATIVADO" msprop:Generator_ColumnPropNameInRow="DAT_DESATIVADO" msprop:Generator_ColumnPropNameInTable="DAT_DESATIVADOColumn" msprop:Generator_UserColumnName="DAT_DESATIVADO" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:CONTAS" />
+      <xs:field xpath="mstns:COD_CONTA" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

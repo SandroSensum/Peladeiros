@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dtsUsuarios" targetNamespace="http://tempuri.org/dtsUsuarios.xsd" xmlns:mstns="http://tempuri.org/dtsUsuarios.xsd" xmlns="http://tempuri.org/dtsUsuarios.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dtsUsuarios" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dtsUsuarios" msprop:Generator_UserDSName="dtsUsuarios">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="USUARIOS" msprop:Generator_TableClassName="USUARIOSDataTable" msprop:Generator_TableVarName="tableUSUARIOS" msprop:Generator_TablePropName="USUARIOS" msprop:Generator_RowDeletingName="USUARIOSRowDeleting" msprop:Generator_RowChangingName="USUARIOSRowChanging" msprop:Generator_RowEvHandlerName="USUARIOSRowChangeEventHandler" msprop:Generator_RowDeletedName="USUARIOSRowDeleted" msprop:Generator_UserTableName="USUARIOS" msprop:Generator_RowChangedName="USUARIOSRowChanged" msprop:Generator_RowEvArgName="USUARIOSRowChangeEvent" msprop:Generator_RowClassName="USUARIOSRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="COD_USUARIO" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnCOD_USUARIO" msprop:Generator_ColumnPropNameInRow="COD_USUARIO" msprop:Generator_ColumnPropNameInTable="COD_USUARIOColumn" msprop:Generator_UserColumnName="COD_USUARIO" type="xs:int" />
+              <xs:element name="NOM_USUARIO" msprop:Generator_ColumnVarNameInTable="columnNOM_USUARIO" msprop:Generator_ColumnPropNameInRow="NOM_USUARIO" msprop:Generator_ColumnPropNameInTable="NOM_USUARIOColumn" msprop:Generator_UserColumnName="NOM_USUARIO" type="xs:string" minOccurs="0" />
+              <xs:element name="SENHA" msprop:Generator_ColumnVarNameInTable="columnSENHA" msprop:Generator_ColumnPropNameInRow="SENHA" msprop:Generator_ColumnPropNameInTable="SENHAColumn" msprop:Generator_UserColumnName="SENHA" type="xs:string" minOccurs="0" />
+              <xs:element name="DAT_DESATIVADO" msprop:Generator_ColumnVarNameInTable="columnDAT_DESATIVADO" msprop:Generator_ColumnPropNameInRow="DAT_DESATIVADO" msprop:Generator_ColumnPropNameInTable="DAT_DESATIVADOColumn" msprop:Generator_UserColumnName="DAT_DESATIVADO" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="IDE_USUARIO" msprop:Generator_ColumnVarNameInTable="columnIDE_USUARIO" msprop:Generator_ColumnPropNameInRow="IDE_USUARIO" msprop:Generator_ColumnPropNameInTable="IDE_USUARIOColumn" msprop:Generator_UserColumnName="IDE_USUARIO" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:USUARIOS" />
+      <xs:field xpath="mstns:COD_USUARIO" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

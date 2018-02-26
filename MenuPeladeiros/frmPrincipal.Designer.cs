@@ -30,10 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Principal));
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnAtrasos = new System.Windows.Forms.Button();
             this.btnSair = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnMensalidades = new System.Windows.Forms.Button();
             this.btJogadores = new System.Windows.Forms.Button();
             this.usuariosESenhasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.propriedadesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -50,6 +50,12 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.menCadastros = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.contasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fornecedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.despesasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.caixaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.atrasosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.caixaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -62,16 +68,16 @@
             this.panel2.Size = new System.Drawing.Size(878, 29);
             this.panel2.TabIndex = 7;
             // 
-            // button2
+            // btnAtrasos
             // 
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.Location = new System.Drawing.Point(179, 3);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(82, 81);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Atrasos";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnAtrasos.Image = ((System.Drawing.Image)(resources.GetObject("btnAtrasos.Image")));
+            this.btnAtrasos.Location = new System.Drawing.Point(179, 3);
+            this.btnAtrasos.Name = "btnAtrasos";
+            this.btnAtrasos.Size = new System.Drawing.Size(82, 81);
+            this.btnAtrasos.TabIndex = 3;
+            this.btnAtrasos.Text = "Atrasos";
+            this.btnAtrasos.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnAtrasos.UseVisualStyleBackColor = true;
             // 
             // btnSair
             // 
@@ -87,9 +93,9 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.button2);
+            this.panel1.Controls.Add(this.btnAtrasos);
             this.panel1.Controls.Add(this.btnSair);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.btnMensalidades);
             this.panel1.Controls.Add(this.btJogadores);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 24);
@@ -97,16 +103,17 @@
             this.panel1.Size = new System.Drawing.Size(878, 87);
             this.panel1.TabIndex = 6;
             // 
-            // button1
+            // btnMensalidades
             // 
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(91, 4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(82, 81);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Menaslidades";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnMensalidades.Image = ((System.Drawing.Image)(resources.GetObject("btnMensalidades.Image")));
+            this.btnMensalidades.Location = new System.Drawing.Point(91, 4);
+            this.btnMensalidades.Name = "btnMensalidades";
+            this.btnMensalidades.Size = new System.Drawing.Size(82, 81);
+            this.btnMensalidades.TabIndex = 1;
+            this.btnMensalidades.Text = "Menaslidades";
+            this.btnMensalidades.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnMensalidades.UseVisualStyleBackColor = true;
+            this.btnMensalidades.Click += new System.EventHandler(this.btnMensalidades_Click);
             // 
             // btJogadores
             // 
@@ -125,6 +132,7 @@
             this.usuariosESenhasToolStripMenuItem.Name = "usuariosESenhasToolStripMenuItem";
             this.usuariosESenhasToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.usuariosESenhasToolStripMenuItem.Text = "Usuarios e Senhas";
+            this.usuariosESenhasToolStripMenuItem.Click += new System.EventHandler(this.usuariosESenhasToolStripMenuItem_Click);
             // 
             // propriedadesToolStripMenuItem1
             // 
@@ -145,7 +153,7 @@
             // atrasosToolStripMenuItem
             // 
             this.atrasosToolStripMenuItem.Name = "atrasosToolStripMenuItem";
-            this.atrasosToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
+            this.atrasosToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.atrasosToolStripMenuItem.Text = "&Atrasos";
             // 
             // mensalidadesToolStripMenuItem
@@ -160,7 +168,9 @@
             // 
             this.relatoriosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.listaDeJogadoresToolStripMenuItem,
-            this.mensalidadesToolStripMenuItem});
+            this.mensalidadesToolStripMenuItem,
+            this.atrasosToolStripMenuItem1,
+            this.caixaToolStripMenuItem1});
             this.relatoriosToolStripMenuItem.Name = "relatoriosToolStripMenuItem";
             this.relatoriosToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
             this.relatoriosToolStripMenuItem.Text = "&Relatorios";
@@ -174,27 +184,32 @@
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(146, 22);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.toolStripMenuItem1.Text = "Valores";
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // mesesToolStripMenuItem
             // 
             this.mesesToolStripMenuItem.Name = "mesesToolStripMenuItem";
-            this.mesesToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.mesesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.mesesToolStripMenuItem.Text = "Meses";
+            this.mesesToolStripMenuItem.Click += new System.EventHandler(this.mesesToolStripMenuItem_Click);
             // 
             // menMensalidades
             // 
             this.menMensalidades.Name = "menMensalidades";
-            this.menMensalidades.Size = new System.Drawing.Size(146, 22);
+            this.menMensalidades.Size = new System.Drawing.Size(152, 22);
             this.menMensalidades.Text = "&Mensalidades";
+            this.menMensalidades.Click += new System.EventHandler(this.menMensalidades_Click);
             // 
             // financeiroToolStripMenuItem
             // 
             this.financeiroToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menMensalidades,
+            this.despesasToolStripMenuItem,
             this.mesesToolStripMenuItem,
-            this.toolStripMenuItem1});
+            this.toolStripMenuItem1,
+            this.caixaToolStripMenuItem});
             this.financeiroToolStripMenuItem.Name = "financeiroToolStripMenuItem";
             this.financeiroToolStripMenuItem.Size = new System.Drawing.Size(74, 20);
             this.financeiroToolStripMenuItem.Text = "Financeiro";
@@ -202,19 +217,21 @@
             // menJogadores
             // 
             this.menJogadores.Name = "menJogadores";
-            this.menJogadores.Size = new System.Drawing.Size(127, 22);
+            this.menJogadores.Size = new System.Drawing.Size(152, 22);
             this.menJogadores.Text = "&Jogadores";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(124, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
             // 
             // menCadastros
             // 
             this.menCadastros.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripSeparator1,
-            this.menJogadores});
+            this.menJogadores,
+            this.contasToolStripMenuItem,
+            this.fornecedoresToolStripMenuItem});
             this.menCadastros.Name = "menCadastros";
             this.menCadastros.Size = new System.Drawing.Size(71, 20);
             this.menCadastros.Text = "&Cadastros";
@@ -231,6 +248,46 @@
             this.menuStrip1.Size = new System.Drawing.Size(878, 24);
             this.menuStrip1.TabIndex = 5;
             this.menuStrip1.Text = "menuStrip1";
+            // 
+            // contasToolStripMenuItem
+            // 
+            this.contasToolStripMenuItem.Name = "contasToolStripMenuItem";
+            this.contasToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.contasToolStripMenuItem.Text = "Contas";
+            this.contasToolStripMenuItem.Click += new System.EventHandler(this.contasToolStripMenuItem_Click);
+            // 
+            // fornecedoresToolStripMenuItem
+            // 
+            this.fornecedoresToolStripMenuItem.Name = "fornecedoresToolStripMenuItem";
+            this.fornecedoresToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.fornecedoresToolStripMenuItem.Text = "Fornecedores";
+            this.fornecedoresToolStripMenuItem.Click += new System.EventHandler(this.fornecedoresToolStripMenuItem_Click);
+            // 
+            // despesasToolStripMenuItem
+            // 
+            this.despesasToolStripMenuItem.Name = "despesasToolStripMenuItem";
+            this.despesasToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.despesasToolStripMenuItem.Text = "Despesas";
+            this.despesasToolStripMenuItem.Click += new System.EventHandler(this.despesasToolStripMenuItem_Click);
+            // 
+            // caixaToolStripMenuItem
+            // 
+            this.caixaToolStripMenuItem.Name = "caixaToolStripMenuItem";
+            this.caixaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.caixaToolStripMenuItem.Text = "Caixa";
+            this.caixaToolStripMenuItem.Click += new System.EventHandler(this.caixaToolStripMenuItem_Click);
+            // 
+            // atrasosToolStripMenuItem1
+            // 
+            this.atrasosToolStripMenuItem1.Name = "atrasosToolStripMenuItem1";
+            this.atrasosToolStripMenuItem1.Size = new System.Drawing.Size(170, 22);
+            this.atrasosToolStripMenuItem1.Text = "Pagamentos";
+            // 
+            // caixaToolStripMenuItem1
+            // 
+            this.caixaToolStripMenuItem1.Name = "caixaToolStripMenuItem1";
+            this.caixaToolStripMenuItem1.Size = new System.Drawing.Size(170, 22);
+            this.caixaToolStripMenuItem1.Text = "Caixa";
             // 
             // frm_Principal
             // 
@@ -255,10 +312,10 @@
         #endregion
 
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnAtrasos;
         private System.Windows.Forms.Button btnSair;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnMensalidades;
         private System.Windows.Forms.Button btJogadores;
         private System.Windows.Forms.ToolStripMenuItem usuariosESenhasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem propriedadesToolStripMenuItem1;
@@ -275,6 +332,12 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem menCadastros;
         private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem atrasosToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem caixaToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem despesasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem caixaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem contasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem fornecedoresToolStripMenuItem;
     }
 }
 

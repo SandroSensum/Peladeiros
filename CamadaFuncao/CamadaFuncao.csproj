@@ -44,11 +44,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Cls\ConexaoBanco.cs" />
-    <Compile Include="Cls\Configuracao.cs" />
+    <Compile Include="Classes\ConexaoBanco.cs" />
+    <Compile Include="Classes\Configuracao.cs" />
+    <Compile Include="Classes\Propriedades.cs" />
     <Compile Include="Delegates\Delegates.cs" />
     <Compile Include="Enumerados.cs" />
     <Compile Include="Funcao.cs" />
+    <Compile Include="Interface\IComponente.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

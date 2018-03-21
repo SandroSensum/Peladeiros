@@ -58,7 +58,6 @@
             this.pnlFiltro.SuspendLayout();
             this.pnlPesquisar.SuspendLayout();
             this.tabPesquisa.SuspendLayout();
-            this.panel3.SuspendLayout();
             this.tbcPadrao.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtsUsuarios1)).BeginInit();
@@ -114,10 +113,6 @@
             // tabPesquisa
             // 
             this.tabPesquisa.Size = new System.Drawing.Size(519, 196);
-            // 
-            // panel3
-            // 
-            this.panel3.Size = new System.Drawing.Size(527, 222);
             // 
             // tbcPadrao
             // 
@@ -337,7 +332,6 @@
             this.pnlPesquisar.ResumeLayout(false);
             this.pnlPesquisar.PerformLayout();
             this.tabPesquisa.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
             this.tbcPadrao.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

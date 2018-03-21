@@ -1,5 +1,7 @@
 ﻿using CamadaBase;
 using CamadaFuncao;
+using CamadaFuncao.Classes;
+using CamadaFuncao.Interface;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -64,7 +66,7 @@ namespace CamadaComponente
         {
             InitializeComponent ();
             lblMensagem.Text = "";
-            lblUsuario.Text = "Pedrinho";
+            lblUsuario.Text = Propriedades.UsuarioLogado;
             lblDataHora.Text = DateTime.Now.ToString ( "dd/MM/yyyy HH:mm:ss" );
         }
 
@@ -117,17 +119,11 @@ namespace CamadaComponente
         {
             foreach ( Control controle in pControle.Controls )
             {
-                if ( controle is TabControl || controle is Button || controle is Panel )
-                {
-                    continue;
-                }
-                else
-                {
-                    if ( controle.Controls.Count > 0 )
-                        AtualizarNavegacaoComponentes ( controle );
+                if ( controle.Controls.Count > 0 )
+                    AtualizarNavegacaoComponentes ( controle );
 
-                    controle.Enabled = Navegacao != eModoNavegacao.navegacao;
-                }
+                if ( controle is IComponente )
+                    ( ( IComponente ) controle ).AtualizarNavegacao ( Navegacao );
             }
         }
 
@@ -349,6 +345,7 @@ namespace CamadaComponente
         }
 
         #endregion
+
 
     }
 }

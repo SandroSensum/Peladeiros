@@ -62,6 +62,9 @@ namespace CamadaBanco
             {
                 if (!coluna.ColumnName.StartsWith("LKP_"))
                 {
+                    if (coluna.ColumnName == "DAT_CADASTRO" )
+                        linha[coluna] = DateTime.Now;
+                    
                     Colunas.Append(coluna.ColumnName).Append(",");
                     oParametro = new FbParameter("@" + coluna.ColumnName, linha[coluna]);
                     oComando.Parameters.Add("@" + coluna.ColumnName, linha[coluna]);

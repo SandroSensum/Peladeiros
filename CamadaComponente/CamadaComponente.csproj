@@ -42,6 +42,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Componentes\ComponentePadrao.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Componentes\cpAtivoInativo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Componentes\cpAtivoInativo.Designer.cs">
+      <DependentUpon>cpAtivoInativo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\frmConexaoBanco.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,6 +77,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Componentes\cpAtivoInativo.resx">
+      <DependentUpon>cpAtivoInativo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmConexaoBanco.resx">
       <DependentUpon>frmConexaoBanco.cs</DependentUpon>
     </EmbeddedResource>
@@ -82,9 +94,7 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Componentes\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\CamadaBase\CamadaBase.csproj">
       <Project>{7CA4F545-3100-4272-AA3C-DF6CADDCC439}</Project>

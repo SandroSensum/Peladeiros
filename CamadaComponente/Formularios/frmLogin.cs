@@ -1,4 +1,6 @@
-﻿using CamadaFuncao.Cls;
+﻿using CamadaFuncao.Classes;
+using CamadaFuncao.Cls;
+using CamadaLogica.Classes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,6 +15,9 @@ namespace CamadaComponente.Formularios
 {
     public partial class frmLogin : Form
     {
+        Configuracao oConfiguracao = null;
+        Usuario oUsuario = new Usuario ();
+
         public frmLogin()
         {
             InitializeComponent();
@@ -20,7 +25,16 @@ namespace CamadaComponente.Formularios
 
         private void frmLogin_Load(object sender, EventArgs e)
         {
+            oConfiguracao = new Configuracao ().CarregarArquivoConfiguracao ();
 
+            frmConexaoBanco oFrmConexao = null;
+
+            if ( oConfiguracao == null )
+                oFrmConexao.ShowDialog ();
+            else
+            {
+                ConexaoBanco.ConfiguracaoBanco = oConfiguracao;
+            }
         }
 
         private void btnConfigurar_Click(object sender, EventArgs e)
@@ -33,21 +47,22 @@ namespace CamadaComponente.Formularios
         {
             if (txtUsuario.Text.ToUpper() == "ADMIN" && txtSenha.Text.ToUpper() == "ADMIN")
             {
-                Configuracao oConfiguracao = new Configuracao ().CarregarArquivoConfiguracao ();
-
-                frmConexaoBanco oFrmConexao = null;
-
-
-                if ( oConfiguracao == null )
-                    oFrmConexao.ShowDialog ();
-                else
-                {
-                    ConexaoBanco.ConfiguracaoBanco = oConfiguracao;
-                    DialogResult = DialogResult.OK;
-                }
+                DialogResult = DialogResult.OK;
             }
             else
-                MessageBox.Show("Usuario ou senha invalidos");
+            {
+                if ( oUsuario.VerificaUsuarioSenha ( txtUsuario.Text, txtSenha.Text ) )
+                {
+                    Propriedades.UsuarioLogado = txtUsuario.Text;
+                    DialogResult = DialogResult.OK;
+                }
+                else
+                {
+                    MessageBox.Show ( "senha invalida" );
+                    txtSenha.Clear ();
+                    txtSenha.Focus ();
+                }
+            }
         }       
         
 
@@ -60,6 +75,19 @@ namespace CamadaComponente.Formularios
         {
             if ( e.KeyCode == Keys.Enter )
                 btnAcessar.PerformClick ();
+        }
+
+        private void txtUsuario_Leave( object sender, EventArgs e )
+        {
+            if ( txtUsuario.Text.ToUpper () != "ADMIN" )
+            {
+                if ( !oUsuario.VerificaUsuario ( txtUsuario.Text ) )
+                {
+                    txtUsuario.Clear ();
+                    txtUsuario.Focus ();
+                }
+            }
+               
         }
     }
 }

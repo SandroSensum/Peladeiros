@@ -49,7 +49,6 @@
             this.pnlGrade.SuspendLayout();
             this.pnlPesquisar.SuspendLayout();
             this.tabPesquisa.SuspendLayout();
-            this.panel3.SuspendLayout();
             this.tbcPadrao.SuspendLayout();
             this.gpAtivo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgPesquisaConta)).BeginInit();
@@ -97,10 +96,6 @@
             // tabPesquisa
             // 
             this.tabPesquisa.Size = new System.Drawing.Size(560, 195);
-            // 
-            // panel3
-            // 
-            this.panel3.Size = new System.Drawing.Size(568, 221);
             // 
             // tbcPadrao
             // 
@@ -255,7 +250,6 @@
             this.pnlPesquisar.ResumeLayout(false);
             this.pnlPesquisar.PerformLayout();
             this.tabPesquisa.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
             this.tbcPadrao.ResumeLayout(false);
             this.gpAtivo.ResumeLayout(false);
             this.gpAtivo.PerformLayout();

@@ -45,7 +45,6 @@
             this.pnlFiltro.SuspendLayout();
             this.pnlPesquisar.SuspendLayout();
             this.tabPesquisa.SuspendLayout();
-            this.panel3.SuspendLayout();
             this.tbcPadrao.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtsFornecedor1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -62,7 +61,6 @@
             this.tabPrincipal.Controls.Add(this.txtCodigo);
             this.tabPrincipal.Controls.Add(this.label2);
             this.tabPrincipal.Controls.Add(this.txtNome);
-            this.tabPrincipal.Size = new System.Drawing.Size(507, 211);
             // 
             // pnlResultado
             // 
@@ -92,13 +90,13 @@
             // 
             this.tabPesquisa.Size = new System.Drawing.Size(507, 211);
             // 
-            // panel3
-            // 
-            this.panel3.Size = new System.Drawing.Size(515, 237);
-            // 
             // tbcPadrao
             // 
             this.tbcPadrao.Size = new System.Drawing.Size(515, 237);
+            // 
+            // ckAtivos
+            // 
+            this.ckAtivos.Visible = false;
             // 
             // label1
             // 
@@ -200,7 +198,6 @@
             this.pnlPesquisar.ResumeLayout(false);
             this.pnlPesquisar.PerformLayout();
             this.tabPesquisa.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
             this.tbcPadrao.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtsFornecedor1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

@@ -1,4 +1,4 @@
-﻿namespace CamadaLogica.DS
+﻿namespace AEE.CamadaLogica.DS
 {
 
 

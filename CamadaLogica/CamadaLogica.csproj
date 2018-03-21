@@ -55,6 +55,9 @@
     <Compile Include="Classes\Usuario.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Classes\Valor.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="DS\dtsConta.cs">
       <DependentUpon>dtsConta.xsd</DependentUpon>
     </Compile>
@@ -91,6 +94,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dtsUsuarios.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DS\dtsValor.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dtsValor.xsd</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -150,6 +158,17 @@
     </None>
     <None Include="DS\dtsUsuarios.xss">
       <DependentUpon>dtsUsuarios.xsd</DependentUpon>
+    </None>
+    <None Include="DS\dtsValor.xsc">
+      <DependentUpon>dtsValor.xsd</DependentUpon>
+    </None>
+    <None Include="DS\dtsValor.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dtsValor.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS\dtsValor.xss">
+      <DependentUpon>dtsValor.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

@@ -45,6 +45,7 @@ namespace CamadaFormulario.Cadastros
         private void dtgResultpesquisa_DoubleClick( object sender, EventArgs e )
         {
             tbcPadrao.SelectedTab = tabPrincipal;
+            cpAtivoInativo1.VerificarAtivoInativo ();
         }
 
         private void btnInformeNome_Click( object sender, EventArgs e )
@@ -68,5 +69,6 @@ namespace CamadaFormulario.Cadastros
             if ( e.KeyCode == Keys.Enter )
                 btnPesquisar.PerformClick ();
         }
+
     }
 }

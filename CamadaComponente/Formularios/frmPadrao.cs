@@ -198,6 +198,7 @@ namespace CamadaComponente
             else
             {
                 MessageBox.Show ( "Não há registros selecionados para alteração.", "Peladeiros", MessageBoxButtons.OK, MessageBoxIcon.Exclamation );
+                //teste
             }
         }
 

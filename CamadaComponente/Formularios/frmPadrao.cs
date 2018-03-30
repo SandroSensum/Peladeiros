@@ -219,15 +219,13 @@ namespace CamadaComponente
         }
         private void btnExcluir_Click( object sender, EventArgs e )
         {
-            //if ( Funcao.PossuiRegistro ( bsoPadrao ) )
-            //{
-            //    Navegacao = eModoNavegacao.exclusao;
-            //    bsoPadrao.RemoveCurrent ();
-            //    ControlaNavegacao ();
-            //    if ( MessageBox.Show ( "O jogador será inativado. Deseja continuar?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question ) == DialogResult.Yes ) ;
-            //}
+            if ( Funcao.PossuiRegistro ( bsoPadrao ) )
+                Navegacao = eModoNavegacao.exclusao;
+            bsoPadrao.RemoveCurrent ();
+            ControlaNavegacao ();
+            if ( MessageBox.Show ( "O registro será excluido. Deseja continuar?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question ) == DialogResult.Yes ) ;
         }
-
+    
         #endregion
 
     }

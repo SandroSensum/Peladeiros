@@ -1,4 +1,5 @@
 ﻿using CamadaBase;
+using CamadaComponente.Componentes;
 using CamadaFuncao;
 using CamadaFuncao.Classes;
 using CamadaFuncao.Interface;
@@ -84,8 +85,12 @@ namespace CamadaComponente
                 btnSair.Enabled = true;
 
                 if ( !tbcPadrao.TabPages.Contains ( tabPesquisa ) )
+                {
+                    tbcPadrao.TabPages.Remove ( tabPrincipal );
                     tbcPadrao.TabPages.Add ( tabPesquisa );
-
+                    tbcPadrao.TabPages.Add ( tabPrincipal );
+                    tbcPadrao.SelectedTab = tabPrincipal;
+                }
                 //Colocar na aba específica e depois tirar daqui
                 //if (!tbcPadrao.TabPages.Contains(tabMensalidades))
                 //    tbcPadrao.TabPages.Add(tabMensalidades);
@@ -211,141 +216,19 @@ namespace CamadaComponente
                 Navegacao = eModoNavegacao.navegacao;
                 ControlaNavegacao ();
             }
-
-            //    if (Validacao())
-            //        try
-            //        {
-            //            if (rbInativo.Checked)
-            //            {
-            //                txtDesativado.Text = DateTime.Now.ToString();
-            //                lblmensagem.Text = "Jogador Inativado com sucesso";
-            //                lblmensagem.ForeColor = Color.Red;
-            //            }
-            //            else
-            //            {
-            //                txtDesativado.Text = "";
-            //                lblmensagem.Text = "Dados gravados com sucesso";
-            //                lblmensagem.ForeColor = Color.Green;
-            //            }
-            //            Acesso_Banco oBanco = new Acesso_Banco();
-            //            Jogador oJogador = new Jogador();
-
-            //            bsoJogador.EndEdit();
-            //            bsoEmail.EndEdit();
-            //            bsoTelefone.EndEdit();
-
-            //            oBanco.Atualizar(dsJogadores.Jogador.GetChanges());
-
-            //            int iCodJogadorAtual = 0;
-
-            //            if (Navegacao == Enumerado.enavegacao.Inclusao)
-            //            {
-            //                iCodJogadorAtual = oJogador.BuscarCodigoUltimoJogador();
-            //            }
-            //            else
-            //            {
-            //                iCodJogadorAtual = Convert.ToInt32(txtCodigo.Text);
-            //            }
-
-            //            foreach (DataRowView drwTelefone in bsoTelefone)
-            //            {
-            //                ((DataRowView)bsoTelefone.Current)["COD_JOGADOR"] = iCodJogadorAtual;
-            //                oBanco.Atualizar(dsJogadores.Telefone.GetChanges());
-            //            }
-
-            //            foreach (DataRowView drwEmail in bsoEmail)
-            //            {
-            //                ((DataRowView)bsoEmail.Current)["COD_JOGADOR"] = iCodJogadorAtual;
-            //                oBanco.Atualizar(dsJogadores.Email.GetChanges());
-            //            }
-
-            //            if (dsJogadores.Telefone.AsEnumerable().Where(item => item.RowState == DataRowState.Deleted).Count() > 0)
-            //                oBanco.Atualizar(dsJogadores.Telefone.GetChanges());
-
-            //            if (dsJogadores.Email.AsEnumerable().Where(item => item.RowState == DataRowState.Deleted).Count() > 0)
-            //                oBanco.Atualizar(dsJogadores.Email.GetChanges());
-
-            //            dsJogadores.Jogador.Clear();
-            //            int iCodJogador = oJogador.BuscarCodigoUltimoJogador();
-            //            dsJogadores.Jogador.Merge(oJogador.BuscarJogador(iCodJogador));
-
-            //        }
-            //        catch (Exception ex)
-            //        {
-            //            lblmensagem.Text = "Anomalia: " + ex.Message;
-            //            lblmensagem.ForeColor = Color.Red;
-            //        }
-            //    Navegacao = Enumerado.enavegacao.Navegacao;
-            //ControlaNavegacao();
-            //    btnAlterar.Enabled = true;
-            //}
-            //private bool Validacao()
-            //{
-            //    string msnvalida = "";
-            //    if (txtNome.Text == "")
-            //        msnvalida = "Campo Nome não pode ser nulo";
-            //    if (msnvalida != "")
-            //        MessageBox.Show(msnvalida);
-            //    return msnvalida == "";
         }
         private void btnExcluir_Click( object sender, EventArgs e )
         {
+            //if ( Funcao.PossuiRegistro ( bsoPadrao ) )
             //{
-            //    if (rbInativo.Checked)
-            //    {
-            //        if (MessageBox.Show("O jogador já está inativo. Operação cancelada", "Confirmação", MessageBoxButtons.OK, MessageBoxIcon.Question) == DialogResult.OK) ;
-
-            //    }
-            //    else
-
-            //    if (MessageBox.Show("O jogador será inativado. Deseja continuar?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            //    {
-            //        if (Validacao())
-            //        {
-            //            try
-            //            {
-            //                rbInativo.Checked = true;
-            //                ((DataRowView)bsoJogador.Current)["ATIVO"] = 'I';
-
-            //                Acesso_Banco oBanco = new Acesso_Banco();
-            //                bsoJogador.EndEdit();
-            //                bsoEmail.EndEdit();
-            //                bsoTelefone.EndEdit();
-            //                oBanco.Atualizar(dsJogadores.Jogador.GetChanges());
-            //                oBanco.Atualizar(dsJogadores.Email.GetChanges());
-            //                oBanco.Atualizar(dsJogadores.Telefone.GetChanges());
-            //                lblmensagem.Text = "Jogador inativado com sucesso";
-            //                lblmensagem.ForeColor = Color.Red;
-            //            }
-            //            catch (Exception ex)
-            //            {
-            //                lblmensagem.Text = "Anomalia: " + ex.Message;
-            //                lblmensagem.ForeColor = Color.Red;
-            //            }
-            //            rbInativo.Checked = true;
-            //        }
-            //        Navegacao = Enumerado.enavegacao.Navegacao;
-            //        //ControlaNavegacao();
-            //    }
+            //    Navegacao = eModoNavegacao.exclusao;
+            //    bsoPadrao.RemoveCurrent ();
+            //    ControlaNavegacao ();
+            //    if ( MessageBox.Show ( "O jogador será inativado. Deseja continuar?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question ) == DialogResult.Yes ) ;
             //}
         }
 
-        private void button1_Click( object sender, EventArgs e )
-        {
-            //dsJogadores.Clear(); ----
-            //btnGravar.Enabled = false;
-            //lblmensagem.Text = "";
-            //Jogador oJogador = new Jogador();-----
-            //int icodini = 0;
-            //if (txtCodini.Text != "")
-            //    icodini = Convert.ToInt32(txtCodini.Text);
-            //int icodfim = 0;
-            //if (txtCodFim.Text != "")
-            //    icodfim = Convert.ToInt32(txtCodFim.Text);
-        }
-
         #endregion
-
 
     }
 }

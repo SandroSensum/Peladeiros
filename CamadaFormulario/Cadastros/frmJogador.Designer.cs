@@ -51,27 +51,27 @@
             this.btnInformeInativo = new System.Windows.Forms.Button();
             this.btnInformeNome = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.txtNasc = new System.Windows.Forms.MaskedTextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txtNome = new CamadaComponente.Componentes.scTextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtCodigo = new CamadaComponente.Componentes.scTextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtObs = new CamadaComponente.Componentes.scTextBox();
-            this.txtCadastro = new System.Windows.Forms.MaskedTextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.lblFone = new System.Windows.Forms.Label();
-            this.lblCelular1 = new System.Windows.Forms.Label();
-            this.lblCelular2 = new System.Windows.Forms.Label();
-            this.txtFone = new System.Windows.Forms.MaskedTextBox();
-            this.txtCelular1 = new System.Windows.Forms.MaskedTextBox();
-            this.txtCelular2 = new System.Windows.Forms.MaskedTextBox();
-            this.txtEmail = new CamadaComponente.Componentes.scTextBox();
-            this.lblEmail = new System.Windows.Forms.Label();
-            this.ckEnviaEmail = new System.Windows.Forms.CheckBox();
-            this.ckMensalista = new System.Windows.Forms.CheckBox();
+            this.picFoto = new System.Windows.Forms.PictureBox();
             this.cpAtivoInativo1 = new CamadaComponente.Componentes.cpAtivoInativo();
+            this.lblObs = new System.Windows.Forms.Label();
+            this.txtObs = new System.Windows.Forms.TextBox();
+            this.lblAnos = new System.Windows.Forms.Label();
+            this.lblIdade = new System.Windows.Forms.Label();
+            this.txtIdade = new System.Windows.Forms.TextBox();
+            this.txtCel2 = new System.Windows.Forms.MaskedTextBox();
+            this.lblCel2 = new System.Windows.Forms.Label();
+            this.txtCel1 = new System.Windows.Forms.MaskedTextBox();
+            this.lblCel1 = new System.Windows.Forms.Label();
+            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
+            this.txtDatNascimento = new System.Windows.Forms.MaskedTextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblDatCadastro = new System.Windows.Forms.Label();
+            this.lblEmail = new System.Windows.Forms.Label();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.lblCodigo = new System.Windows.Forms.Label();
+            this.txtCodigo = new System.Windows.Forms.TextBox();
+            this.lblNome = new System.Windows.Forms.Label();
+            this.txtNome = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.bsoPadrao)).BeginInit();
             this.tabPrincipal.SuspendLayout();
             this.pnlResultado.SuspendLayout();
@@ -80,10 +80,11 @@
             this.pnlPesquisar.SuspendLayout();
             this.tabPesquisa.SuspendLayout();
             this.tbcPadrao.SuspendLayout();
-            this.panelBase.SuspendLayout();
+            this.pnlBase.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtsJogador1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgResultpesquisa)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picFoto)).BeginInit();
             this.SuspendLayout();
             // 
             // bsoPadrao
@@ -93,13 +94,13 @@
             // 
             // tabPrincipal
             // 
-            this.tabPrincipal.Size = new System.Drawing.Size(675, 292);
+            this.tabPrincipal.Size = new System.Drawing.Size(616, 292);
             // 
             // pnlResultado
             // 
             this.pnlResultado.Controls.Add(this.dataGridView1);
             this.pnlResultado.Location = new System.Drawing.Point(3, 63);
-            this.pnlResultado.Size = new System.Drawing.Size(669, 226);
+            this.pnlResultado.Size = new System.Drawing.Size(610, 226);
             this.pnlResultado.Controls.SetChildIndex(this.pnlPesquisar, 0);
             this.pnlResultado.Controls.SetChildIndex(this.dataGridView1, 0);
             this.pnlResultado.Controls.SetChildIndex(this.pnlGrade, 0);
@@ -107,19 +108,19 @@
             // pnlGrade
             // 
             this.pnlGrade.Controls.Add(this.dtgResultpesquisa);
-            this.pnlGrade.Size = new System.Drawing.Size(669, 199);
+            this.pnlGrade.Size = new System.Drawing.Size(610, 199);
             // 
             // pnlFiltro
             // 
             this.pnlFiltro.Controls.Add(this.btnInformeNome);
             this.pnlFiltro.Controls.Add(this.txtNomePesquisa);
             this.pnlFiltro.Controls.Add(this.label5);
-            this.pnlFiltro.Size = new System.Drawing.Size(669, 60);
+            this.pnlFiltro.Size = new System.Drawing.Size(610, 60);
             // 
             // pnlPesquisar
             // 
             this.pnlPesquisar.Controls.Add(this.btnInformeInativo);
-            this.pnlPesquisar.Size = new System.Drawing.Size(669, 27);
+            this.pnlPesquisar.Size = new System.Drawing.Size(610, 27);
             this.pnlPesquisar.Controls.SetChildIndex(this.btnPesquisar, 0);
             this.pnlPesquisar.Controls.SetChildIndex(this.ckAtivos, 0);
             this.pnlPesquisar.Controls.SetChildIndex(this.btnInformeInativo, 0);
@@ -131,40 +132,40 @@
             // 
             // tabPesquisa
             // 
-            this.tabPesquisa.Size = new System.Drawing.Size(675, 292);
+            this.tabPesquisa.Size = new System.Drawing.Size(616, 292);
             // 
             // tbcPadrao
             // 
-            this.tbcPadrao.Size = new System.Drawing.Size(683, 318);
+            this.tbcPadrao.Size = new System.Drawing.Size(624, 318);
             // 
             // ckAtivos
             // 
             this.ckAtivos.TabIndex = 1;
             // 
-            // panelBase
+            // pnlBase
             // 
-            this.panelBase.Controls.Add(this.cpAtivoInativo1);
-            this.panelBase.Controls.Add(this.ckMensalista);
-            this.panelBase.Controls.Add(this.ckEnviaEmail);
-            this.panelBase.Controls.Add(this.lblEmail);
-            this.panelBase.Controls.Add(this.txtEmail);
-            this.panelBase.Controls.Add(this.txtCelular2);
-            this.panelBase.Controls.Add(this.txtCelular1);
-            this.panelBase.Controls.Add(this.txtFone);
-            this.panelBase.Controls.Add(this.lblCelular2);
-            this.panelBase.Controls.Add(this.lblCelular1);
-            this.panelBase.Controls.Add(this.lblFone);
-            this.panelBase.Controls.Add(this.label9);
-            this.panelBase.Controls.Add(this.txtCadastro);
-            this.panelBase.Controls.Add(this.txtObs);
-            this.panelBase.Controls.Add(this.label1);
-            this.panelBase.Controls.Add(this.txtCodigo);
-            this.panelBase.Controls.Add(this.label2);
-            this.panelBase.Controls.Add(this.txtNome);
-            this.panelBase.Controls.Add(this.label7);
-            this.panelBase.Controls.Add(this.label4);
-            this.panelBase.Controls.Add(this.txtNasc);
-            this.panelBase.Size = new System.Drawing.Size(669, 286);
+            this.pnlBase.Controls.Add(this.picFoto);
+            this.pnlBase.Controls.Add(this.cpAtivoInativo1);
+            this.pnlBase.Controls.Add(this.lblObs);
+            this.pnlBase.Controls.Add(this.txtObs);
+            this.pnlBase.Controls.Add(this.lblAnos);
+            this.pnlBase.Controls.Add(this.lblIdade);
+            this.pnlBase.Controls.Add(this.txtIdade);
+            this.pnlBase.Controls.Add(this.txtCel2);
+            this.pnlBase.Controls.Add(this.lblCel2);
+            this.pnlBase.Controls.Add(this.txtCel1);
+            this.pnlBase.Controls.Add(this.lblCel1);
+            this.pnlBase.Controls.Add(this.maskedTextBox2);
+            this.pnlBase.Controls.Add(this.txtDatNascimento);
+            this.pnlBase.Controls.Add(this.label1);
+            this.pnlBase.Controls.Add(this.lblDatCadastro);
+            this.pnlBase.Controls.Add(this.lblEmail);
+            this.pnlBase.Controls.Add(this.txtEmail);
+            this.pnlBase.Controls.Add(this.lblCodigo);
+            this.pnlBase.Controls.Add(this.txtCodigo);
+            this.pnlBase.Controls.Add(this.lblNome);
+            this.pnlBase.Controls.Add(this.txtNome);
+            this.pnlBase.Size = new System.Drawing.Size(610, 286);
             // 
             // dtsJogador1
             // 
@@ -202,7 +203,7 @@
             this.dtgResultpesquisa.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgResultpesquisa.Location = new System.Drawing.Point(0, 0);
             this.dtgResultpesquisa.Name = "dtgResultpesquisa";
-            this.dtgResultpesquisa.Size = new System.Drawing.Size(669, 199);
+            this.dtgResultpesquisa.Size = new System.Drawing.Size(610, 199);
             this.dtgResultpesquisa.TabIndex = 0;
             this.dtgResultpesquisa.DoubleClick += new System.EventHandler(this.dtgResultpesquisa_DoubleClick);
             // 
@@ -323,209 +324,206 @@
             this.btnInformeNome.UseVisualStyleBackColor = true;
             this.btnInformeNome.Click += new System.EventHandler(this.btnInformeNome_Click);
             // 
-            // txtNasc
+            // picFoto
             // 
-            this.txtNasc.AllowPromptAsInput = false;
-            this.txtNasc.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsoPadrao, "DAT_NASC", true));
-            this.txtNasc.Location = new System.Drawing.Point(424, 73);
-            this.txtNasc.Mask = "00/00/0000";
-            this.txtNasc.Name = "txtNasc";
-            this.txtNasc.Size = new System.Drawing.Size(84, 20);
-            this.txtNasc.TabIndex = 58;
-            this.txtNasc.ValidatingType = typeof(System.DateTime);
+            this.picFoto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.picFoto.Location = new System.Drawing.Point(482, 22);
+            this.picFoto.Name = "picFoto";
+            this.picFoto.Size = new System.Drawing.Size(119, 142);
+            this.picFoto.TabIndex = 155;
+            this.picFoto.TabStop = false;
             // 
-            // label4
+            // cpAtivoInativo1
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(421, 57);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(32, 13);
-            this.label4.TabIndex = 70;
-            this.label4.Text = "Nasc";
+            this.cpAtivoInativo1.bsoAtivoInativo = this.bsoPadrao;
+            this.cpAtivoInativo1.Location = new System.Drawing.Point(376, 57);
+            this.cpAtivoInativo1.Name = "cpAtivoInativo1";
+            this.cpAtivoInativo1.NomeCampo = "DAT_DESATIVADO";
+            this.cpAtivoInativo1.Size = new System.Drawing.Size(100, 107);
+            this.cpAtivoInativo1.TabIndex = 154;
             // 
-            // label7
+            // lblObs
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(12, 184);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(29, 13);
-            this.label7.TabIndex = 69;
-            this.label7.Text = "OBS";
-            // 
-            // txtNome
-            // 
-            this.txtNome.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtNome.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsoPadrao, "NOM_JOGADOR", true));
-            this.txtNome.Location = new System.Drawing.Point(12, 73);
-            this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(388, 20);
-            this.txtNome.TabIndex = 57;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 57);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
-            this.label2.TabIndex = 68;
-            this.label2.Text = "Nome";
-            // 
-            // txtCodigo
-            // 
-            this.txtCodigo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsoPadrao, "COD_JOGADOR", true));
-            this.txtCodigo.Enabled = false;
-            this.txtCodigo.Location = new System.Drawing.Point(12, 30);
-            this.txtCodigo.Name = "txtCodigo";
-            this.txtCodigo.ReadOnly = true;
-            this.txtCodigo.Size = new System.Drawing.Size(70, 20);
-            this.txtCodigo.TabIndex = 67;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 14);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(40, 13);
-            this.label1.TabIndex = 66;
-            this.label1.Text = "Código";
+            this.lblObs.AutoSize = true;
+            this.lblObs.Location = new System.Drawing.Point(12, 182);
+            this.lblObs.Name = "lblObs";
+            this.lblObs.Size = new System.Drawing.Size(70, 13);
+            this.lblObs.TabIndex = 153;
+            this.lblObs.Text = "Observações";
             // 
             // txtObs
             // 
             this.txtObs.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsoPadrao, "OBS_JOGADOR", true));
-            this.txtObs.Location = new System.Drawing.Point(12, 200);
+            this.txtObs.Location = new System.Drawing.Point(12, 198);
             this.txtObs.Multiline = true;
             this.txtObs.Name = "txtObs";
-            this.txtObs.Size = new System.Drawing.Size(496, 73);
-            this.txtObs.TabIndex = 63;
+            this.txtObs.Size = new System.Drawing.Size(589, 67);
+            this.txtObs.TabIndex = 152;
             // 
-            // txtCadastro
+            // lblAnos
             // 
-            this.txtCadastro.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsoPadrao, "DAT_CADASTRO", true));
-            this.txtCadastro.Location = new System.Drawing.Point(91, 30);
-            this.txtCadastro.Mask = "00/00/0000";
-            this.txtCadastro.Name = "txtCadastro";
-            this.txtCadastro.ReadOnly = true;
-            this.txtCadastro.Size = new System.Drawing.Size(84, 20);
-            this.txtCadastro.TabIndex = 71;
-            this.txtCadastro.ValidatingType = typeof(System.DateTime);
+            this.lblAnos.AutoSize = true;
+            this.lblAnos.Location = new System.Drawing.Point(142, 123);
+            this.lblAnos.Name = "lblAnos";
+            this.lblAnos.Size = new System.Drawing.Size(30, 13);
+            this.lblAnos.TabIndex = 151;
+            this.lblAnos.Text = "anos";
             // 
-            // label9
+            // lblIdade
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(88, 14);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(75, 13);
-            this.label9.TabIndex = 72;
-            this.label9.Text = "Data Cadastro";
+            this.lblIdade.AutoSize = true;
+            this.lblIdade.Location = new System.Drawing.Point(103, 104);
+            this.lblIdade.Name = "lblIdade";
+            this.lblIdade.Size = new System.Drawing.Size(34, 13);
+            this.lblIdade.TabIndex = 150;
+            this.lblIdade.Text = "Idade";
             // 
-            // lblFone
+            // txtIdade
             // 
-            this.lblFone.AutoSize = true;
-            this.lblFone.Location = new System.Drawing.Point(12, 96);
-            this.lblFone.Name = "lblFone";
-            this.lblFone.Size = new System.Drawing.Size(31, 13);
-            this.lblFone.TabIndex = 73;
-            this.lblFone.Text = "Fone";
+            this.txtIdade.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtIdade.Location = new System.Drawing.Point(103, 120);
+            this.txtIdade.Name = "txtIdade";
+            this.txtIdade.ReadOnly = true;
+            this.txtIdade.Size = new System.Drawing.Size(39, 20);
+            this.txtIdade.TabIndex = 149;
             // 
-            // lblCelular1
+            // txtCel2
             // 
-            this.lblCelular1.AutoSize = true;
-            this.lblCelular1.Location = new System.Drawing.Point(152, 96);
-            this.lblCelular1.Name = "lblCelular1";
-            this.lblCelular1.Size = new System.Drawing.Size(45, 13);
-            this.lblCelular1.TabIndex = 74;
-            this.lblCelular1.Text = "Celular1";
+            this.txtCel2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsoPadrao, "CELULAR2", true));
+            this.txtCel2.Location = new System.Drawing.Point(278, 120);
+            this.txtCel2.Mask = "(99) 00000-0000";
+            this.txtCel2.Name = "txtCel2";
+            this.txtCel2.Size = new System.Drawing.Size(84, 20);
+            this.txtCel2.TabIndex = 138;
             // 
-            // lblCelular2
+            // lblCel2
             // 
-            this.lblCelular2.AutoSize = true;
-            this.lblCelular2.Location = new System.Drawing.Point(300, 96);
-            this.lblCelular2.Name = "lblCelular2";
-            this.lblCelular2.Size = new System.Drawing.Size(45, 13);
-            this.lblCelular2.TabIndex = 75;
-            this.lblCelular2.Text = "Celular2";
+            this.lblCel2.AutoSize = true;
+            this.lblCel2.Location = new System.Drawing.Point(275, 104);
+            this.lblCel2.Name = "lblCel2";
+            this.lblCel2.Size = new System.Drawing.Size(39, 13);
+            this.lblCel2.TabIndex = 148;
+            this.lblCel2.Text = "Celular";
             // 
-            // txtFone
+            // txtCel1
             // 
-            this.txtFone.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsoPadrao, "FONE", true));
-            this.txtFone.Location = new System.Drawing.Point(12, 112);
-            this.txtFone.Mask = "(99) 000-0000";
-            this.txtFone.Name = "txtFone";
-            this.txtFone.Size = new System.Drawing.Size(100, 20);
-            this.txtFone.TabIndex = 59;
+            this.txtCel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsoPadrao, "CELULAR1", true));
+            this.txtCel1.Location = new System.Drawing.Point(188, 120);
+            this.txtCel1.Mask = "(99) 00000-0000";
+            this.txtCel1.Name = "txtCel1";
+            this.txtCel1.Size = new System.Drawing.Size(84, 20);
+            this.txtCel1.TabIndex = 137;
             // 
-            // txtCelular1
+            // lblCel1
             // 
-            this.txtCelular1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsoPadrao, "CELULAR1", true));
-            this.txtCelular1.Location = new System.Drawing.Point(152, 112);
-            this.txtCelular1.Mask = "(99) 0000-0000";
-            this.txtCelular1.Name = "txtCelular1";
-            this.txtCelular1.Size = new System.Drawing.Size(100, 20);
-            this.txtCelular1.TabIndex = 60;
+            this.lblCel1.AutoSize = true;
+            this.lblCel1.Location = new System.Drawing.Point(185, 104);
+            this.lblCel1.Name = "lblCel1";
+            this.lblCel1.Size = new System.Drawing.Size(39, 13);
+            this.lblCel1.TabIndex = 147;
+            this.lblCel1.Text = "Celular";
             // 
-            // txtCelular2
+            // maskedTextBox2
             // 
-            this.txtCelular2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsoPadrao, "CELULAR2", true));
-            this.txtCelular2.Location = new System.Drawing.Point(300, 112);
-            this.txtCelular2.Mask = "(99) 0000-0000";
-            this.txtCelular2.Name = "txtCelular2";
-            this.txtCelular2.Size = new System.Drawing.Size(100, 20);
-            this.txtCelular2.TabIndex = 61;
+            this.maskedTextBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsoPadrao, "DAT_CADASTRO", true));
+            this.maskedTextBox2.Location = new System.Drawing.Point(88, 38);
+            this.maskedTextBox2.Mask = "00/00/0000";
+            this.maskedTextBox2.Name = "maskedTextBox2";
+            this.maskedTextBox2.ReadOnly = true;
+            this.maskedTextBox2.Size = new System.Drawing.Size(84, 20);
+            this.maskedTextBox2.TabIndex = 146;
+            this.maskedTextBox2.ValidatingType = typeof(System.DateTime);
+            // 
+            // txtDatNascimento
+            // 
+            this.txtDatNascimento.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsoPadrao, "DAT_NASC", true));
+            this.txtDatNascimento.Location = new System.Drawing.Point(13, 120);
+            this.txtDatNascimento.Mask = "00/00/0000";
+            this.txtDatNascimento.Name = "txtDatNascimento";
+            this.txtDatNascimento.Size = new System.Drawing.Size(84, 20);
+            this.txtDatNascimento.TabIndex = 136;
+            this.txtDatNascimento.ValidatingType = typeof(System.DateTime);
+            this.txtDatNascimento.Leave += new System.EventHandler(this.txtDatNascimento_Leave);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(10, 104);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(63, 13);
+            this.label1.TabIndex = 145;
+            this.label1.Text = "Nascimento";
+            // 
+            // lblDatCadastro
+            // 
+            this.lblDatCadastro.AutoSize = true;
+            this.lblDatCadastro.Location = new System.Drawing.Point(85, 22);
+            this.lblDatCadastro.Name = "lblDatCadastro";
+            this.lblDatCadastro.Size = new System.Drawing.Size(75, 13);
+            this.lblDatCadastro.TabIndex = 144;
+            this.lblDatCadastro.Text = "Data Cadastro";
+            // 
+            // lblEmail
+            // 
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.Location = new System.Drawing.Point(12, 143);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(35, 13);
+            this.lblEmail.TabIndex = 143;
+            this.lblEmail.Text = "E-mail";
             // 
             // txtEmail
             // 
             this.txtEmail.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
             this.txtEmail.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsoPadrao, "EMAIL", true));
-            this.txtEmail.Location = new System.Drawing.Point(12, 151);
+            this.txtEmail.Location = new System.Drawing.Point(12, 159);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(388, 20);
-            this.txtEmail.TabIndex = 62;
+            this.txtEmail.Size = new System.Drawing.Size(350, 20);
+            this.txtEmail.TabIndex = 139;
             // 
-            // lblEmail
+            // lblCodigo
             // 
-            this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(12, 135);
-            this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(35, 13);
-            this.lblEmail.TabIndex = 76;
-            this.lblEmail.Text = "E-mail";
+            this.lblCodigo.AutoSize = true;
+            this.lblCodigo.Location = new System.Drawing.Point(12, 22);
+            this.lblCodigo.Name = "lblCodigo";
+            this.lblCodigo.Size = new System.Drawing.Size(40, 13);
+            this.lblCodigo.TabIndex = 140;
+            this.lblCodigo.Text = "Código";
             // 
-            // ckEnviaEmail
+            // txtCodigo
             // 
-            this.ckEnviaEmail.AutoSize = true;
-            this.ckEnviaEmail.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.bsoPadrao, "LGC_ENVIA_EMAIL", true));
-            this.ckEnviaEmail.Location = new System.Drawing.Point(527, 134);
-            this.ckEnviaEmail.Name = "ckEnviaEmail";
-            this.ckEnviaEmail.Size = new System.Drawing.Size(81, 17);
-            this.ckEnviaEmail.TabIndex = 64;
-            this.ckEnviaEmail.Text = "Envia Email";
-            this.ckEnviaEmail.UseVisualStyleBackColor = true;
+            this.txtCodigo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsoPadrao, "COD_JOGADOR", true));
+            this.txtCodigo.Enabled = false;
+            this.txtCodigo.Location = new System.Drawing.Point(12, 38);
+            this.txtCodigo.Name = "txtCodigo";
+            this.txtCodigo.ReadOnly = true;
+            this.txtCodigo.Size = new System.Drawing.Size(70, 20);
+            this.txtCodigo.TabIndex = 141;
             // 
-            // ckMensalista
+            // lblNome
             // 
-            this.ckMensalista.AutoSize = true;
-            this.ckMensalista.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.bsoPadrao, "LGC_MENSALISTA", true));
-            this.ckMensalista.Location = new System.Drawing.Point(527, 157);
-            this.ckMensalista.Name = "ckMensalista";
-            this.ckMensalista.Size = new System.Drawing.Size(76, 17);
-            this.ckMensalista.TabIndex = 65;
-            this.ckMensalista.Text = "Mensalista";
-            this.ckMensalista.UseVisualStyleBackColor = true;
+            this.lblNome.AutoSize = true;
+            this.lblNome.Location = new System.Drawing.Point(12, 65);
+            this.lblNome.Name = "lblNome";
+            this.lblNome.Size = new System.Drawing.Size(35, 13);
+            this.lblNome.TabIndex = 142;
+            this.lblNome.Text = "Nome";
             // 
-            // cpAtivoInativo1
+            // txtNome
             // 
-            this.cpAtivoInativo1.Location = new System.Drawing.Point(527, 14);
-            this.cpAtivoInativo1.Name = "cpAtivoInativo1";
-            this.cpAtivoInativo1.NomeCampo = "DAT_DESATIVADO";
-            this.cpAtivoInativo1.Size = new System.Drawing.Size(96, 107);
-            this.cpAtivoInativo1.TabIndex = 77;
+            this.txtNome.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtNome.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsoPadrao, "NOM_JOGADOR", true));
+            this.txtNome.Location = new System.Drawing.Point(12, 81);
+            this.txtNome.Name = "txtNome";
+            this.txtNome.Size = new System.Drawing.Size(350, 20);
+            this.txtNome.TabIndex = 135;
             // 
             // frmJogador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClasseDados = this.jogador1;
-            this.ClientSize = new System.Drawing.Size(683, 380);
+            this.ClientSize = new System.Drawing.Size(624, 380);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmJogador";
             this.Text = "Cadastro de Jogadores";
@@ -540,11 +538,12 @@
             this.pnlPesquisar.PerformLayout();
             this.tabPesquisa.ResumeLayout(false);
             this.tbcPadrao.ResumeLayout(false);
-            this.panelBase.ResumeLayout(false);
-            this.panelBase.PerformLayout();
+            this.pnlBase.ResumeLayout(false);
+            this.pnlBase.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtsJogador1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgResultpesquisa)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picFoto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -573,27 +572,27 @@
         private System.Windows.Forms.Button btnInformeInativo;
         private System.Windows.Forms.Button btnInformeNome;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.PictureBox picFoto;
         private CamadaComponente.Componentes.cpAtivoInativo cpAtivoInativo1;
-        private System.Windows.Forms.CheckBox ckMensalista;
-        private System.Windows.Forms.CheckBox ckEnviaEmail;
-        private System.Windows.Forms.Label lblEmail;
-        private CamadaComponente.Componentes.scTextBox txtEmail;
-        private System.Windows.Forms.MaskedTextBox txtCelular2;
-        private System.Windows.Forms.MaskedTextBox txtCelular1;
-        private System.Windows.Forms.MaskedTextBox txtFone;
-        private System.Windows.Forms.Label lblCelular2;
-        private System.Windows.Forms.Label lblCelular1;
-        private System.Windows.Forms.Label lblFone;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.MaskedTextBox txtCadastro;
-        private CamadaComponente.Componentes.scTextBox txtObs;
+        private System.Windows.Forms.Label lblObs;
+        private System.Windows.Forms.TextBox txtObs;
+        private System.Windows.Forms.Label lblAnos;
+        private System.Windows.Forms.Label lblIdade;
+        private System.Windows.Forms.TextBox txtIdade;
+        private System.Windows.Forms.MaskedTextBox txtCel2;
+        private System.Windows.Forms.Label lblCel2;
+        private System.Windows.Forms.MaskedTextBox txtCel1;
+        private System.Windows.Forms.Label lblCel1;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox2;
+        private System.Windows.Forms.MaskedTextBox txtDatNascimento;
         private System.Windows.Forms.Label label1;
-        private CamadaComponente.Componentes.scTextBox txtCodigo;
-        private System.Windows.Forms.Label label2;
-        private CamadaComponente.Componentes.scTextBox txtNome;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.MaskedTextBox txtNasc;
+        private System.Windows.Forms.Label lblDatCadastro;
+        private System.Windows.Forms.Label lblEmail;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.Label lblCodigo;
+        private System.Windows.Forms.TextBox txtCodigo;
+        private System.Windows.Forms.Label lblNome;
+        private System.Windows.Forms.TextBox txtNome;
     }
 
 }

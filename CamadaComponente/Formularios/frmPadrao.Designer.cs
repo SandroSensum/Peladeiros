@@ -45,7 +45,6 @@ namespace CamadaComponente
             this.btnPesquisar = new CamadaComponente.Componentes.scButton();
             this.pnlFiltro = new CamadaComponente.Componentes.scPanel();
             this.tabPrincipal = new System.Windows.Forms.TabPage();
-            this.panelBase = new CamadaComponente.Componentes.scPanel();
             this.pnlFerramentas = new CamadaComponente.Componentes.scPanel();
             this.pnlIncluir = new CamadaComponente.Componentes.scPanel();
             this.btnIncluir = new CamadaComponente.Componentes.scButton();
@@ -64,6 +63,7 @@ namespace CamadaComponente
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.bsoPadrao = new CamadaComponente.Componentes.scBso(this.components);
             this.tmrHora = new System.Windows.Forms.Timer(this.components);
+            this.pnlBase = new CamadaComponente.Componentes.scPanel();
             this.statusStrip1.SuspendLayout();
             this.tbcPadrao.SuspendLayout();
             this.tabPesquisa.SuspendLayout();
@@ -193,7 +193,6 @@ namespace CamadaComponente
             this.btnPesquisar.Size = new System.Drawing.Size(75, 27);
             this.btnPesquisar.TabIndex = 11;
             this.btnPesquisar.Text = "Pesquisar";
-            this.btnPesquisar.Click += new System.EventHandler(this.button1_Click);
             // 
             // pnlFiltro
             // 
@@ -206,7 +205,7 @@ namespace CamadaComponente
             // 
             // tabPrincipal
             // 
-            this.tabPrincipal.Controls.Add(this.panelBase);
+            this.tabPrincipal.Controls.Add(this.pnlBase);
             this.tabPrincipal.Location = new System.Drawing.Point(4, 22);
             this.tabPrincipal.Name = "tabPrincipal";
             this.tabPrincipal.Padding = new System.Windows.Forms.Padding(3);
@@ -214,15 +213,6 @@ namespace CamadaComponente
             this.tabPrincipal.TabIndex = 1;
             this.tabPrincipal.Text = "Principal";
             this.tabPrincipal.UseVisualStyleBackColor = true;
-            // 
-            // panelBase
-            // 
-            this.panelBase.Desabilitar = false;
-            this.panelBase.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelBase.Location = new System.Drawing.Point(3, 3);
-            this.panelBase.Name = "panelBase";
-            this.panelBase.Size = new System.Drawing.Size(813, 352);
-            this.panelBase.TabIndex = 0;
             // 
             // pnlFerramentas
             // 
@@ -395,6 +385,14 @@ namespace CamadaComponente
             this.tmrHora.Interval = 1000;
             this.tmrHora.Tick += new System.EventHandler(this.tmrHora_Tick);
             // 
+            // pnlBase
+            // 
+            this.pnlBase.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlBase.Location = new System.Drawing.Point(3, 3);
+            this.pnlBase.Name = "pnlBase";
+            this.pnlBase.Size = new System.Drawing.Size(813, 352);
+            this.pnlBase.TabIndex = 0;
+            // 
             // frmPadrao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -462,6 +460,6 @@ namespace CamadaComponente
         public System.Windows.Forms.TabPage tabPesquisa;
         public System.Windows.Forms.TabControl tbcPadrao;
         public System.Windows.Forms.CheckBox ckAtivos;
-        public scPanel panelBase;
+        public scPanel pnlBase;
     }
 }

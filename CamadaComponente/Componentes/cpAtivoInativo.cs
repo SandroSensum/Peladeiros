@@ -24,33 +24,42 @@ namespace CamadaComponente.Componentes
 
         private void rbInativo_CheckedChanged( object sender, EventArgs e )
         {
-            if (rbInativo.Checked)
+            if ( !DesignMode )
             {
-              bsoAtivoInativo.Linha[NomeCampo] = DateTime.Now;                
-            }
-            else
-            {
-               bsoAtivoInativo.Linha[NomeCampo] = DBNull.Value;
+                if ( rbInativo.Checked )
+                {
+                    bsoAtivoInativo.Linha[NomeCampo] = DateTime.Now;
+                }
+                else
+                {
+                    bsoAtivoInativo.Linha[NomeCampo] = DBNull.Value;
+                }
             }
         }
 
         private void cpAtivoInativo_Load( object sender, EventArgs e )
         {
-            this.txtDesativado.DataBindings.Add ( new Binding ( "Text", this.bsoAtivoInativo, NomeCampo, true ) );
-            VerificarAtivoInativo ();
+            if ( !DesignMode )
+            {
+                this.txtDesativado.DataBindings.Add ( new Binding ( "Text", this.bsoAtivoInativo, NomeCampo, true ) );
+                VerificarAtivoInativo ();
+            }
         }
 
         public void VerificarAtivoInativo()
         {
-            if ( bsoAtivoInativo.Linha != null && bsoAtivoInativo.Linha[NomeCampo] != DBNull.Value )
+            if ( !DesignMode )
             {
-                if ( Convert.ToDateTime ( bsoAtivoInativo.Linha[NomeCampo] ) == new DateTime())
-                    rbAtivo.Checked = true;
+                if ( bsoAtivoInativo.Linha != null && bsoAtivoInativo.Linha[NomeCampo] != DBNull.Value )
+                {
+                    if ( Convert.ToDateTime ( bsoAtivoInativo.Linha[NomeCampo] ) == new DateTime () )
+                        rbAtivo.Checked = true;
+                    else
+                        rbInativo.Checked = true;
+                }
                 else
-                    rbInativo.Checked = true;
+                    rbAtivo.Checked = true;
             }
-            else
-                rbAtivo.Checked = true;
         }
     }
 

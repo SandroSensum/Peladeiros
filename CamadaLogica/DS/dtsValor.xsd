@@ -16,8 +16,8 @@
           <xs:complexType>
             <xs:sequence>
               <xs:element name="COD_VALOR" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnCOD_VALOR" msprop:Generator_ColumnPropNameInRow="COD_VALOR" msprop:Generator_ColumnPropNameInTable="COD_VALORColumn" msprop:Generator_UserColumnName="COD_VALOR" type="xs:int" />
-              <xs:element name="VALOR" msprop:Generator_ColumnVarNameInTable="columnVALOR" msprop:Generator_ColumnPropNameInRow="VALOR" msprop:Generator_ColumnPropNameInTable="VALORColumn" msprop:Generator_UserColumnName="VALOR" type="xs:double" minOccurs="0" />
-              <xs:element name="DAT_VALOR" msprop:Generator_ColumnVarNameInTable="columnDAT_VALOR" msprop:Generator_ColumnPropNameInRow="DAT_VALOR" msprop:Generator_ColumnPropNameInTable="DAT_VALORColumn" msprop:Generator_UserColumnName="DAT_VALOR" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="VALOR" msprop:Generator_ColumnVarNameInTable="columnVALOR" msprop:Generator_ColumnPropNameInRow="VALOR" msprop:Generator_ColumnPropNameInTable="VALORColumn" msprop:Generator_UserColumnName="VALOR" type="xs:decimal" minOccurs="0" />
+              <xs:element name="DAT_VALOR" msprop:Generator_ColumnVarNameInTable="columnDAT_VALOR" msprop:Generator_ColumnPropNameInRow="DAT_VALOR" msprop:Generator_ColumnPropNameInTable="DAT_VALORColumn" msprop:Generator_UserColumnName="DAT_VALOR" type="xs:string" minOccurs="0" />
               <xs:element name="DAT_CADASTRO" msprop:Generator_ColumnVarNameInTable="columnDAT_CADASTRO" msprop:Generator_ColumnPropNameInRow="DAT_CADASTRO" msprop:Generator_ColumnPropNameInTable="DAT_CADASTROColumn" msprop:Generator_UserColumnName="DAT_CADASTRO" type="xs:dateTime" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>

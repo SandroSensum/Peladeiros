@@ -10,19 +10,28 @@ namespace CamadaLogica.Classes
 {
     public class Valor : Base
     {
-        public DataTable Buscarvalor( string Valor )
+        public DataTable BuscarMesAno( string Referencia )
         {
             StringBuilder sql = new StringBuilder ();
             sql.AppendLine ( "SELECT * FROM VALOR " );
             //sql.AppendLine ( "WHERE " );
-            //if ( Inativos )
-            //    sql.AppendLine ( "DAT_DESATIVADO IS NOT NULL" );
-            //else
-            //    sql.AppendLine ( "DAT_DESATIVADO IS NULL" );
-            //if ( !string.IsNullOrEmpty ( NomeJogador ) )
-            //    sql.AppendLine ( $"AND UPPER (NOM_JOGADOR) LIKE '%{NomeJogador.ToUpper ()}%'" );
-
+            //if (! string.IsNullOrEmpty ( Referencia ) )
+            //    sql.AppendLine ( $"DAT_VALOR = '{Referencia}'" );
             return Select ( sql );
         }
+    
+        //public DataTable Buscarvalref( string Referencia )
+        //{
+        //    StringBuilder sql = new StringBuilder ();
+        //    sql.AppendLine ( "SELECT * FROM VALOR " );            
+        //    sql.AppendLine ( $"WHERE DAT_VALOR = '{Referencia}'");
+        //    return Convert.ToInt32( Select ( sql ).Rows[0]["COD_VALOR"] );
+
     }
+
+
+        /* Método igual o de cima para buscar o valor pela referência(mes/ano)
+         * Como parâmetro tem que passar a referencia que vem lá da tela igual ao de cima ( string referencia )
+         *  return Convert.ToInt32(Select(sql).Rows[0]["COD_VALOR"])
+         */
 }

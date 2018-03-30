@@ -389,7 +389,7 @@ namespace CamadaLogica.DS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public VALORRow AddVALORRow(double VALOR, System.DateTime DAT_VALOR, System.DateTime DAT_CADASTRO) {
+            public VALORRow AddVALORRow(decimal VALOR, string DAT_VALOR, System.DateTime DAT_CADASTRO) {
                 VALORRow rowVALORRow = ((VALORRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -436,9 +436,9 @@ namespace CamadaLogica.DS {
             private void InitClass() {
                 this.columnCOD_VALOR = new global::System.Data.DataColumn("COD_VALOR", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCOD_VALOR);
-                this.columnVALOR = new global::System.Data.DataColumn("VALOR", typeof(double), null, global::System.Data.MappingType.Element);
+                this.columnVALOR = new global::System.Data.DataColumn("VALOR", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnVALOR);
-                this.columnDAT_VALOR = new global::System.Data.DataColumn("DAT_VALOR", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                this.columnDAT_VALOR = new global::System.Data.DataColumn("DAT_VALOR", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDAT_VALOR);
                 this.columnDAT_CADASTRO = new global::System.Data.DataColumn("DAT_CADASTRO", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDAT_CADASTRO);
@@ -602,10 +602,10 @@ namespace CamadaLogica.DS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public double VALOR {
+            public decimal VALOR {
                 get {
                     try {
-                        return ((double)(this[this.tableVALOR.VALORColumn]));
+                        return ((decimal)(this[this.tableVALOR.VALORColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("O valor da coluna \'VALOR\' na tabela \'VALOR\' é DBNull.", e);
@@ -618,10 +618,10 @@ namespace CamadaLogica.DS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime DAT_VALOR {
+            public string DAT_VALOR {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.tableVALOR.DAT_VALORColumn]));
+                        return ((string)(this[this.tableVALOR.DAT_VALORColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("O valor da coluna \'DAT_VALOR\' na tabela \'VALOR\' é DBNull.", e);

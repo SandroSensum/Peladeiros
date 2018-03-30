@@ -24,7 +24,7 @@ namespace CamadaFormulario.Cadastros
             StringBuilder sbMensagem = new StringBuilder ();
             if ( string.IsNullOrWhiteSpace ( txtNome.Text ) )
                 sbMensagem.AppendLine ( "- Nome não pode ficar em branco." );
-            if(string.IsNullOrWhiteSpace(txtCelular1.Text.Replace("(", "").Replace(")", "").Replace("-", "" ).Trim () ) )
+            if(string.IsNullOrWhiteSpace(txtCel1.Text.Replace("(", "").Replace(")", "").Replace("-", "" ).Trim () ) )
                 sbMensagem.AppendLine ( "- Deve ser informado pelo menos um número de celular." );
             if(string.IsNullOrWhiteSpace(txtEmail.Text))
                 sbMensagem.AppendLine ( "- Deve ser informada o email." );
@@ -46,6 +46,7 @@ namespace CamadaFormulario.Cadastros
         {
             tbcPadrao.SelectedTab = tabPrincipal;
             cpAtivoInativo1.VerificarAtivoInativo ();
+            CalcularIdade ();
         }
 
         private void btnInformeNome_Click( object sender, EventArgs e )
@@ -70,5 +71,15 @@ namespace CamadaFormulario.Cadastros
                 btnPesquisar.PerformClick ();
         }
 
+        private void txtDatNascimento_Leave( object sender, EventArgs e )
+        {
+            CalcularIdade ();
+        }
+        private void CalcularIdade()
+        {
+            DateTime Nascimento = Convert.ToDateTime ( txtDatNascimento.Text );
+            int Idade = DateTime.Now.Year - Nascimento.Year;
+            txtIdade.Text = Idade.ToString ();
+        }
     }
 }

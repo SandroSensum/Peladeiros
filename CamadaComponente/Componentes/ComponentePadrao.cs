@@ -105,4 +105,44 @@ namespace CamadaComponente.Componentes
                 Enabled = Enabled = pModoNavegacao != Enumerados.eModoNavegacao.navegacao;
         }
     }
+
+    public class scMaskValor : MaskedTextBox, IComponente
+    {
+        
+        public bool Desabilitar { get; set; }
+
+        public void AtualizarNavegacao( Enumerados.eModoNavegacao pModoNavegacao )
+        {
+            if ( Desabilitar )
+                Enabled = Enabled = pModoNavegacao != Enumerados.eModoNavegacao.navegacao;
+        }
+
+        protected override void OnKeyPress( KeyPressEventArgs e )
+        {
+            //FormatarValor ();
+            base.OnKeyPress ( e );
+        }
+
+        protected override void OnLeave( EventArgs e )
+        {
+            base.OnLeave ( e );
+            FormatarValor ();
+        }
+
+        private void FormatarValor()
+        {
+            Mask = "00.00";
+            if ( !string.IsNullOrEmpty ( Text.Replace ( ",", "" ).Trim () ) )
+                Text = String.Format ( "{0:0.00}", Convert.ToDouble ( Text ) );
+            else
+                Text = String.Format ( "{0:0.00}", 0 );
+
+        }
+
+        protected override void OnVisibleChanged( EventArgs e )
+        {
+            base.OnVisibleChanged ( e );
+            FormatarValor ();
+        }
+    }
 }

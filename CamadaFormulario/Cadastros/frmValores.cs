@@ -21,7 +21,7 @@ namespace CamadaFormulario.Cadastros
         {
             dtsValor1.Clear ();
             Valor oMesAno = new Valor ();
-            dtsValor1.VALOR.Merge ( oMesAno.BuscarMesAno ( txtReferencia.Text) );
+            dtsValor1.VALOR.Merge ( oMesAno.BuscarMesAno ( txtMesAnoPesquisa.Text ) );
         }
 
         private void dataGridView1_DoubleClick( object sender, EventArgs e )
@@ -31,9 +31,31 @@ namespace CamadaFormulario.Cadastros
 
         private void txtReferencia_Leave( object sender, EventArgs e )
         {
-            //dtsValor1.Clear ();
-            //Valor oRef = new Valor ();
-            //dtsValor1.VALOR.Merge ( oRef.Buscarvalref ( txtReferencia.Text ) );
+            Valor oRef = new Valor ();
+            if ( !string.IsNullOrEmpty ( txtReferencia.Text.Replace ( "/", "" ).Trim () ) && !oRef.ValidaRef ( txtReferencia.Text ) )
+                MessageBox.Show ( "Valor para o Mês e Ano de referencia já cadastrado", "Peladeiros", MessageBoxButtons.OK, MessageBoxIcon.Stop );
+        }
+
+        private bool frmValores_ValidarGravar()
+        {
+            bool validacao = true;
+            Valor oRef = new Valor ();
+            if ( !string.IsNullOrEmpty ( txtReferencia.Text.Replace ( "/", "" ).Trim () ) && !oRef.ValidaRef ( txtReferencia.Text ) )
+            {
+                validacao = false;
+                MessageBox.Show ( "Valor para o Mês e Ano de referencia já cadastrado", "Peladeiros", MessageBoxButtons.OK, MessageBoxIcon.Stop );
+            }
+            else
+            {
+                if ( string.IsNullOrEmpty ( txtReferencia.Text.Replace ( "/", "" ).Trim () ) )
+                {
+                    validacao = false;
+                    MessageBox.Show ( "Deve ser informado Mês e Ano de referencia", "Peladeiros", MessageBoxButtons.OK, MessageBoxIcon.Stop );
+                }
+            }
+
+            return validacao;
+
         }
     }
 }

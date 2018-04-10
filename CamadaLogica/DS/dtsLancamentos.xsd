@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dtsLancamentos" targetNamespace="http://tempuri.org/dtsLancamentos.xsd" xmlns:mstns="http://tempuri.org/dtsLancamentos.xsd" xmlns="http://tempuri.org/dtsLancamentos.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dtsLancamentos" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dtsLancamentos" msprop:Generator_UserDSName="dtsLancamentos">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="LANCAMENTOS" msprop:Generator_TableClassName="LANCAMENTOSDataTable" msprop:Generator_TableVarName="tableLANCAMENTOS" msprop:Generator_TablePropName="LANCAMENTOS" msprop:Generator_RowDeletingName="LANCAMENTOSRowDeleting" msprop:Generator_RowChangingName="LANCAMENTOSRowChanging" msprop:Generator_RowEvHandlerName="LANCAMENTOSRowChangeEventHandler" msprop:Generator_RowDeletedName="LANCAMENTOSRowDeleted" msprop:Generator_UserTableName="LANCAMENTOS" msprop:Generator_RowChangedName="LANCAMENTOSRowChanged" msprop:Generator_RowEvArgName="LANCAMENTOSRowChangeEvent" msprop:Generator_RowClassName="LANCAMENTOSRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="COD_LCTO" msprop:Generator_ColumnVarNameInTable="columnCOD_LCTO" msprop:Generator_ColumnPropNameInRow="COD_LCTO" msprop:Generator_ColumnPropNameInTable="COD_LCTOColumn" msprop:Generator_UserColumnName="COD_LCTO" type="xs:int" />
+              <xs:element name="DAT_CADASTRO" msprop:Generator_ColumnVarNameInTable="columnDAT_CADASTRO" msprop:Generator_ColumnPropNameInRow="DAT_CADASTRO" msprop:Generator_ColumnPropNameInTable="DAT_CADASTROColumn" msprop:Generator_UserColumnName="DAT_CADASTRO" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="COD_CONTA" msprop:Generator_ColumnVarNameInTable="columnCOD_CONTA" msprop:Generator_ColumnPropNameInRow="COD_CONTA" msprop:Generator_ColumnPropNameInTable="COD_CONTAColumn" msprop:Generator_UserColumnName="COD_CONTA" type="xs:int" minOccurs="0" />
+              <xs:element name="DES_LCTO" msprop:Generator_ColumnVarNameInTable="columnDES_LCTO" msprop:Generator_ColumnPropNameInRow="DES_LCTO" msprop:Generator_ColumnPropNameInTable="DES_LCTOColumn" msprop:Generator_UserColumnName="DES_LCTO" type="xs:string" minOccurs="0" />
+              <xs:element name="VALOR" msprop:Generator_ColumnVarNameInTable="columnVALOR" msprop:Generator_ColumnPropNameInRow="VALOR" msprop:Generator_ColumnPropNameInTable="VALORColumn" msprop:Generator_UserColumnName="VALOR" type="xs:decimal" minOccurs="0" />
+              <xs:element name="DAT_LCTO" msprop:Generator_ColumnVarNameInTable="columnDAT_LCTO" msprop:Generator_ColumnPropNameInRow="DAT_LCTO" msprop:Generator_ColumnPropNameInTable="DAT_LCTOColumn" msprop:Generator_UserColumnName="DAT_LCTO" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:LANCAMENTOS" />
+      <xs:field xpath="mstns:COD_LCTO" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

@@ -283,7 +283,15 @@ namespace CamadaLogica.DS {
             
             private global::System.Data.DataColumn columnDES_CONTA;
             
+            private global::System.Data.DataColumn columnDAT_CADASTRO;
+            
             private global::System.Data.DataColumn columnDAT_DESATIVADO;
+            
+            private global::System.Data.DataColumn columnDES_BANCO;
+            
+            private global::System.Data.DataColumn columnAGENCIA;
+            
+            private global::System.Data.DataColumn columnCC;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -336,9 +344,41 @@ namespace CamadaLogica.DS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DAT_CADASTROColumn {
+                get {
+                    return this.columnDAT_CADASTRO;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public global::System.Data.DataColumn DAT_DESATIVADOColumn {
                 get {
                     return this.columnDAT_DESATIVADO;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DES_BANCOColumn {
+                get {
+                    return this.columnDES_BANCO;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn AGENCIAColumn {
+                get {
+                    return this.columnAGENCIA;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CCColumn {
+                get {
+                    return this.columnCC;
                 }
             }
             
@@ -379,12 +419,16 @@ namespace CamadaLogica.DS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public CONTASRow AddCONTASRow(string DES_CONTA, System.DateTime DAT_DESATIVADO) {
+            public CONTASRow AddCONTASRow(string DES_CONTA, System.DateTime DAT_CADASTRO, System.DateTime DAT_DESATIVADO, string DES_BANCO, string AGENCIA, string CC) {
                 CONTASRow rowCONTASRow = ((CONTASRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         DES_CONTA,
-                        DAT_DESATIVADO};
+                        DAT_CADASTRO,
+                        DAT_DESATIVADO,
+                        DES_BANCO,
+                        AGENCIA,
+                        CC};
                 rowCONTASRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowCONTASRow);
                 return rowCONTASRow;
@@ -416,7 +460,11 @@ namespace CamadaLogica.DS {
             internal void InitVars() {
                 this.columnCOD_CONTA = base.Columns["COD_CONTA"];
                 this.columnDES_CONTA = base.Columns["DES_CONTA"];
+                this.columnDAT_CADASTRO = base.Columns["DAT_CADASTRO"];
                 this.columnDAT_DESATIVADO = base.Columns["DAT_DESATIVADO"];
+                this.columnDES_BANCO = base.Columns["DES_BANCO"];
+                this.columnAGENCIA = base.Columns["AGENCIA"];
+                this.columnCC = base.Columns["CC"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -426,8 +474,16 @@ namespace CamadaLogica.DS {
                 base.Columns.Add(this.columnCOD_CONTA);
                 this.columnDES_CONTA = new global::System.Data.DataColumn("DES_CONTA", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDES_CONTA);
+                this.columnDAT_CADASTRO = new global::System.Data.DataColumn("DAT_CADASTRO", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDAT_CADASTRO);
                 this.columnDAT_DESATIVADO = new global::System.Data.DataColumn("DAT_DESATIVADO", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDAT_DESATIVADO);
+                this.columnDES_BANCO = new global::System.Data.DataColumn("DES_BANCO", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDES_BANCO);
+                this.columnAGENCIA = new global::System.Data.DataColumn("AGENCIA", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAGENCIA);
+                this.columnCC = new global::System.Data.DataColumn("CC", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCC);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnCOD_CONTA}, true));
                 this.columnCOD_CONTA.AutoIncrement = true;
@@ -604,6 +660,22 @@ namespace CamadaLogica.DS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime DAT_CADASTRO {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableCONTAS.DAT_CADASTROColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'DAT_CADASTRO\' na tabela \'CONTAS\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCONTAS.DAT_CADASTROColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public System.DateTime DAT_DESATIVADO {
                 get {
                     try {
@@ -615,6 +687,54 @@ namespace CamadaLogica.DS {
                 }
                 set {
                     this[this.tableCONTAS.DAT_DESATIVADOColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string DES_BANCO {
+                get {
+                    try {
+                        return ((string)(this[this.tableCONTAS.DES_BANCOColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'DES_BANCO\' na tabela \'CONTAS\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCONTAS.DES_BANCOColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string AGENCIA {
+                get {
+                    try {
+                        return ((string)(this[this.tableCONTAS.AGENCIAColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'AGENCIA\' na tabela \'CONTAS\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCONTAS.AGENCIAColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string CC {
+                get {
+                    try {
+                        return ((string)(this[this.tableCONTAS.CCColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'CC\' na tabela \'CONTAS\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCONTAS.CCColumn] = value;
                 }
             }
             
@@ -632,6 +752,18 @@ namespace CamadaLogica.DS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDAT_CADASTRONull() {
+                return this.IsNull(this.tableCONTAS.DAT_CADASTROColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDAT_CADASTRONull() {
+                this[this.tableCONTAS.DAT_CADASTROColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsDAT_DESATIVADONull() {
                 return this.IsNull(this.tableCONTAS.DAT_DESATIVADOColumn);
             }
@@ -640,6 +772,42 @@ namespace CamadaLogica.DS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetDAT_DESATIVADONull() {
                 this[this.tableCONTAS.DAT_DESATIVADOColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDES_BANCONull() {
+                return this.IsNull(this.tableCONTAS.DES_BANCOColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDES_BANCONull() {
+                this[this.tableCONTAS.DES_BANCOColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsAGENCIANull() {
+                return this.IsNull(this.tableCONTAS.AGENCIAColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetAGENCIANull() {
+                this[this.tableCONTAS.AGENCIAColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCCNull() {
+                return this.IsNull(this.tableCONTAS.CCColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCCNull() {
+                this[this.tableCONTAS.CCColumn] = global::System.Convert.DBNull;
             }
         }
         

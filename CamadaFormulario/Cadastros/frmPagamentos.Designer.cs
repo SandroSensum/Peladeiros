@@ -49,12 +49,15 @@
             this.txtNome = new System.Windows.Forms.TextBox();
             this.ckMensalista = new System.Windows.Forms.CheckBox();
             this.btnInformeNome = new System.Windows.Forms.Button();
+            this.scDataGridView1 = new CamadaComponente.Componentes.scDataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.bsoPadrao)).BeginInit();
             this.tabPrincipal.SuspendLayout();
             this.pnlResultado.SuspendLayout();
+            this.pnlGrade.SuspendLayout();
             this.pnlPesquisar.SuspendLayout();
             this.tabPesquisa.SuspendLayout();
             this.tbcPadrao.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.scDataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabPrincipal
@@ -80,18 +83,41 @@
             this.tabPrincipal.Controls.Add(this.lblReferencia);
             this.tabPrincipal.Controls.Add(this.lbl_jogador);
             this.tabPrincipal.Size = new System.Drawing.Size(505, 239);
+            this.tabPrincipal.Controls.SetChildIndex(this.lbl_jogador, 0);
+            this.tabPrincipal.Controls.SetChildIndex(this.lblReferencia, 0);
+            this.tabPrincipal.Controls.SetChildIndex(this.lblValor, 0);
+            this.tabPrincipal.Controls.SetChildIndex(this.lblPgto, 0);
+            this.tabPrincipal.Controls.SetChildIndex(this.txtPgto, 0);
+            this.tabPrincipal.Controls.SetChildIndex(this.txtReferencia, 0);
+            this.tabPrincipal.Controls.SetChildIndex(this.label1, 0);
+            this.tabPrincipal.Controls.SetChildIndex(this.lblCadastro, 0);
+            this.tabPrincipal.Controls.SetChildIndex(this.txtCadastro, 0);
+            this.tabPrincipal.Controls.SetChildIndex(this.txtCodigo, 0);
+            this.tabPrincipal.Controls.SetChildIndex(this.cboJogador, 0);
+            this.tabPrincipal.Controls.SetChildIndex(this.txtValor, 0);
+            this.tabPrincipal.Controls.SetChildIndex(this.label2, 0);
+            this.tabPrincipal.Controls.SetChildIndex(this.comboBox1, 0);
+            this.tabPrincipal.Controls.SetChildIndex(this.label3, 0);
+            this.tabPrincipal.Controls.SetChildIndex(this.maskedTextBox1, 0);
+            this.tabPrincipal.Controls.SetChildIndex(this.label4, 0);
+            this.tabPrincipal.Controls.SetChildIndex(this.txtNome, 0);
+            this.tabPrincipal.Controls.SetChildIndex(this.ckMensalista, 0);
+            this.tabPrincipal.Controls.SetChildIndex(this.btnInformeNome, 0);
+            this.tabPrincipal.Controls.SetChildIndex(this.pnlBase, 0);
             // 
             // pnlResultado
             // 
-            this.pnlResultado.Size = new System.Drawing.Size(499, 139);
+            this.pnlResultado.Location = new System.Drawing.Point(3, 70);
+            this.pnlResultado.Size = new System.Drawing.Size(499, 166);
             // 
             // pnlGrade
             // 
-            this.pnlGrade.Size = new System.Drawing.Size(499, 112);
+            this.pnlGrade.Controls.Add(this.scDataGridView1);
+            this.pnlGrade.Size = new System.Drawing.Size(499, 139);
             // 
             // pnlFiltro
             // 
-            this.pnlFiltro.Size = new System.Drawing.Size(499, 94);
+            this.pnlFiltro.Size = new System.Drawing.Size(499, 67);
             // 
             // pnlPesquisar
             // 
@@ -104,6 +130,10 @@
             // tbcPadrao
             // 
             this.tbcPadrao.Size = new System.Drawing.Size(513, 265);
+            // 
+            // pnlBase
+            // 
+            this.pnlBase.Size = new System.Drawing.Size(499, 233);
             // 
             // comboBox1
             // 
@@ -283,6 +313,20 @@
             this.btnInformeNome.TabIndex = 80;
             this.btnInformeNome.UseVisualStyleBackColor = true;
             // 
+            // scDataGridView1
+            // 
+            this.scDataGridView1.AllowUserToAddRows = false;
+            this.scDataGridView1.AllowUserToDeleteRows = false;
+            this.scDataGridView1.AutoGenerateColumns = false;
+            this.scDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.scDataGridView1.DataSource = this.bsoPadrao;
+            this.scDataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.scDataGridView1.Location = new System.Drawing.Point(0, 0);
+            this.scDataGridView1.Name = "scDataGridView1";
+            this.scDataGridView1.ReadOnly = true;
+            this.scDataGridView1.Size = new System.Drawing.Size(499, 139);
+            this.scDataGridView1.TabIndex = 0;
+            // 
             // frmPagamentos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -293,10 +337,12 @@
             this.tabPrincipal.ResumeLayout(false);
             this.tabPrincipal.PerformLayout();
             this.pnlResultado.ResumeLayout(false);
+            this.pnlGrade.ResumeLayout(false);
             this.pnlPesquisar.ResumeLayout(false);
             this.pnlPesquisar.PerformLayout();
             this.tabPesquisa.ResumeLayout(false);
             this.tbcPadrao.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.scDataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -324,5 +370,6 @@
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.CheckBox ckMensalista;
         private System.Windows.Forms.Button btnInformeNome;
+        private CamadaComponente.Componentes.scDataGridView scDataGridView1;
     }
 }

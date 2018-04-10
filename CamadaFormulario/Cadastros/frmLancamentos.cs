@@ -8,11 +8,17 @@ using System.Windows.Forms;
 
 namespace CamadaFormulario.Cadastros
 {
-    public partial class frmContaCorrente : CamadaComponente.frmPadrao
+    public partial class frmLancamentos : CamadaComponente.frmPadrao
     {
-        public frmContaCorrente()
+        public frmLancamentos()
         {
             InitializeComponent ();
+        }
+
+        private void btnConta_Click( object sender, EventArgs e )
+        {
+            frmContas oFrmContas = new frmContas ();
+            oFrmContas.Show ();
         }
     }
 }

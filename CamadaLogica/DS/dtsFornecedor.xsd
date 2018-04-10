@@ -12,11 +12,12 @@
   <xs:element name="dtsFornecedor" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dtsFornecedor" msprop:Generator_UserDSName="dtsFornecedor">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="FORNECEDORES" msprop:Generator_TableClassName="FORNECEDORESDataTable" msprop:Generator_TableVarName="tableFORNECEDORES" msprop:Generator_TablePropName="FORNECEDORES" msprop:Generator_RowDeletingName="FORNECEDORESRowDeleting" msprop:Generator_RowChangingName="FORNECEDORESRowChanging" msprop:Generator_RowEvHandlerName="FORNECEDORESRowChangeEventHandler" msprop:Generator_RowDeletedName="FORNECEDORESRowDeleted" msprop:Generator_UserTableName="FORNECEDORES" msprop:Generator_RowChangedName="FORNECEDORESRowChanged" msprop:Generator_RowEvArgName="FORNECEDORESRowChangeEvent" msprop:Generator_RowClassName="FORNECEDORESRow">
+        <xs:element name="FORNECEDORES" msprop:Generator_TableClassName="FORNECEDORESDataTable" msprop:Generator_TableVarName="tableFORNECEDORES" msprop:Generator_RowChangedName="FORNECEDORESRowChanged" msprop:Generator_TablePropName="FORNECEDORES" msprop:Generator_RowDeletingName="FORNECEDORESRowDeleting" msprop:Generator_RowChangingName="FORNECEDORESRowChanging" msprop:Generator_RowEvHandlerName="FORNECEDORESRowChangeEventHandler" msprop:Generator_RowDeletedName="FORNECEDORESRowDeleted" msprop:Generator_RowClassName="FORNECEDORESRow" msprop:Generator_UserTableName="FORNECEDORES" msprop:Generator_RowEvArgName="FORNECEDORESRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="COD_FORNECEDOR" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnCOD_FORNECEDOR" msprop:Generator_ColumnPropNameInRow="COD_FORNECEDOR" msprop:Generator_ColumnPropNameInTable="COD_FORNECEDORColumn" msprop:Generator_UserColumnName="COD_FORNECEDOR" type="xs:int" />
               <xs:element name="NOM_FORNECEDOR" msprop:Generator_ColumnVarNameInTable="columnNOM_FORNECEDOR" msprop:Generator_ColumnPropNameInRow="NOM_FORNECEDOR" msprop:Generator_ColumnPropNameInTable="NOM_FORNECEDORColumn" msprop:Generator_UserColumnName="NOM_FORNECEDOR" type="xs:string" minOccurs="0" />
+              <xs:element name="DAT_CADASTRO" msprop:Generator_ColumnVarNameInTable="columnDAT_CADASTRO" msprop:Generator_ColumnPropNameInRow="DAT_CADASTRO" msprop:Generator_ColumnPropNameInTable="DAT_CADASTROColumn" msprop:Generator_UserColumnName="DAT_CADASTRO" type="xs:dateTime" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

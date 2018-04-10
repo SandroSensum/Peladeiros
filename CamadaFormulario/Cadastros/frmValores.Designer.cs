@@ -46,8 +46,8 @@
             this.txtCadastro = new System.Windows.Forms.MaskedTextBox();
             this.lblCodigo = new System.Windows.Forms.Label();
             this.txtCodigo = new System.Windows.Forms.TextBox();
-            this.scMaskValor1 = new CamadaComponente.Componentes.scMaskValor();
-            this.txtValorPesquisa = new System.Windows.Forms.MaskedTextBox();
+            this.txtValor = new CamadaComponente.Componentes.scMaskValor();
+            this.txtMesAnoPesquisa = new System.Windows.Forms.MaskedTextBox();
             lblCadastro = new System.Windows.Forms.Label();
             lblValor = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.bsoPadrao)).BeginInit();
@@ -84,7 +84,7 @@
             // 
             // pnlFiltro
             // 
-            this.pnlFiltro.Controls.Add(this.txtValorPesquisa);
+            this.pnlFiltro.Controls.Add(this.txtMesAnoPesquisa);
             this.pnlFiltro.Controls.Add(this.lblPesquisa);
             this.pnlFiltro.Size = new System.Drawing.Size(497, 56);
             // 
@@ -104,9 +104,13 @@
             // 
             this.tbcPadrao.Size = new System.Drawing.Size(511, 227);
             // 
+            // ckAtivos
+            // 
+            this.ckAtivos.Visible = false;
+            // 
             // pnlBase
             // 
-            this.pnlBase.Controls.Add(this.scMaskValor1);
+            this.pnlBase.Controls.Add(this.txtValor);
             this.pnlBase.Controls.Add(this.txtReferencia);
             this.pnlBase.Controls.Add(this.lblReferencia);
             this.pnlBase.Controls.Add(this.txtCadastro);
@@ -162,9 +166,10 @@
             // cODVALORDataGridViewTextBoxColumn
             // 
             this.cODVALORDataGridViewTextBoxColumn.DataPropertyName = "COD_VALOR";
-            this.cODVALORDataGridViewTextBoxColumn.HeaderText = "COD_VALOR";
+            this.cODVALORDataGridViewTextBoxColumn.HeaderText = "CODIGO";
             this.cODVALORDataGridViewTextBoxColumn.Name = "cODVALORDataGridViewTextBoxColumn";
             this.cODVALORDataGridViewTextBoxColumn.ReadOnly = true;
+            this.cODVALORDataGridViewTextBoxColumn.Width = 50;
             // 
             // vALORDataGridViewTextBoxColumn
             // 
@@ -182,7 +187,7 @@
             dataGridViewCellStyle2.Format = "00/0000";
             dataGridViewCellStyle2.NullValue = "00/0000";
             this.dATVALORDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dATVALORDataGridViewTextBoxColumn.HeaderText = "DAT_VALOR";
+            this.dATVALORDataGridViewTextBoxColumn.HeaderText = "REFERENCIA";
             this.dATVALORDataGridViewTextBoxColumn.Name = "dATVALORDataGridViewTextBoxColumn";
             this.dATVALORDataGridViewTextBoxColumn.ReadOnly = true;
             this.dATVALORDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -190,7 +195,7 @@
             // dATCADASTRODataGridViewTextBoxColumn
             // 
             this.dATCADASTRODataGridViewTextBoxColumn.DataPropertyName = "DAT_CADASTRO";
-            this.dATCADASTRODataGridViewTextBoxColumn.HeaderText = "DAT_CADASTRO";
+            this.dATCADASTRODataGridViewTextBoxColumn.HeaderText = "CADASTRO";
             this.dATCADASTRODataGridViewTextBoxColumn.Name = "dATCADASTRODataGridViewTextBoxColumn";
             this.dATCADASTRODataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -253,25 +258,24 @@
             this.txtCodigo.Size = new System.Drawing.Size(70, 20);
             this.txtCodigo.TabIndex = 1;
             // 
-            // scMaskValor1
+            // txtValor
             // 
-            this.scMaskValor1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsoPadrao, "VALOR", true));
-            this.scMaskValor1.Desabilitar = false;
-            this.scMaskValor1.Location = new System.Drawing.Point(15, 68);
-            this.scMaskValor1.Mask = "00.00";
-            this.scMaskValor1.Name = "scMaskValor1";
-            this.scMaskValor1.Size = new System.Drawing.Size(70, 20);
-            this.scMaskValor1.TabIndex = 5;
-            this.scMaskValor1.Text = "000";
+            this.txtValor.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsoPadrao, "VALOR", true));
+            this.txtValor.Desabilitar = false;
+            this.txtValor.Location = new System.Drawing.Point(15, 68);
+            this.txtValor.Mask = "00.00";
+            this.txtValor.Name = "txtValor";
+            this.txtValor.Size = new System.Drawing.Size(70, 20);
+            this.txtValor.TabIndex = 5;
+            this.txtValor.Text = "0000";
             // 
-            // txtValorPesquisa
+            // txtMesAnoPesquisa
             // 
-            this.txtValorPesquisa.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsoPadrao, "DAT_VALOR", true));
-            this.txtValorPesquisa.Location = new System.Drawing.Point(16, 25);
-            this.txtValorPesquisa.Mask = "00/0000";
-            this.txtValorPesquisa.Name = "txtValorPesquisa";
-            this.txtValorPesquisa.Size = new System.Drawing.Size(70, 20);
-            this.txtValorPesquisa.TabIndex = 8;
+            this.txtMesAnoPesquisa.Location = new System.Drawing.Point(16, 25);
+            this.txtMesAnoPesquisa.Mask = "00/0000";
+            this.txtMesAnoPesquisa.Name = "txtMesAnoPesquisa";
+            this.txtMesAnoPesquisa.Size = new System.Drawing.Size(70, 20);
+            this.txtMesAnoPesquisa.TabIndex = 8;
             // 
             // frmValores
             // 
@@ -280,6 +284,7 @@
             this.ClientSize = new System.Drawing.Size(511, 289);
             this.Name = "frmValores";
             this.Text = "Cadastro de Valores";
+            this.ValidarGravar += new CamadaFuncao.Delegates.Delegates.PadraoValidarEventHandler(this.frmValores_ValidarGravar);
             ((System.ComponentModel.ISupportInitialize)(this.bsoPadrao)).EndInit();
             this.tabPrincipal.ResumeLayout(false);
             this.pnlResultado.ResumeLayout(false);
@@ -310,11 +315,11 @@
         private System.Windows.Forms.MaskedTextBox txtCadastro;
         private System.Windows.Forms.Label lblCodigo;
         private System.Windows.Forms.TextBox txtCodigo;
-        private CamadaComponente.Componentes.scMaskValor scMaskValor1;
+        private CamadaComponente.Componentes.scMaskValor txtValor;
+        private System.Windows.Forms.MaskedTextBox txtMesAnoPesquisa;
         private System.Windows.Forms.DataGridViewTextBoxColumn cODVALORDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn vALORDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dATVALORDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dATCADASTRODataGridViewTextBoxColumn;
-        private System.Windows.Forms.MaskedTextBox txtValorPesquisa;
     }
 }

@@ -36,16 +36,13 @@
             this.dtgResultpesquisa = new System.Windows.Forms.DataGridView();
             this.cODJOGADORDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nOMJOGADORDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cELULAR1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cELULAR2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fONEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.eMAILDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dATNASCDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.oBSJOGADORDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dATCADASTRODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dATDESATIVADODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fONEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cELULAR1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.eMAILDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cELULAR2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lGCENVIAEMAILDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lGCMENSALISTADataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label5 = new System.Windows.Forms.Label();
             this.txtNomePesquisa = new CamadaComponente.Componentes.scTextBox();
             this.btnInformeInativo = new System.Windows.Forms.Button();
@@ -189,20 +186,18 @@
             this.dtgResultpesquisa.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.cODJOGADORDataGridViewTextBoxColumn,
             this.nOMJOGADORDataGridViewTextBoxColumn,
-            this.dATNASCDataGridViewTextBoxColumn,
-            this.oBSJOGADORDataGridViewTextBoxColumn,
-            this.dATCADASTRODataGridViewTextBoxColumn,
-            this.dATDESATIVADODataGridViewTextBoxColumn,
-            this.fONEDataGridViewTextBoxColumn,
             this.cELULAR1DataGridViewTextBoxColumn,
-            this.eMAILDataGridViewTextBoxColumn,
             this.cELULAR2DataGridViewTextBoxColumn,
-            this.lGCENVIAEMAILDataGridViewTextBoxColumn,
-            this.lGCMENSALISTADataGridViewTextBoxColumn});
+            this.fONEDataGridViewTextBoxColumn,
+            this.eMAILDataGridViewTextBoxColumn,
+            this.dATNASCDataGridViewTextBoxColumn,
+            this.dATCADASTRODataGridViewTextBoxColumn,
+            this.dATDESATIVADODataGridViewTextBoxColumn});
             this.dtgResultpesquisa.DataSource = this.bsoPadrao;
             this.dtgResultpesquisa.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgResultpesquisa.Location = new System.Drawing.Point(0, 0);
             this.dtgResultpesquisa.Name = "dtgResultpesquisa";
+            this.dtgResultpesquisa.ReadOnly = true;
             this.dtgResultpesquisa.Size = new System.Drawing.Size(610, 199);
             this.dtgResultpesquisa.TabIndex = 0;
             this.dtgResultpesquisa.DoubleClick += new System.EventHandler(this.dtgResultpesquisa_DoubleClick);
@@ -210,74 +205,67 @@
             // cODJOGADORDataGridViewTextBoxColumn
             // 
             this.cODJOGADORDataGridViewTextBoxColumn.DataPropertyName = "COD_JOGADOR";
-            this.cODJOGADORDataGridViewTextBoxColumn.HeaderText = "COD_JOGADOR";
+            this.cODJOGADORDataGridViewTextBoxColumn.HeaderText = "CODIGO";
             this.cODJOGADORDataGridViewTextBoxColumn.Name = "cODJOGADORDataGridViewTextBoxColumn";
+            this.cODJOGADORDataGridViewTextBoxColumn.ReadOnly = true;
+            this.cODJOGADORDataGridViewTextBoxColumn.Width = 50;
             // 
             // nOMJOGADORDataGridViewTextBoxColumn
             // 
             this.nOMJOGADORDataGridViewTextBoxColumn.DataPropertyName = "NOM_JOGADOR";
-            this.nOMJOGADORDataGridViewTextBoxColumn.HeaderText = "NOM_JOGADOR";
+            this.nOMJOGADORDataGridViewTextBoxColumn.HeaderText = "JOGADOR";
             this.nOMJOGADORDataGridViewTextBoxColumn.Name = "nOMJOGADORDataGridViewTextBoxColumn";
+            this.nOMJOGADORDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nOMJOGADORDataGridViewTextBoxColumn.Width = 200;
             // 
-            // dATNASCDataGridViewTextBoxColumn
+            // cELULAR1DataGridViewTextBoxColumn
             // 
-            this.dATNASCDataGridViewTextBoxColumn.DataPropertyName = "DAT_NASC";
-            this.dATNASCDataGridViewTextBoxColumn.HeaderText = "DAT_NASC";
-            this.dATNASCDataGridViewTextBoxColumn.Name = "dATNASCDataGridViewTextBoxColumn";
+            this.cELULAR1DataGridViewTextBoxColumn.DataPropertyName = "CELULAR1";
+            this.cELULAR1DataGridViewTextBoxColumn.HeaderText = "CELULAR 1";
+            this.cELULAR1DataGridViewTextBoxColumn.Name = "cELULAR1DataGridViewTextBoxColumn";
+            this.cELULAR1DataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // oBSJOGADORDataGridViewTextBoxColumn
+            // cELULAR2DataGridViewTextBoxColumn
             // 
-            this.oBSJOGADORDataGridViewTextBoxColumn.DataPropertyName = "OBS_JOGADOR";
-            this.oBSJOGADORDataGridViewTextBoxColumn.HeaderText = "OBS_JOGADOR";
-            this.oBSJOGADORDataGridViewTextBoxColumn.Name = "oBSJOGADORDataGridViewTextBoxColumn";
-            // 
-            // dATCADASTRODataGridViewTextBoxColumn
-            // 
-            this.dATCADASTRODataGridViewTextBoxColumn.DataPropertyName = "DAT_CADASTRO";
-            this.dATCADASTRODataGridViewTextBoxColumn.HeaderText = "DAT_CADASTRO";
-            this.dATCADASTRODataGridViewTextBoxColumn.Name = "dATCADASTRODataGridViewTextBoxColumn";
-            // 
-            // dATDESATIVADODataGridViewTextBoxColumn
-            // 
-            this.dATDESATIVADODataGridViewTextBoxColumn.DataPropertyName = "DAT_DESATIVADO";
-            this.dATDESATIVADODataGridViewTextBoxColumn.HeaderText = "DAT_DESATIVADO";
-            this.dATDESATIVADODataGridViewTextBoxColumn.Name = "dATDESATIVADODataGridViewTextBoxColumn";
+            this.cELULAR2DataGridViewTextBoxColumn.DataPropertyName = "CELULAR2";
+            this.cELULAR2DataGridViewTextBoxColumn.HeaderText = "CELULAR 2";
+            this.cELULAR2DataGridViewTextBoxColumn.Name = "cELULAR2DataGridViewTextBoxColumn";
+            this.cELULAR2DataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // fONEDataGridViewTextBoxColumn
             // 
             this.fONEDataGridViewTextBoxColumn.DataPropertyName = "FONE";
             this.fONEDataGridViewTextBoxColumn.HeaderText = "FONE";
             this.fONEDataGridViewTextBoxColumn.Name = "fONEDataGridViewTextBoxColumn";
-            // 
-            // cELULAR1DataGridViewTextBoxColumn
-            // 
-            this.cELULAR1DataGridViewTextBoxColumn.DataPropertyName = "CELULAR1";
-            this.cELULAR1DataGridViewTextBoxColumn.HeaderText = "CELULAR1";
-            this.cELULAR1DataGridViewTextBoxColumn.Name = "cELULAR1DataGridViewTextBoxColumn";
+            this.fONEDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // eMAILDataGridViewTextBoxColumn
             // 
             this.eMAILDataGridViewTextBoxColumn.DataPropertyName = "EMAIL";
             this.eMAILDataGridViewTextBoxColumn.HeaderText = "EMAIL";
             this.eMAILDataGridViewTextBoxColumn.Name = "eMAILDataGridViewTextBoxColumn";
+            this.eMAILDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // cELULAR2DataGridViewTextBoxColumn
+            // dATNASCDataGridViewTextBoxColumn
             // 
-            this.cELULAR2DataGridViewTextBoxColumn.DataPropertyName = "CELULAR2";
-            this.cELULAR2DataGridViewTextBoxColumn.HeaderText = "CELULAR2";
-            this.cELULAR2DataGridViewTextBoxColumn.Name = "cELULAR2DataGridViewTextBoxColumn";
+            this.dATNASCDataGridViewTextBoxColumn.DataPropertyName = "DAT_NASC";
+            this.dATNASCDataGridViewTextBoxColumn.HeaderText = "NASCIMENTO";
+            this.dATNASCDataGridViewTextBoxColumn.Name = "dATNASCDataGridViewTextBoxColumn";
+            this.dATNASCDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // lGCENVIAEMAILDataGridViewTextBoxColumn
+            // dATCADASTRODataGridViewTextBoxColumn
             // 
-            this.lGCENVIAEMAILDataGridViewTextBoxColumn.DataPropertyName = "LGC_ENVIA_EMAIL";
-            this.lGCENVIAEMAILDataGridViewTextBoxColumn.HeaderText = "LGC_ENVIA_EMAIL";
-            this.lGCENVIAEMAILDataGridViewTextBoxColumn.Name = "lGCENVIAEMAILDataGridViewTextBoxColumn";
+            this.dATCADASTRODataGridViewTextBoxColumn.DataPropertyName = "DAT_CADASTRO";
+            this.dATCADASTRODataGridViewTextBoxColumn.HeaderText = "CADASTRO";
+            this.dATCADASTRODataGridViewTextBoxColumn.Name = "dATCADASTRODataGridViewTextBoxColumn";
+            this.dATCADASTRODataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // lGCMENSALISTADataGridViewTextBoxColumn
+            // dATDESATIVADODataGridViewTextBoxColumn
             // 
-            this.lGCMENSALISTADataGridViewTextBoxColumn.DataPropertyName = "LGC_MENSALISTA";
-            this.lGCMENSALISTADataGridViewTextBoxColumn.HeaderText = "LGC_MENSALISTA";
-            this.lGCMENSALISTADataGridViewTextBoxColumn.Name = "lGCMENSALISTADataGridViewTextBoxColumn";
+            this.dATDESATIVADODataGridViewTextBoxColumn.DataPropertyName = "DAT_DESATIVADO";
+            this.dATDESATIVADODataGridViewTextBoxColumn.HeaderText = "DESATIVADO";
+            this.dATDESATIVADODataGridViewTextBoxColumn.Name = "dATDESATIVADODataGridViewTextBoxColumn";
+            this.dATDESATIVADODataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // label5
             // 
@@ -340,7 +328,7 @@
             this.cpAtivoInativo1.Name = "cpAtivoInativo1";
             this.cpAtivoInativo1.NomeCampo = "DAT_DESATIVADO";
             this.cpAtivoInativo1.Size = new System.Drawing.Size(100, 107);
-            this.cpAtivoInativo1.TabIndex = 154;
+            this.cpAtivoInativo1.TabIndex = 19;
             // 
             // lblObs
             // 
@@ -348,7 +336,7 @@
             this.lblObs.Location = new System.Drawing.Point(12, 182);
             this.lblObs.Name = "lblObs";
             this.lblObs.Size = new System.Drawing.Size(70, 13);
-            this.lblObs.TabIndex = 153;
+            this.lblObs.TabIndex = 17;
             this.lblObs.Text = "Observações";
             // 
             // txtObs
@@ -358,7 +346,7 @@
             this.txtObs.Multiline = true;
             this.txtObs.Name = "txtObs";
             this.txtObs.Size = new System.Drawing.Size(589, 67);
-            this.txtObs.TabIndex = 152;
+            this.txtObs.TabIndex = 18;
             // 
             // lblAnos
             // 
@@ -366,7 +354,7 @@
             this.lblAnos.Location = new System.Drawing.Point(142, 123);
             this.lblAnos.Name = "lblAnos";
             this.lblAnos.Size = new System.Drawing.Size(30, 13);
-            this.lblAnos.TabIndex = 151;
+            this.lblAnos.TabIndex = 10;
             this.lblAnos.Text = "anos";
             // 
             // lblIdade
@@ -375,7 +363,7 @@
             this.lblIdade.Location = new System.Drawing.Point(103, 104);
             this.lblIdade.Name = "lblIdade";
             this.lblIdade.Size = new System.Drawing.Size(34, 13);
-            this.lblIdade.TabIndex = 150;
+            this.lblIdade.TabIndex = 8;
             this.lblIdade.Text = "Idade";
             // 
             // txtIdade
@@ -385,7 +373,7 @@
             this.txtIdade.Name = "txtIdade";
             this.txtIdade.ReadOnly = true;
             this.txtIdade.Size = new System.Drawing.Size(39, 20);
-            this.txtIdade.TabIndex = 149;
+            this.txtIdade.TabIndex = 9;
             // 
             // txtCel2
             // 
@@ -394,7 +382,7 @@
             this.txtCel2.Mask = "(99) 00000-0000";
             this.txtCel2.Name = "txtCel2";
             this.txtCel2.Size = new System.Drawing.Size(84, 20);
-            this.txtCel2.TabIndex = 138;
+            this.txtCel2.TabIndex = 14;
             // 
             // lblCel2
             // 
@@ -402,7 +390,7 @@
             this.lblCel2.Location = new System.Drawing.Point(275, 104);
             this.lblCel2.Name = "lblCel2";
             this.lblCel2.Size = new System.Drawing.Size(39, 13);
-            this.lblCel2.TabIndex = 148;
+            this.lblCel2.TabIndex = 13;
             this.lblCel2.Text = "Celular";
             // 
             // txtCel1
@@ -412,7 +400,7 @@
             this.txtCel1.Mask = "(99) 00000-0000";
             this.txtCel1.Name = "txtCel1";
             this.txtCel1.Size = new System.Drawing.Size(84, 20);
-            this.txtCel1.TabIndex = 137;
+            this.txtCel1.TabIndex = 12;
             // 
             // lblCel1
             // 
@@ -420,18 +408,19 @@
             this.lblCel1.Location = new System.Drawing.Point(185, 104);
             this.lblCel1.Name = "lblCel1";
             this.lblCel1.Size = new System.Drawing.Size(39, 13);
-            this.lblCel1.TabIndex = 147;
+            this.lblCel1.TabIndex = 11;
             this.lblCel1.Text = "Celular";
             // 
             // maskedTextBox2
             // 
             this.maskedTextBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsoPadrao, "DAT_CADASTRO", true));
+            this.maskedTextBox2.Enabled = false;
             this.maskedTextBox2.Location = new System.Drawing.Point(88, 38);
             this.maskedTextBox2.Mask = "00/00/0000";
             this.maskedTextBox2.Name = "maskedTextBox2";
             this.maskedTextBox2.ReadOnly = true;
             this.maskedTextBox2.Size = new System.Drawing.Size(84, 20);
-            this.maskedTextBox2.TabIndex = 146;
+            this.maskedTextBox2.TabIndex = 3;
             this.maskedTextBox2.ValidatingType = typeof(System.DateTime);
             // 
             // txtDatNascimento
@@ -441,7 +430,7 @@
             this.txtDatNascimento.Mask = "00/00/0000";
             this.txtDatNascimento.Name = "txtDatNascimento";
             this.txtDatNascimento.Size = new System.Drawing.Size(84, 20);
-            this.txtDatNascimento.TabIndex = 136;
+            this.txtDatNascimento.TabIndex = 7;
             this.txtDatNascimento.ValidatingType = typeof(System.DateTime);
             this.txtDatNascimento.Leave += new System.EventHandler(this.txtDatNascimento_Leave);
             // 
@@ -451,7 +440,7 @@
             this.label1.Location = new System.Drawing.Point(10, 104);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(63, 13);
-            this.label1.TabIndex = 145;
+            this.label1.TabIndex = 6;
             this.label1.Text = "Nascimento";
             // 
             // lblDatCadastro
@@ -460,7 +449,7 @@
             this.lblDatCadastro.Location = new System.Drawing.Point(85, 22);
             this.lblDatCadastro.Name = "lblDatCadastro";
             this.lblDatCadastro.Size = new System.Drawing.Size(75, 13);
-            this.lblDatCadastro.TabIndex = 144;
+            this.lblDatCadastro.TabIndex = 2;
             this.lblDatCadastro.Text = "Data Cadastro";
             // 
             // lblEmail
@@ -469,7 +458,7 @@
             this.lblEmail.Location = new System.Drawing.Point(12, 143);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(35, 13);
-            this.lblEmail.TabIndex = 143;
+            this.lblEmail.TabIndex = 15;
             this.lblEmail.Text = "E-mail";
             // 
             // txtEmail
@@ -479,7 +468,7 @@
             this.txtEmail.Location = new System.Drawing.Point(12, 159);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(350, 20);
-            this.txtEmail.TabIndex = 139;
+            this.txtEmail.TabIndex = 16;
             // 
             // lblCodigo
             // 
@@ -487,7 +476,7 @@
             this.lblCodigo.Location = new System.Drawing.Point(12, 22);
             this.lblCodigo.Name = "lblCodigo";
             this.lblCodigo.Size = new System.Drawing.Size(40, 13);
-            this.lblCodigo.TabIndex = 140;
+            this.lblCodigo.TabIndex = 0;
             this.lblCodigo.Text = "Código";
             // 
             // txtCodigo
@@ -498,7 +487,7 @@
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.ReadOnly = true;
             this.txtCodigo.Size = new System.Drawing.Size(70, 20);
-            this.txtCodigo.TabIndex = 141;
+            this.txtCodigo.TabIndex = 1;
             // 
             // lblNome
             // 
@@ -506,7 +495,7 @@
             this.lblNome.Location = new System.Drawing.Point(12, 65);
             this.lblNome.Name = "lblNome";
             this.lblNome.Size = new System.Drawing.Size(35, 13);
-            this.lblNome.TabIndex = 142;
+            this.lblNome.TabIndex = 4;
             this.lblNome.Text = "Nome";
             // 
             // txtNome
@@ -516,7 +505,7 @@
             this.txtNome.Location = new System.Drawing.Point(12, 81);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(350, 20);
-            this.txtNome.TabIndex = 135;
+            this.txtNome.TabIndex = 5;
             // 
             // frmJogador
             // 
@@ -555,18 +544,6 @@
         private CamadaLogica.DS.dtsJogador dtsJogador1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridView dtgResultpesquisa;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cODJOGADORDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nOMJOGADORDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dATNASCDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn oBSJOGADORDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dATCADASTRODataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dATDESATIVADODataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fONEDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cELULAR1DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn eMAILDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cELULAR2DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn lGCENVIAEMAILDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn lGCMENSALISTADataGridViewTextBoxColumn;
         private CamadaComponente.Componentes.scTextBox txtNomePesquisa;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnInformeInativo;
@@ -593,6 +570,15 @@
         private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.Label lblNome;
         private System.Windows.Forms.TextBox txtNome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cODJOGADORDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nOMJOGADORDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cELULAR1DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cELULAR2DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fONEDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn eMAILDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dATNASCDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dATCADASTRODataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dATDESATIVADODataGridViewTextBoxColumn;
     }
 
 }

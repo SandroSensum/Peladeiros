@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dtsBaixas" targetNamespace="http://tempuri.org/dtsBaixas.xsd" xmlns:mstns="http://tempuri.org/dtsBaixas.xsd" xmlns="http://tempuri.org/dtsBaixas.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dtsBaixas" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dtsBaixas" msprop:Generator_UserDSName="dtsBaixas">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="BAIXA_MENSALIDADES" msprop:Generator_TableClassName="BAIXA_MENSALIDADESDataTable" msprop:Generator_TableVarName="tableBAIXA_MENSALIDADES" msprop:Generator_TablePropName="BAIXA_MENSALIDADES" msprop:Generator_RowDeletingName="BAIXA_MENSALIDADESRowDeleting" msprop:Generator_RowChangingName="BAIXA_MENSALIDADESRowChanging" msprop:Generator_RowEvHandlerName="BAIXA_MENSALIDADESRowChangeEventHandler" msprop:Generator_RowDeletedName="BAIXA_MENSALIDADESRowDeleted" msprop:Generator_UserTableName="BAIXA_MENSALIDADES" msprop:Generator_RowChangedName="BAIXA_MENSALIDADESRowChanged" msprop:Generator_RowEvArgName="BAIXA_MENSALIDADESRowChangeEvent" msprop:Generator_RowClassName="BAIXA_MENSALIDADESRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="COD_BAIXA" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnCOD_BAIXA" msprop:Generator_ColumnPropNameInRow="COD_BAIXA" msprop:Generator_ColumnPropNameInTable="COD_BAIXAColumn" msprop:Generator_UserColumnName="COD_BAIXA" type="xs:int" />
+              <xs:element name="DAT_CADASTRO" msprop:Generator_ColumnVarNameInTable="columnDAT_CADASTRO" msprop:Generator_ColumnPropNameInRow="DAT_CADASTRO" msprop:Generator_ColumnPropNameInTable="DAT_CADASTROColumn" msprop:Generator_UserColumnName="DAT_CADASTRO" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="COD_JOGADOR" msprop:Generator_ColumnVarNameInTable="columnCOD_JOGADOR" msprop:Generator_ColumnPropNameInRow="COD_JOGADOR" msprop:Generator_ColumnPropNameInTable="COD_JOGADORColumn" msprop:Generator_UserColumnName="COD_JOGADOR" type="xs:int" minOccurs="0" />
+              <xs:element name="COD_CONTA" msprop:Generator_ColumnVarNameInTable="columnCOD_CONTA" msprop:Generator_ColumnPropNameInRow="COD_CONTA" msprop:Generator_ColumnPropNameInTable="COD_CONTAColumn" msprop:Generator_UserColumnName="COD_CONTA" type="xs:int" minOccurs="0" />
+              <xs:element name="COD_VALOR" msprop:Generator_ColumnVarNameInTable="columnCOD_VALOR" msprop:Generator_ColumnPropNameInRow="COD_VALOR" msprop:Generator_ColumnPropNameInTable="COD_VALORColumn" msprop:Generator_UserColumnName="COD_VALOR" type="xs:int" minOccurs="0" />
+              <xs:element name="DAT_PGTO" msprop:Generator_ColumnVarNameInTable="columnDAT_PGTO" msprop:Generator_ColumnPropNameInRow="DAT_PGTO" msprop:Generator_ColumnPropNameInTable="DAT_PGTOColumn" msprop:Generator_UserColumnName="DAT_PGTO" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="LKP_REF" msprop:Generator_ColumnVarNameInTable="columnLKP_REF" msprop:Generator_ColumnPropNameInRow="LKP_REF" msprop:Generator_ColumnPropNameInTable="LKP_REFColumn" msprop:Generator_UserColumnName="LKP_REF" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:BAIXA_MENSALIDADES" />
+      <xs:field xpath="mstns:COD_BAIXA" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

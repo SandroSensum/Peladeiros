@@ -20,17 +20,17 @@ namespace CamadaLogica.DS {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("dtsFornecedor")]
+    [global::System.Xml.Serialization.XmlRootAttribute("dtsBaixas")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class dtsFornecedor : global::System.Data.DataSet {
+    public partial class dtsBaixas : global::System.Data.DataSet {
         
-        private FORNECEDORESDataTable tableFORNECEDORES;
+        private BAIXA_MENSALIDADESDataTable tableBAIXA_MENSALIDADES;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public dtsFornecedor() {
+        public dtsBaixas() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace CamadaLogica.DS {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected dtsFornecedor(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected dtsBaixas(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -54,8 +54,8 @@ namespace CamadaLogica.DS {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["FORNECEDORES"] != null)) {
-                    base.Tables.Add(new FORNECEDORESDataTable(ds.Tables["FORNECEDORES"]));
+                if ((ds.Tables["BAIXA_MENSALIDADES"] != null)) {
+                    base.Tables.Add(new BAIXA_MENSALIDADESDataTable(ds.Tables["BAIXA_MENSALIDADES"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace CamadaLogica.DS {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public FORNECEDORESDataTable FORNECEDORES {
+        public BAIXA_MENSALIDADESDataTable BAIXA_MENSALIDADES {
             get {
-                return this.tableFORNECEDORES;
+                return this.tableBAIXA_MENSALIDADES;
             }
         }
         
@@ -127,7 +127,7 @@ namespace CamadaLogica.DS {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            dtsFornecedor cln = ((dtsFornecedor)(base.Clone()));
+            dtsBaixas cln = ((dtsBaixas)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -152,8 +152,8 @@ namespace CamadaLogica.DS {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["FORNECEDORES"] != null)) {
-                    base.Tables.Add(new FORNECEDORESDataTable(ds.Tables["FORNECEDORES"]));
+                if ((ds.Tables["BAIXA_MENSALIDADES"] != null)) {
+                    base.Tables.Add(new BAIXA_MENSALIDADESDataTable(ds.Tables["BAIXA_MENSALIDADES"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace CamadaLogica.DS {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableFORNECEDORES = ((FORNECEDORESDataTable)(base.Tables["FORNECEDORES"]));
+            this.tableBAIXA_MENSALIDADES = ((BAIXA_MENSALIDADESDataTable)(base.Tables["BAIXA_MENSALIDADES"]));
             if ((initTable == true)) {
-                if ((this.tableFORNECEDORES != null)) {
-                    this.tableFORNECEDORES.InitVars();
+                if ((this.tableBAIXA_MENSALIDADES != null)) {
+                    this.tableBAIXA_MENSALIDADES.InitVars();
                 }
             }
         }
@@ -199,18 +199,18 @@ namespace CamadaLogica.DS {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "dtsFornecedor";
+            this.DataSetName = "dtsBaixas";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/dtsFornecedor.xsd";
+            this.Namespace = "http://tempuri.org/dtsBaixas.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableFORNECEDORES = new FORNECEDORESDataTable();
-            base.Tables.Add(this.tableFORNECEDORES);
+            this.tableBAIXA_MENSALIDADES = new BAIXA_MENSALIDADESDataTable();
+            base.Tables.Add(this.tableBAIXA_MENSALIDADES);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializeFORNECEDORES() {
+        private bool ShouldSerializeBAIXA_MENSALIDADES() {
             return false;
         }
         
@@ -225,7 +225,7 @@ namespace CamadaLogica.DS {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            dtsFornecedor ds = new dtsFornecedor();
+            dtsBaixas ds = new dtsBaixas();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -270,25 +270,33 @@ namespace CamadaLogica.DS {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void FORNECEDORESRowChangeEventHandler(object sender, FORNECEDORESRowChangeEvent e);
+        public delegate void BAIXA_MENSALIDADESRowChangeEventHandler(object sender, BAIXA_MENSALIDADESRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class FORNECEDORESDataTable : global::System.Data.TypedTableBase<FORNECEDORESRow> {
+        public partial class BAIXA_MENSALIDADESDataTable : global::System.Data.TypedTableBase<BAIXA_MENSALIDADESRow> {
             
-            private global::System.Data.DataColumn columnCOD_FORNECEDOR;
-            
-            private global::System.Data.DataColumn columnNOM_FORNECEDOR;
+            private global::System.Data.DataColumn columnCOD_BAIXA;
             
             private global::System.Data.DataColumn columnDAT_CADASTRO;
             
+            private global::System.Data.DataColumn columnCOD_JOGADOR;
+            
+            private global::System.Data.DataColumn columnCOD_CONTA;
+            
+            private global::System.Data.DataColumn columnCOD_VALOR;
+            
+            private global::System.Data.DataColumn columnDAT_PGTO;
+            
+            private global::System.Data.DataColumn columnLKP_REF;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public FORNECEDORESDataTable() {
-                this.TableName = "FORNECEDORES";
+            public BAIXA_MENSALIDADESDataTable() {
+                this.TableName = "BAIXA_MENSALIDADES";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -296,7 +304,7 @@ namespace CamadaLogica.DS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal FORNECEDORESDataTable(global::System.Data.DataTable table) {
+            internal BAIXA_MENSALIDADESDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -313,24 +321,16 @@ namespace CamadaLogica.DS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected FORNECEDORESDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected BAIXA_MENSALIDADESDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn COD_FORNECEDORColumn {
+            public global::System.Data.DataColumn COD_BAIXAColumn {
                 get {
-                    return this.columnCOD_FORNECEDOR;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn NOM_FORNECEDORColumn {
-                get {
-                    return this.columnNOM_FORNECEDOR;
+                    return this.columnCOD_BAIXA;
                 }
             }
             
@@ -339,6 +339,46 @@ namespace CamadaLogica.DS {
             public global::System.Data.DataColumn DAT_CADASTROColumn {
                 get {
                     return this.columnDAT_CADASTRO;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn COD_JOGADORColumn {
+                get {
+                    return this.columnCOD_JOGADOR;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn COD_CONTAColumn {
+                get {
+                    return this.columnCOD_CONTA;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn COD_VALORColumn {
+                get {
+                    return this.columnCOD_VALOR;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DAT_PGTOColumn {
+                get {
+                    return this.columnDAT_PGTO;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn LKP_REFColumn {
+                get {
+                    return this.columnLKP_REF;
                 }
             }
             
@@ -353,54 +393,58 @@ namespace CamadaLogica.DS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public FORNECEDORESRow this[int index] {
+            public BAIXA_MENSALIDADESRow this[int index] {
                 get {
-                    return ((FORNECEDORESRow)(this.Rows[index]));
+                    return ((BAIXA_MENSALIDADESRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event FORNECEDORESRowChangeEventHandler FORNECEDORESRowChanging;
+            public event BAIXA_MENSALIDADESRowChangeEventHandler BAIXA_MENSALIDADESRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event FORNECEDORESRowChangeEventHandler FORNECEDORESRowChanged;
+            public event BAIXA_MENSALIDADESRowChangeEventHandler BAIXA_MENSALIDADESRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event FORNECEDORESRowChangeEventHandler FORNECEDORESRowDeleting;
+            public event BAIXA_MENSALIDADESRowChangeEventHandler BAIXA_MENSALIDADESRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event FORNECEDORESRowChangeEventHandler FORNECEDORESRowDeleted;
+            public event BAIXA_MENSALIDADESRowChangeEventHandler BAIXA_MENSALIDADESRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void AddFORNECEDORESRow(FORNECEDORESRow row) {
+            public void AddBAIXA_MENSALIDADESRow(BAIXA_MENSALIDADESRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public FORNECEDORESRow AddFORNECEDORESRow(string NOM_FORNECEDOR, System.DateTime DAT_CADASTRO) {
-                FORNECEDORESRow rowFORNECEDORESRow = ((FORNECEDORESRow)(this.NewRow()));
+            public BAIXA_MENSALIDADESRow AddBAIXA_MENSALIDADESRow(System.DateTime DAT_CADASTRO, int COD_JOGADOR, int COD_CONTA, int COD_VALOR, System.DateTime DAT_PGTO, string LKP_REF) {
+                BAIXA_MENSALIDADESRow rowBAIXA_MENSALIDADESRow = ((BAIXA_MENSALIDADESRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        NOM_FORNECEDOR,
-                        DAT_CADASTRO};
-                rowFORNECEDORESRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowFORNECEDORESRow);
-                return rowFORNECEDORESRow;
+                        DAT_CADASTRO,
+                        COD_JOGADOR,
+                        COD_CONTA,
+                        COD_VALOR,
+                        DAT_PGTO,
+                        LKP_REF};
+                rowBAIXA_MENSALIDADESRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowBAIXA_MENSALIDADESRow);
+                return rowBAIXA_MENSALIDADESRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public FORNECEDORESRow FindByCOD_FORNECEDOR(int COD_FORNECEDOR) {
-                return ((FORNECEDORESRow)(this.Rows.Find(new object[] {
-                            COD_FORNECEDOR})));
+            public BAIXA_MENSALIDADESRow FindByCOD_BAIXA(int COD_BAIXA) {
+                return ((BAIXA_MENSALIDADESRow)(this.Rows.Find(new object[] {
+                            COD_BAIXA})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                FORNECEDORESDataTable cln = ((FORNECEDORESDataTable)(base.Clone()));
+                BAIXA_MENSALIDADESDataTable cln = ((BAIXA_MENSALIDADESDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -408,59 +452,71 @@ namespace CamadaLogica.DS {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new FORNECEDORESDataTable();
+                return new BAIXA_MENSALIDADESDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
-                this.columnCOD_FORNECEDOR = base.Columns["COD_FORNECEDOR"];
-                this.columnNOM_FORNECEDOR = base.Columns["NOM_FORNECEDOR"];
+                this.columnCOD_BAIXA = base.Columns["COD_BAIXA"];
                 this.columnDAT_CADASTRO = base.Columns["DAT_CADASTRO"];
+                this.columnCOD_JOGADOR = base.Columns["COD_JOGADOR"];
+                this.columnCOD_CONTA = base.Columns["COD_CONTA"];
+                this.columnCOD_VALOR = base.Columns["COD_VALOR"];
+                this.columnDAT_PGTO = base.Columns["DAT_PGTO"];
+                this.columnLKP_REF = base.Columns["LKP_REF"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             private void InitClass() {
-                this.columnCOD_FORNECEDOR = new global::System.Data.DataColumn("COD_FORNECEDOR", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCOD_FORNECEDOR);
-                this.columnNOM_FORNECEDOR = new global::System.Data.DataColumn("NOM_FORNECEDOR", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnNOM_FORNECEDOR);
+                this.columnCOD_BAIXA = new global::System.Data.DataColumn("COD_BAIXA", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCOD_BAIXA);
                 this.columnDAT_CADASTRO = new global::System.Data.DataColumn("DAT_CADASTRO", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDAT_CADASTRO);
+                this.columnCOD_JOGADOR = new global::System.Data.DataColumn("COD_JOGADOR", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCOD_JOGADOR);
+                this.columnCOD_CONTA = new global::System.Data.DataColumn("COD_CONTA", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCOD_CONTA);
+                this.columnCOD_VALOR = new global::System.Data.DataColumn("COD_VALOR", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCOD_VALOR);
+                this.columnDAT_PGTO = new global::System.Data.DataColumn("DAT_PGTO", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDAT_PGTO);
+                this.columnLKP_REF = new global::System.Data.DataColumn("LKP_REF", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnLKP_REF);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnCOD_FORNECEDOR}, true));
-                this.columnCOD_FORNECEDOR.AutoIncrement = true;
-                this.columnCOD_FORNECEDOR.AutoIncrementSeed = -1;
-                this.columnCOD_FORNECEDOR.AutoIncrementStep = -1;
-                this.columnCOD_FORNECEDOR.AllowDBNull = false;
-                this.columnCOD_FORNECEDOR.Unique = true;
+                                this.columnCOD_BAIXA}, true));
+                this.columnCOD_BAIXA.AutoIncrement = true;
+                this.columnCOD_BAIXA.AutoIncrementSeed = -1;
+                this.columnCOD_BAIXA.AutoIncrementStep = -1;
+                this.columnCOD_BAIXA.AllowDBNull = false;
+                this.columnCOD_BAIXA.Unique = true;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public FORNECEDORESRow NewFORNECEDORESRow() {
-                return ((FORNECEDORESRow)(this.NewRow()));
+            public BAIXA_MENSALIDADESRow NewBAIXA_MENSALIDADESRow() {
+                return ((BAIXA_MENSALIDADESRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new FORNECEDORESRow(builder);
+                return new BAIXA_MENSALIDADESRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(FORNECEDORESRow);
+                return typeof(BAIXA_MENSALIDADESRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.FORNECEDORESRowChanged != null)) {
-                    this.FORNECEDORESRowChanged(this, new FORNECEDORESRowChangeEvent(((FORNECEDORESRow)(e.Row)), e.Action));
+                if ((this.BAIXA_MENSALIDADESRowChanged != null)) {
+                    this.BAIXA_MENSALIDADESRowChanged(this, new BAIXA_MENSALIDADESRowChangeEvent(((BAIXA_MENSALIDADESRow)(e.Row)), e.Action));
                 }
             }
             
@@ -468,8 +524,8 @@ namespace CamadaLogica.DS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.FORNECEDORESRowChanging != null)) {
-                    this.FORNECEDORESRowChanging(this, new FORNECEDORESRowChangeEvent(((FORNECEDORESRow)(e.Row)), e.Action));
+                if ((this.BAIXA_MENSALIDADESRowChanging != null)) {
+                    this.BAIXA_MENSALIDADESRowChanging(this, new BAIXA_MENSALIDADESRowChangeEvent(((BAIXA_MENSALIDADESRow)(e.Row)), e.Action));
                 }
             }
             
@@ -477,8 +533,8 @@ namespace CamadaLogica.DS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.FORNECEDORESRowDeleted != null)) {
-                    this.FORNECEDORESRowDeleted(this, new FORNECEDORESRowChangeEvent(((FORNECEDORESRow)(e.Row)), e.Action));
+                if ((this.BAIXA_MENSALIDADESRowDeleted != null)) {
+                    this.BAIXA_MENSALIDADESRowDeleted(this, new BAIXA_MENSALIDADESRowChangeEvent(((BAIXA_MENSALIDADESRow)(e.Row)), e.Action));
                 }
             }
             
@@ -486,14 +542,14 @@ namespace CamadaLogica.DS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.FORNECEDORESRowDeleting != null)) {
-                    this.FORNECEDORESRowDeleting(this, new FORNECEDORESRowChangeEvent(((FORNECEDORESRow)(e.Row)), e.Action));
+                if ((this.BAIXA_MENSALIDADESRowDeleting != null)) {
+                    this.BAIXA_MENSALIDADESRowDeleting(this, new BAIXA_MENSALIDADESRowChangeEvent(((BAIXA_MENSALIDADESRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void RemoveFORNECEDORESRow(FORNECEDORESRow row) {
+            public void RemoveBAIXA_MENSALIDADESRow(BAIXA_MENSALIDADESRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -502,7 +558,7 @@ namespace CamadaLogica.DS {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                dtsFornecedor ds = new dtsFornecedor();
+                dtsBaixas ds = new dtsBaixas();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -520,7 +576,7 @@ namespace CamadaLogica.DS {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "FORNECEDORESDataTable";
+                attribute2.FixedValue = "BAIXA_MENSALIDADESDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -564,41 +620,25 @@ namespace CamadaLogica.DS {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class FORNECEDORESRow : global::System.Data.DataRow {
+        public partial class BAIXA_MENSALIDADESRow : global::System.Data.DataRow {
             
-            private FORNECEDORESDataTable tableFORNECEDORES;
+            private BAIXA_MENSALIDADESDataTable tableBAIXA_MENSALIDADES;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal FORNECEDORESRow(global::System.Data.DataRowBuilder rb) : 
+            internal BAIXA_MENSALIDADESRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableFORNECEDORES = ((FORNECEDORESDataTable)(this.Table));
+                this.tableBAIXA_MENSALIDADES = ((BAIXA_MENSALIDADESDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int COD_FORNECEDOR {
+            public int COD_BAIXA {
                 get {
-                    return ((int)(this[this.tableFORNECEDORES.COD_FORNECEDORColumn]));
+                    return ((int)(this[this.tableBAIXA_MENSALIDADES.COD_BAIXAColumn]));
                 }
                 set {
-                    this[this.tableFORNECEDORES.COD_FORNECEDORColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string NOM_FORNECEDOR {
-                get {
-                    try {
-                        return ((string)(this[this.tableFORNECEDORES.NOM_FORNECEDORColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("O valor da coluna \'NOM_FORNECEDOR\' na tabela \'FORNECEDORES\' é DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableFORNECEDORES.NOM_FORNECEDORColumn] = value;
+                    this[this.tableBAIXA_MENSALIDADES.COD_BAIXAColumn] = value;
                 }
             }
             
@@ -607,39 +647,167 @@ namespace CamadaLogica.DS {
             public System.DateTime DAT_CADASTRO {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.tableFORNECEDORES.DAT_CADASTROColumn]));
+                        return ((global::System.DateTime)(this[this.tableBAIXA_MENSALIDADES.DAT_CADASTROColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("O valor da coluna \'DAT_CADASTRO\' na tabela \'FORNECEDORES\' é DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'DAT_CADASTRO\' na tabela \'BAIXA_MENSALIDADES\' é DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableFORNECEDORES.DAT_CADASTROColumn] = value;
+                    this[this.tableBAIXA_MENSALIDADES.DAT_CADASTROColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsNOM_FORNECEDORNull() {
-                return this.IsNull(this.tableFORNECEDORES.NOM_FORNECEDORColumn);
+            public int COD_JOGADOR {
+                get {
+                    try {
+                        return ((int)(this[this.tableBAIXA_MENSALIDADES.COD_JOGADORColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'COD_JOGADOR\' na tabela \'BAIXA_MENSALIDADES\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableBAIXA_MENSALIDADES.COD_JOGADORColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetNOM_FORNECEDORNull() {
-                this[this.tableFORNECEDORES.NOM_FORNECEDORColumn] = global::System.Convert.DBNull;
+            public int COD_CONTA {
+                get {
+                    try {
+                        return ((int)(this[this.tableBAIXA_MENSALIDADES.COD_CONTAColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'COD_CONTA\' na tabela \'BAIXA_MENSALIDADES\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableBAIXA_MENSALIDADES.COD_CONTAColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int COD_VALOR {
+                get {
+                    try {
+                        return ((int)(this[this.tableBAIXA_MENSALIDADES.COD_VALORColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'COD_VALOR\' na tabela \'BAIXA_MENSALIDADES\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableBAIXA_MENSALIDADES.COD_VALORColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime DAT_PGTO {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableBAIXA_MENSALIDADES.DAT_PGTOColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'DAT_PGTO\' na tabela \'BAIXA_MENSALIDADES\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableBAIXA_MENSALIDADES.DAT_PGTOColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string LKP_REF {
+                get {
+                    try {
+                        return ((string)(this[this.tableBAIXA_MENSALIDADES.LKP_REFColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'LKP_REF\' na tabela \'BAIXA_MENSALIDADES\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableBAIXA_MENSALIDADES.LKP_REFColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsDAT_CADASTRONull() {
-                return this.IsNull(this.tableFORNECEDORES.DAT_CADASTROColumn);
+                return this.IsNull(this.tableBAIXA_MENSALIDADES.DAT_CADASTROColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetDAT_CADASTRONull() {
-                this[this.tableFORNECEDORES.DAT_CADASTROColumn] = global::System.Convert.DBNull;
+                this[this.tableBAIXA_MENSALIDADES.DAT_CADASTROColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCOD_JOGADORNull() {
+                return this.IsNull(this.tableBAIXA_MENSALIDADES.COD_JOGADORColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCOD_JOGADORNull() {
+                this[this.tableBAIXA_MENSALIDADES.COD_JOGADORColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCOD_CONTANull() {
+                return this.IsNull(this.tableBAIXA_MENSALIDADES.COD_CONTAColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCOD_CONTANull() {
+                this[this.tableBAIXA_MENSALIDADES.COD_CONTAColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCOD_VALORNull() {
+                return this.IsNull(this.tableBAIXA_MENSALIDADES.COD_VALORColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCOD_VALORNull() {
+                this[this.tableBAIXA_MENSALIDADES.COD_VALORColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDAT_PGTONull() {
+                return this.IsNull(this.tableBAIXA_MENSALIDADES.DAT_PGTOColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDAT_PGTONull() {
+                this[this.tableBAIXA_MENSALIDADES.DAT_PGTOColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsLKP_REFNull() {
+                return this.IsNull(this.tableBAIXA_MENSALIDADES.LKP_REFColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetLKP_REFNull() {
+                this[this.tableBAIXA_MENSALIDADES.LKP_REFColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -647,22 +815,22 @@ namespace CamadaLogica.DS {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class FORNECEDORESRowChangeEvent : global::System.EventArgs {
+        public class BAIXA_MENSALIDADESRowChangeEvent : global::System.EventArgs {
             
-            private FORNECEDORESRow eventRow;
+            private BAIXA_MENSALIDADESRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public FORNECEDORESRowChangeEvent(FORNECEDORESRow row, global::System.Data.DataRowAction action) {
+            public BAIXA_MENSALIDADESRowChangeEvent(BAIXA_MENSALIDADESRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public FORNECEDORESRow Row {
+            public BAIXA_MENSALIDADESRow Row {
                 get {
                     return this.eventRow;
                 }

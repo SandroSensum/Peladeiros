@@ -16,16 +16,31 @@ namespace CamadaFormulario.Cadastros
             InitializeComponent ();
         }
 
-        private void dtgPesquisaConta_DoubleClick( object sender, EventArgs e )
+        private void ckBanco_CheckedChanged( object sender, EventArgs e )
         {
-            tbcPadrao.SelectedTab = tabPrincipal;
+            //if ( ckBanco.Checked )
+            //    gpBanco.Enabled = true;
+            //else
+            //    gpBanco.Enabled = false;
+            gpBanco.Enabled = ckBanco.Checked; // esta linha faz o mesmo "if" de cima
+        }
+
+        private void frmContas_Load( object sender, EventArgs e )
+        {
+            gpBanco.Enabled = ckBanco.Checked; // esta linha faz o mesmo "if" de cima
+        }
+
+        private void txtContaPesquisa_KeyDown( object sender, KeyEventArgs e )
+        {
+            if ( e.KeyCode == Keys.Enter )
+                btnPesquisar.PerformClick ();
         }
 
         private void btnPesquisar_Click( object sender, EventArgs e )
         {
             dtsConta1.Clear ();
-            Contas oContas = new Contas ();
-            dtsConta1.CONTAS.Merge ( oContas.BuscarContas (txtNome.Text,ckAtivos.Checked) );
+            Contas oConta = new Contas ();
+            dtsConta1.CONTAS.Merge ( oConta.BuscarContas( txtContaPesquisa.Text,ckAtivos.Checked ) );
         }
     }
 }

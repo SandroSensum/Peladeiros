@@ -1,4 +1,5 @@
 ﻿using CamadaBase;
+using CamadaFuncao;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -13,25 +14,46 @@ namespace CamadaLogica.Classes
         public DataTable BuscarMesAno( string Referencia )
         {
             StringBuilder sql = new StringBuilder ();
-            sql.AppendLine ( "SELECT * FROM VALOR " );
-            //sql.AppendLine ( "WHERE " );
-            //if (! string.IsNullOrEmpty ( Referencia ) )
-            //    sql.AppendLine ( $"DAT_VALOR = '{Referencia}'" );
+            sql.AppendLine ( "SELECT " );
+            sql.AppendLine ( " * FROM VALOR " );            
+            if ( !string.IsNullOrEmpty ( Referencia.Replace ( "/", "" ).Trim () ) )
+            {
+                sql.AppendLine ( "WHERE " );
+                sql.AppendLine ( $"DAT_VALOR LIKE '{Referencia}'" );
+            }
+
             return Select ( sql );
         }
-    
-        //public DataTable Buscarvalref( string Referencia )
-        //{
-        //    StringBuilder sql = new StringBuilder ();
-        //    sql.AppendLine ( "SELECT * FROM VALOR " );            
-        //    sql.AppendLine ( $"WHERE DAT_VALOR = '{Referencia}'");
-        //    return Convert.ToInt32( Select ( sql ).Rows[0]["COD_VALOR"] );
+
+        public bool ValidaRef( string Referencia )
+        {
+            DataTable Valref = BuscarMesAno ( Referencia );
+            if ( Valref.Rows.Count > 0 )// conta o numero de linhas na tabela
+                return Convert.ToInt32 ( Valref.Rows[0]["COD_VALOR"] ) == 0; //se nao tiver linha retorna false
+            else
+                return true;// se não é verdadeiro
+        }
+
+        public double BuscaValor (int Valor )
+        {
+            if ( Valor > 0 )
+            {
+                StringBuilder sql = new StringBuilder ();
+                sql.AppendLine ( "SELECT VALOR FROM VALOR " );
+                sql.AppendLine ( "WHERE " );
+                sql.AppendLine ( $"COD_VALOR ='{Valor}'" );
+
+                DataTable oValor = Select ( sql );
+                if ( Funcao.PossuiRegistro ( oValor ) )
+                {
+                    return Convert.ToDouble(oValor.Rows[0][0]);                   
+                }
+
+                
+            }
+
+            return 0 ;
+        }
 
     }
-
-
-        /* Método igual o de cima para buscar o valor pela referência(mes/ano)
-         * Como parâmetro tem que passar a referencia que vem lá da tela igual ao de cima ( string referencia )
-         *  return Convert.ToInt32(Select(sql).Rows[0]["COD_VALOR"])
-         */
 }
